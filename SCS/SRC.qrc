@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/_123034.png</file>
+        <file>Images/pencils_120694.png</file>
+        <file>Images/1490820813-6_82408.png</file>
+        <file>Images/login-square-arrow-button-outline_icon-icons.com_73220.png</file>
+        <file>Images/cv_102350.png</file>
+        <file>Images/iconfinder-7-avatar-2754582_120519.png</file>
+        <file>Images/check-form_116472.png</file>
+        <file>Images/iconfinder-document03-1622833_121957.png</file>
+        <file>Images/iconfinder-document05-1622831_121951.png</file>
+        <file>Images/door_internet_key_lock_password_safe_security_icon_127075.png</file>
+        <file>Images/iconfinder-document10-1622826_121954.png</file>
+        <file>Images/iconfinder-documents01-1622837_121952.png</file>
+        <file>Images/iconfinder-documents07-1622836_121949.png</file>
+        <file>Images/internet_lock_locked_padlock_password_secure_security_icon_127078.png</file>
+        <file>Images/internet_lock_locked_padlock_password_secure_security_icon_127100.png</file>
+        <file>Images/test_102328.png</file>
+        <file>Images/system_102355.png</file>
+        <file>Images/laptop-1_102326.png</file>
+    </qresource>
+</RCC>
