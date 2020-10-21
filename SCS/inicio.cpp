@@ -81,6 +81,8 @@ void inicio::on_Inicio_sesion_clicked()
    administrador admin(idusuario,this);
    admin.setWindowTitle("administrador");
    admin.exec();
+   ui->Contrasena->clear();
+   ui->Matricula->clear();
    }
    queryalumno.prepare("SELECT matricula, IF('"+idusuario+"'=matricula ,'TRUE','FALSE') AS ESTADO FROM alumno WHERE matricula='"+idusuario+"'");
    queryalumno.exec();
@@ -93,6 +95,8 @@ void inicio::on_Inicio_sesion_clicked()
        alumno alumn(idusuario,this);
        alumn.setWindowTitle("alumno");
        alumn.exec();
+       ui->Contrasena->clear();
+       ui->Matricula->clear();
    }
 }else{
            QMessageBox::critical(this,"Error","Contraseña incorrecta","Aceptar");

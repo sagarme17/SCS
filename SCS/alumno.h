@@ -18,6 +18,11 @@ public:
 
     ~alumno();
 
+private slots:
+    void on_Cambio_al_clicked();
+
+    void on_Cerrar_Sesion_clicked();
+
 private:
     Ui::alumno *ui;
     QString Matricula;
