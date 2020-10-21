@@ -63,9 +63,9 @@
    <widget class="QLabel" name="Alumno">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>50</y>
-      <width>121</width>
+      <x>180</x>
+      <y>20</y>
+      <width>91</width>
       <height>41</height>
      </rect>
     </property>
@@ -76,7 +76,7 @@ background:transparent;
 </string>
     </property>
     <property name="text">
-     <string>Alumno</string>
+     <string>Perfil</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
@@ -244,25 +244,6 @@ hover!pressed:border: 5px solid blue;</string>
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>20</y>
-      <width>171</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
-background:transparent;
-
-</string>
-    </property>
-    <property name="text">
-     <string>Bienvenido </string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
@@ -310,7 +291,6 @@ background:transparent;
    <zorder>lineEdit</zorder>
    <zorder>Alumno</zorder>
    <zorder>groupBox_4</zorder>
-   <zorder>label_5</zorder>
    <zorder>label_2</zorder>
    <zorder>label_3</zorder>
   </widget>

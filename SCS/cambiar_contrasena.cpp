@@ -1,5 +1,6 @@
 #include "cambiar_contrasena.h"
 #include "ui_cambiar_contrasena.h"
+#include <QMessageBox>
 
 Cambiar_Contrasena::Cambiar_Contrasena(QString id_usuario, QWidget *parent) :
     QDialog(parent),
@@ -17,10 +18,34 @@ Cambiar_Contrasena::~Cambiar_Contrasena()
 
 void Cambiar_Contrasena::on_Actualizar_clicked()
 {
-
+    if(mdb.open())
+    {
+        QString contrasea=ui->Contrasea->text();
+        QString confirma=ui->Confirmar_Contrasea->text();
+        QSqlQuery contra(mdb);
+        if(ui->Contrasea->text().size()<6 && ui->Confirmar_Contrasea->text().size()<6)
+        {
+            QMessageBox::critical(this,"Error","Su contraseña es muy corta.","Aceptar");
+        }
+        else
+        {
+       if(ui->Contrasea->text()==ui->Confirmar_Contrasea->text())
+       {
+        contra.clear();
+        contra.prepare("Update usuario set Contraseña ='"+ui->Contrasea->text()+"' where Id_Usuario='"+id_usuario+"'");
+        contra.exec();
+        contra.next();
+        QMessageBox::information(this,"Actualizado","Su contraseña ha sido actualizada.","Aceptar");
+        close();
+       }
+       else{
+           QMessageBox::critical(this,"Error","La contraseña no coincide.","Aceptar");
+           }
+       }
+    }
 }
 
 void Cambiar_Contrasena::on_Regresar_clicked()
 {
-
+    close();
 }

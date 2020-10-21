@@ -85,6 +85,9 @@ border: 2px solid gray;
      <property name="text">
       <string/>
      </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Normal</enum>
+     </property>
      <property name="placeholderText">
       <string>Contraseña</string>
      </property>

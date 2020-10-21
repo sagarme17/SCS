@@ -21,3 +21,8 @@ void alumno::on_Cambio_al_clicked()
     windows.setWindowTitle("Cambiar contraseña");
     windows.exec();
 }
+
+void alumno::on_Cerrar_Sesion_clicked()
+{
+    close();
+}

@@ -31,3 +31,8 @@ void administrador::on_Cambio_clicked()
     windows.setWindowTitle("Cambiar contraseña");
     windows.exec();
 }
+
+void administrador::on_Cerrar_Sesion_clicked()
+{
+    close();
+}
