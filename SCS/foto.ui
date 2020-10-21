@@ -208,25 +208,6 @@ hover!pressed:border: 5px solid blue;</string>
       </item>
      </layout>
     </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>60</y>
-       <width>121</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="SRC.qrc">:/Images/iconfinder-7-avatar-2754582_120519.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QPushButton" name="Cambiar_Foto">
      <property name="geometry">
       <rect>
@@ -240,11 +221,27 @@ hover!pressed:border: 5px solid blue;</string>
       <string/>
      </property>
     </widget>
+    <widget class="QLabel" name="aver">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>30</y>
+       <width>191</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
     <zorder>Cambiar_Foto</zorder>
     <zorder>Regresar</zorder>
     <zorder>Actualizar</zorder>
     <zorder>verticalLayoutWidget</zorder>
-    <zorder>label_4</zorder>
+    <zorder>aver</zorder>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">

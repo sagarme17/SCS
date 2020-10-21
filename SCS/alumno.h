@@ -16,12 +16,17 @@ class alumno : public QDialog
 public:
     explicit alumno(QString Matricula, QWidget *parent = nullptr);
 
+
     ~alumno();
 
 private slots:
     void on_Cambio_al_clicked();
 
     void on_Cerrar_Sesion_clicked();
+
+    void on_Cambiar_Foto_objectNameChanged(const QString &objectName);
+
+    void on_Cambiar_Foto_clicked();
 
 private:
     Ui::alumno *ui;
