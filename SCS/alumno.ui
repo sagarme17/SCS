@@ -66,6 +66,22 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="Cambiar_Foto">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>50</y>
+      <width>111</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>Cambiar_Foto</zorder>
+   <zorder>label</zorder>
+   <zorder>Foto</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
