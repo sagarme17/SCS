@@ -25,6 +25,7 @@ inicio::~inicio()
 
 
 void inicio::on_Inicio_sesion_clicked()
+
 {
 
    //close();
@@ -38,6 +39,7 @@ void inicio::on_Inicio_sesion_clicked()
    QString id,contrasenia,aux;
    id=ui->Matricula->text();
    contrasenia=ui->Contrasena->text();
+
    if(id==""||contrasenia==""){
        QPalette falta;
        if(id==""){
@@ -50,61 +52,76 @@ void inicio::on_Inicio_sesion_clicked()
        }
    }
    else{
+    /*QString id,contrasenia,aux;
+    id=ui->Matricula->text();
+    contrasenia=ui->Contrasena->text();*/
 
-       QSqlQuery query1(mdb);
-       QString idusuario;
-       if(id.length()>0 && contrasenia.length()>0)
-       {
-       query1.prepare("SELECT Id_usuario FROM usuario WHERE Id_usuario='"+id+"' AND contraseña='"+contrasenia+"'");
-       query1.exec();
-       query1.next();
-       idusuario = query1.value(0).toString();
-       qDebug()<<idusuario;
-       }
-       if(!idusuario.isNull())
-        {
-   QSqlQuery queryadmin(mdb);
-   QSqlQuery queryalumno(mdb);
-   QString adminRes;
-   QString alumnoRes;
-   QString res3;
+       if(mdb.open()){
+           qDebug() << "Conexión exitosa";
+           QSqlQuery query1(mdb),query2(mdb);
+           query1.prepare("select Id_Administrador from administrador where Id_Administrador='"+id+"'");
+           query1.exec();
+           query2.prepare("select Matricula from alumno where Matricula='"+id+"'");
+           query2.exec();
 
-   queryadmin.prepare("SELECT Id_Administrador, IF('"+idusuario+"'=Id_Administrador ,'TRUE','FALSE') AS ESTADO FROM administrador WHERE Id_Administrador='"+idusuario+"'");
-   queryadmin.exec();
-   if(queryadmin.next()){
-  adminRes = queryadmin.value(1).toString();
+         //QString alumnoRes;
+         //QString res3;
+         //QString idusuario;
 
-       }
-   qDebug() <<adminRes;
-   if(adminRes=="TRUE")
-   {
-   administrador admin(idusuario,this);
-   admin.setWindowTitle("administrador");
-   admin.exec();
-   ui->Contrasena->clear();
-   ui->Matricula->clear();
-   }
-   queryalumno.prepare("SELECT matricula, IF('"+idusuario+"'=matricula ,'TRUE','FALSE') AS ESTADO FROM alumno WHERE matricula='"+idusuario+"'");
-   queryalumno.exec();
-   while(queryalumno.next())
-   {
-     alumnoRes=queryalumno.value(1).toString();
-   }
-   if(alumnoRes=="TRUE")
-   {
-       alumno alumn(idusuario,this);
-       alumn.setWindowTitle("alumno");
-       alumn.exec();
-       ui->Contrasena->clear();
-       ui->Matricula->clear();
-   }
-}else{
-           QMessageBox::critical(this,"Error","Contraseña incorrecta","Aceptar");
-           ui->Contrasena->clear();
-       }
+           if(query1.next()){
+              query1.clear();
+              query1.prepare("select Contraseña from usuario inner join administrador on Id_Administrador=Id_Usuario where Id_Usuario='"+id+"'");
+              query1.exec();
+              query1.next();
+              if(contrasenia==query1.value(0).toString()){
+                  administrador admin(id);
+                  admin.setWindowTitle("Administrador");
+                  admin.setModal(false);
+                  this->setVisible(false);//this
+                  admin.exec();
+                  this->setVisible(true); //this
+                  ui->Matricula->clear();
+                  ui->Contrasena->clear();
+              }
+              else{
+                  QMessageBox::critical(this,"Error","Contraseña incorrecta","Aceptar");
+                  ui->Contrasena->clear();
+              }
+   }else if (query2.next())
+           {
+               query2.clear();
+               query2.prepare("select Contraseña from usuario inner join alumno on Matricula=Id_Usuario where Id_Usuario='"+id+"'");
+               query2.exec();
+               query2.next();
+               if(contrasenia==query2.value(0).toString())
+               {
+                   alumno alum(id);
+                   alum.setWindowTitle("Alumno");
+                   alum.setModal(false);
+                   this->setVisible(false);
+                   alum.exec();
+                   this->setVisible(true);
+                   ui->Matricula->clear();
+                   ui->Contrasena->clear();
+               }else
+               {
 
-}
-  }
+                   QMessageBox::critical(this,"Error","Contraseña incorrecta","Aceptar");
+                   ui->Contrasena->clear();
+                   ui->Matricula->clear();
+
+               }
+
+       }else
+           {
+               QMessageBox::critical(this,"Error","Matricula incorrecta","Aceptar");
+               ui->Contrasena->clear();
+               ui->Matricula->clear();
+           }
+
+           } //bd
+     } //labels
+ } //funcion
 void inicio::on_pushButton_clicked()
 {
     close();

@@ -9,6 +9,14 @@ alumno::alumno(QString Matricula, QWidget *parent) :
 {
     ui->setupUi(this);
     this->Matricula=Matricula;
+    this->mdb=QSqlDatabase::database("Connection");
+    if(mdb.open()){
+        QSqlQuery nombre(mdb);
+        nombre.prepare("select nombre from usuario where Id_Usuario='"+Matricula+"'");
+        nombre.exec();
+        nombre.next();
+        ui->Alumno->setText(nombre.value(0).toString());
+}
 }
 
 alumno::~alumno()
@@ -39,3 +47,5 @@ void alumno::on_Cambiar_Foto_clicked()
     camb_foto.setWindowTitle("Actualizar Perfil");
     camb_foto.exec();
 }
+
+

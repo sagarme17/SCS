@@ -63,9 +63,9 @@
    <widget class="QLabel" name="Alumno">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>170</x>
       <y>20</y>
-      <width>91</width>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
@@ -83,9 +83,9 @@ background:transparent;
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>90</y>
+      <y>70</y>
       <width>401</width>
-      <height>461</height>
+      <height>501</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -97,41 +97,12 @@ background:transparent;
     <property name="title">
      <string/>
     </property>
-    <widget class="QPushButton" name="Regresar">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>380</y>
-       <width>131</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="mouseTracking">
-      <bool>true</bool>
-     </property>
-     <property name="focusPolicy">
-      <enum>Qt::ClickFocus</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #FF4081;
-font: 14pt 75 &quot;Times New Roman&quot;;
-border:none;
-hover!pressed:border: 5px solid blue;
-</string>
-     </property>
-     <property name="text">
-      <string>Regresar</string>
-     </property>
-     <property name="flat">
-      <bool>false</bool>
-     </property>
-    </widget>
     <widget class="QPushButton" name="Actualizar">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>380</y>
-       <width>131</width>
+       <x>105</x>
+       <y>215</y>
+       <width>191</width>
        <height>41</height>
       </rect>
      </property>
@@ -142,7 +113,7 @@ border:none;
 hover!pressed:border: 5px solid blue;</string>
      </property>
      <property name="text">
-      <string>Actualizar</string>
+      <string>Actualizar Foto</string>
      </property>
      <property name="autoDefault">
       <bool>true</bool>
@@ -152,9 +123,9 @@ hover!pressed:border: 5px solid blue;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>190</y>
+       <y>280</y>
        <width>381</width>
-       <height>131</height>
+       <height>160</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -224,10 +195,10 @@ hover!pressed:border: 5px solid blue;</string>
     <widget class="QLabel" name="aver">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>30</y>
-       <width>191</width>
-       <height>141</height>
+       <x>88</x>
+       <y>19</y>
+       <width>211</width>
+       <height>191</height>
       </rect>
      </property>
      <property name="text">
@@ -237,11 +208,40 @@ hover!pressed:border: 5px solid blue;</string>
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QPushButton" name="Regresar">
+     <property name="geometry">
+      <rect>
+       <x>142</x>
+       <y>445</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #FF4081;
+font: 14pt 75 &quot;Times New Roman&quot;;
+border:none;
+hover!pressed:border: 5px solid blue;
+</string>
+     </property>
+     <property name="text">
+      <string>Regresar</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
     <zorder>Cambiar_Foto</zorder>
-    <zorder>Regresar</zorder>
     <zorder>Actualizar</zorder>
     <zorder>verticalLayoutWidget</zorder>
     <zorder>aver</zorder>
+    <zorder>Regresar</zorder>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">

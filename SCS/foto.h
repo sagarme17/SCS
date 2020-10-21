@@ -17,14 +17,19 @@ class Foto : public QDialog
 public:
     explicit Foto(QString idusuario,QWidget *parent = nullptr);
     ~Foto();
+     void CargarFoto();
 
 private slots:
     void on_Actualizar_clicked();
+
+    void on_Regresar_clicked();
+
 
 private:
     Ui::Foto *ui;
     QString Matricula;
     QSqlDatabase mdb;
+
 
 };
 

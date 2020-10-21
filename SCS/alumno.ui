@@ -120,31 +120,12 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QLabel" name="Alumno">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>40</y>
-      <width>121</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
-background:transparent;
-
-</string>
-    </property>
-    <property name="text">
-     <string>Alumno</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>120</x>
       <y>10</y>
-      <width>171</width>
+      <width>221</width>
       <height>41</height>
      </rect>
     </property>
@@ -206,7 +187,7 @@ background:transparent;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>90</y>
+      <y>120</y>
       <width>391</width>
       <height>451</height>
      </rect>
@@ -280,9 +261,9 @@ background:transparent;
     <widget class="QPushButton" name="Cerrar_Sesion">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>220</x>
        <y>400</y>
-       <width>131</width>
+       <width>161</width>
        <height>41</height>
       </rect>
      </property>
@@ -390,7 +371,7 @@ hover!pressed:border: 5px solid blue;
       <x>10</x>
       <y>-10</y>
       <width>431</width>
-      <height>131</height>
+      <height>141</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -403,12 +384,57 @@ border: 1px solid #1DE9B6;
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="Alumno_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>40</y>
+      <width>311</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
+background:transparent;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Alumno</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Alumno">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>80</y>
+      <width>311</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
+background:transparent;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Alumno</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
    <zorder>label_2</zorder>
-   <zorder>Alumno</zorder>
    <zorder>label_5</zorder>
    <zorder>label_3</zorder>
    <zorder>label_4</zorder>
    <zorder>groupBox_4</zorder>
+   <zorder>Alumno_2</zorder>
+   <zorder>Alumno</zorder>
   </widget>
  </widget>
  <resources>

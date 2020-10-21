@@ -19,25 +19,7 @@ Foto::Foto(QString idusuario, QWidget *parent) :
     this->Matricula=idusuario;
 
     this->mdb=QSqlDatabase::database("Connection");
-    QSqlQuery query1(mdb);
-    QSqlQuery query(mdb);
-    QByteArray foto;
-
-
-    query.prepare("SELECT img FROM perfil where matricula= '"+idusuario+"'");
-    query.exec();
-    query.last();
-    foto = query.value(0).toByteArray();
-
-    if(!foto.isNull())
-     {
-    QPixmap pix(141,141);
-
-    pix.loadFromData(query.value(0).toByteArray());
-    ui->aver->setPixmap(pix);
-    qDebug() << "Encontro la imagen";
-
-    }
+    CargarFoto();
 }
 
 Foto::~Foto()
@@ -63,10 +45,40 @@ void Foto::on_Actualizar_clicked()
         query.exec();
         qDebug()<<Matricula;
 
-        qDebug() << "ACtualizo imagen de alumno sin imagen";
+        qDebug() << "Actualizo imagen de alumno sin imagen";
 
-        QMessageBox::critical(this,"Actualizar","Cierra esta Pestaña para actualizar los cambios");
+        CargarFoto();
+
+       QMessageBox::information(this,"Actualizar","Foto Actualizada","Aceptar");
 
 
 
+}
+
+void Foto::CargarFoto()
+{
+    QSqlQuery query1(mdb);
+    QSqlQuery query(mdb);
+    QByteArray foto;
+
+
+    query.prepare("SELECT img FROM perfil where matricula= '"+Matricula+"'");
+    query.exec();
+    query.last();
+    foto = query.value(0).toByteArray();
+
+    if(!foto.isNull())
+     {
+    QPixmap pix(141,141);
+
+    pix.loadFromData(query.value(0).toByteArray());
+    ui->aver->setPixmap(pix);
+    qDebug() << "Encontro la imagen";
+
+    }
+}
+
+void Foto::on_Regresar_clicked()
+{
+    close();
 }
