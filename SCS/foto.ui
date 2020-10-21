@@ -41,7 +41,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Images/skill_102344.png</pixmap>
+     <pixmap resource="SRC.qrc">:/Images/skill_102344.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -77,22 +77,6 @@ background:transparent;
     </property>
     <property name="text">
      <string>Perfil</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>-10</y>
-      <width>441</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #1DE9B6;  
-border: 1px solid #1DE9B6;
-    border-radius: 20px;
-    margin-top: 0.5em;</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_4">
@@ -243,11 +227,29 @@ hover!pressed:border: 5px solid blue;</string>
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QPushButton" name="Cambiar_Foto">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>60</y>
+       <width>121</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>Cambiar_Foto</zorder>
+    <zorder>Regresar</zorder>
+    <zorder>Actualizar</zorder>
+    <zorder>verticalLayoutWidget</zorder>
+    <zorder>label_4</zorder>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>0</y>
       <width>71</width>
       <height>71</height>
@@ -269,7 +271,7 @@ hover!pressed:border: 5px solid blue;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>370</x>
       <y>0</y>
       <width>61</width>
       <height>71</height>
@@ -288,7 +290,26 @@ hover!pressed:border: 5px solid blue;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <zorder>lineEdit</zorder>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>-10</y>
+      <width>421</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1DE9B6;  
+border: 1px solid #1DE9B6;
+    border-radius: 20px;
+    margin-top: 0.5em;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_6</zorder>
    <zorder>Alumno</zorder>
    <zorder>groupBox_4</zorder>
    <zorder>label_2</zorder>

@@ -41,7 +41,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Images/skill_102344.png</pixmap>
+     <pixmap resource="SRC.qrc">:/Images/skill_102344.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -60,7 +60,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Images/1486503785-authorisation-lock-padlock-password-privacy-safe-security_81267.png</pixmap>
+     <pixmap resource="SRC.qrc">:/Images/1486503785-authorisation-lock-padlock-password-privacy-safe-security_81267.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -79,22 +79,6 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>-10</y>
-      <width>451</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #1DE9B6;  
-border: 1px solid #1DE9B6;
-    border-radius: 20px;
-    margin-top: 0.5em;</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="Alumno">
     <property name="geometry">
      <rect>
@@ -220,7 +204,7 @@ hover!pressed:border: 5px solid blue;</string>
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>Images/internet_lock_locked_padlock_password_secure_security_icon_127100.png</pixmap>
+      <pixmap resource="SRC.qrc">:/Images/internet_lock_locked_padlock_password_secure_security_icon_127100.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -286,7 +270,7 @@ background: transparent;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>0</y>
       <width>71</width>
       <height>81</height>
@@ -308,7 +292,7 @@ background: transparent;
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>370</x>
       <y>0</y>
       <width>71</width>
       <height>71</height>
@@ -321,12 +305,37 @@ background: transparent;
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Images/alumno.png</pixmap>
+     <pixmap resource="SRC.qrc">:/Images/laptop-1_102326.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>-10</y>
+      <width>431</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1DE9B6;  
+border: 1px solid #1DE9B6;
+    border-radius: 20px;
+    margin-top: 0.5em;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_7</zorder>
+   <zorder>Alumno</zorder>
+   <zorder>label_5</zorder>
+   <zorder>groupBox_4</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
   </widget>
  </widget>
  <resources>
