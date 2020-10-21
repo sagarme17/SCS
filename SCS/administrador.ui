@@ -343,6 +343,26 @@ hover!pressed:border: 5px solid blue;
       <bool>false</bool>
      </property>
     </widget>
+    <widget class="QPushButton" name="Cambio">
+     <property name="geometry">
+      <rect>
+       <x>254</x>
+       <y>152</y>
+       <width>81</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+       background:transparent;
+       border:none;
+       outline:none;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
