@@ -227,6 +227,24 @@ hover!pressed:border: 5px solid blue;</string>
       <bool>true</bool>
      </property>
     </widget>
+    <widget class="QPushButton" name="Cambiar_Foto">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>60</y>
+       <width>121</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>Cambiar_Foto</zorder>
+    <zorder>Regresar</zorder>
+    <zorder>Actualizar</zorder>
+    <zorder>verticalLayoutWidget</zorder>
+    <zorder>label_4</zorder>
    </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
