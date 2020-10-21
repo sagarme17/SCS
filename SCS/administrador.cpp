@@ -1,4 +1,5 @@
 #include "administrador.h"
+#include "Cambiar_contrasena.h"
 #include "ui_administrador.h"
 
 
@@ -22,4 +23,11 @@ administrador::administrador(QString Id_Administrador,QWidget *parent) :
 administrador::~administrador()
 {
     delete ui;
+}
+
+void administrador::on_Cambio_clicked()
+{
+    Cambiar_Contrasena windows(Id_Administrador, this);
+    windows.setWindowTitle("Cambiar contraseña");
+    windows.exec();
 }

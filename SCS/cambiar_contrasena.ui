@@ -98,27 +98,8 @@ border: 1px solid #1DE9B6;
    <widget class="QLabel" name="Alumno">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>40</y>
-      <width>121</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
-background:transparent;
-
-</string>
-    </property>
-    <property name="text">
-     <string>Alumno</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
       <x>150</x>
-      <y>10</y>
+      <y>40</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -130,7 +111,26 @@ background:transparent;
 </string>
     </property>
     <property name="text">
-     <string>Bienvenido </string>
+     <string>Contraseña</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>10</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
+background:transparent;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Cambiar</string>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_4">
