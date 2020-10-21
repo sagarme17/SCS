@@ -31,22 +31,6 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>-10</y>
-      <width>371</width>
-      <height>261</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #1DE9B6;  
-border: 1px solid #1DE9B6;
-    border-radius: 20px;
-    margin-top: 0.5em;</string>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
      <rect>
@@ -84,6 +68,9 @@ border: 2px solid gray;
      </property>
      <property name="text">
       <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
      </property>
      <property name="placeholderText">
       <string>Contraseña</string>
@@ -229,6 +216,29 @@ background:transparent;
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>-10</y>
+      <width>361</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1DE9B6;  
+border: 1px solid #1DE9B6;
+    border-radius: 20px;
+    margin-top: 0.5em;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_5</zorder>
+   <zorder>groupBox_4</zorder>
+   <zorder>label</zorder>
+   <zorder>label_3</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">

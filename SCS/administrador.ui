@@ -31,22 +31,6 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>-10</y>
-      <width>431</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #1DE9B6;  
-border: 1px solid #1DE9B6;
-    border-radius: 20px;
-    margin-top: 0.5em;</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -69,7 +53,7 @@ background:transparent;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>0</y>
       <width>81</width>
       <height>81</height>
@@ -363,7 +347,7 @@ hover!pressed:border: 5px solid blue;
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>340</x>
       <y>0</y>
       <width>81</width>
       <height>81</height>
@@ -382,6 +366,31 @@ hover!pressed:border: 5px solid blue;
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="label_16">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>-10</y>
+      <width>411</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1DE9B6;  
+border: 1px solid #1DE9B6;
+    border-radius: 20px;
+    margin-top: 0.5em;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_16</zorder>
+   <zorder>label</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_2</zorder>
+   <zorder>groupBox_4</zorder>
+   <zorder>label_4</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
