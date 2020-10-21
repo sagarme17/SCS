@@ -51,7 +51,7 @@
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>50</y>
+      <y>40</y>
       <width>121</width>
       <height>121</height>
      </rect>
@@ -67,21 +67,46 @@
     </property>
    </widget>
    <widget class="QPushButton" name="Cambiar_Foto">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>50</y>
+      <y>40</y>
       <width>111</width>
       <height>111</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">       background:transparent;
+       border:none;
+       outline:none;
+</string>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <zorder>Cambiar_Foto</zorder>
-   <zorder>label</zorder>
-   <zorder>Foto</zorder>
+   <widget class="QLabel" name="Ver_Perfil">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>140</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 12pt &quot;Berlin Sans FB Demi&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Ver Perfil</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
