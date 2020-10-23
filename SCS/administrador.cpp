@@ -1,6 +1,8 @@
 #include "administrador.h"
-#include "Cambiar_contrasena.h"
+#include "cambiar_contrasena.h"
 #include "ui_administrador.h"
+#include "recuperar_contrasena.h"
+#include "ui_recuperar_contrasena.h"
 
 
 
@@ -35,4 +37,12 @@ void administrador::on_Cambio_clicked()
 void administrador::on_Cerrar_Sesion_clicked()
 {
     close();
+}
+
+void administrador::on_Cambio_2_clicked()
+{
+    recuperar_contrasena  recuperar(this);
+    recuperar.setWindowTitle("Recuperar Contraseña");
+    recuperar.exec();
+
 }

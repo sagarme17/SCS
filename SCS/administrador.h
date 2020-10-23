@@ -22,10 +22,13 @@ private slots:
 
     void on_Cerrar_Sesion_clicked();
 
+    void on_Cambio_2_clicked();
+
 private:
     Ui::administrador *ui;
     QString Id_Administrador;
     QSqlDatabase mdb;
+    QString id_usuario;
 };
 
 #endif // ADMINISTRADOR_H

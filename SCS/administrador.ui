@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="SRC.qrc">
+    <normaloff>:/Images/1490820813-6_82408.png</normaloff>:/Images/1490820813-6_82408.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
@@ -327,8 +331,28 @@ hover!pressed:border: 5px solid blue;
     <widget class="QPushButton" name="Cambio">
      <property name="geometry">
       <rect>
-       <x>255</x>
+       <x>279</x>
        <y>152</y>
+       <width>81</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+       background:transparent;
+       border:none;
+       outline:none;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Cambio_2">
+     <property name="geometry">
+      <rect>
+       <x>187</x>
+       <y>272</y>
        <width>81</width>
        <height>71</height>
       </rect>

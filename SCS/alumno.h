@@ -24,11 +24,13 @@ private slots:
 
     void on_Cerrar_Sesion_clicked();
 
-    void on_Cambiar_Foto_objectNameChanged(const QString &objectName);
+   // void on_Cambiar_Foto_objectNameChanged(const QString &objectName);
 
     void on_Cambiar_Foto_clicked();
 
-    void on_Ver_Perfil_linkActivated(const QString &link);
+    //void on_Ver_Perfil_linkActivated(const QString &link);
+
+    void on_Cambio_al_2_clicked();
 
 private:
     Ui::alumno *ui;

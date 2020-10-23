@@ -2,6 +2,8 @@
 #include "cambiar_contrasena.h"
 #include "ui_alumno.h"
 #include "foto.h"
+#include "materias_porcursar.h"
+#include "ui_materias_porcursar.h"
 
 alumno::alumno(QString Matricula, QWidget *parent) :
     QDialog(parent),
@@ -36,10 +38,7 @@ void alumno::on_Cerrar_Sesion_clicked()
     close();
 }
 
-void alumno::on_Cambiar_Foto_objectNameChanged(const QString &objectName)
-{
 
-}
 
 void alumno::on_Cambiar_Foto_clicked()
 {
@@ -49,3 +48,10 @@ void alumno::on_Cambiar_Foto_clicked()
 }
 
 
+
+void alumno::on_Cambio_al_2_clicked()
+{
+    materias_porCursar PorCursar(this);
+    PorCursar.setWindowTitle("Materias por cursar");
+    PorCursar.exec();
+}
