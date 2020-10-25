@@ -17,6 +17,12 @@ public:
     bool CambiarContraAlumno(int,int);
     bool GeneralAutenticarse(int,int);
     bool InsertarFoto1(QString,int);
+    /*---Pruebas Sprint 2---*/
+    bool generarPDF(int);
+    bool HacerSolicitud(int);
+    bool BuscarSolicitud(int);
+    bool RestablecerContrasena(int);
+    bool MarcarMateriasPorCursar(int,QString);
 
 
 
