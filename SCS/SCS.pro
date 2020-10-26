@@ -22,21 +22,24 @@ SOURCES += \
     cambiar_contrasena.cpp \
     foto.cpp \
     inicio.cpp \
-    main.cpp
+    main.cpp \
+    reestablecer_contrasenia.cpp
 
 HEADERS += \
     administrador.h \
     alumno.h \
     cambiar_contrasena.h \
     foto.h \
-    inicio.h
+    inicio.h \
+    reestablecer_contrasenia.h
 
 FORMS += \
     administrador.ui \
     alumno.ui \
     cambiar_contrasena.ui \
     foto.ui \
-    inicio.ui
+    inicio.ui \
+    reestablecer_contrasenia.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
