@@ -18,9 +18,6 @@ recuperar_contrasena::~recuperar_contrasena()
 void recuperar_contrasena::on_pushButton_clicked()
 {
 
-    Cambiar_Contrasena recuperar(id_usuario);
-    recuperar.setWindowTitle("Recuperar Contraseña");
-    recuperar.exec();
 
 
 }

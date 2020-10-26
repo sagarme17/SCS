@@ -52,7 +52,7 @@ background-color: #1DE9B6;  </string>
     </column>
     <column>
      <property name="text">
-      <string>Mariana</string>
+      <string>Nombre</string>
      </property>
     </column>
     <column>
