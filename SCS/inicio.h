@@ -26,6 +26,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_Olvidaste_Contrasena_clicked();
+
 private:
     Ui::inicio *ui;
     QSqlDatabase mdb;

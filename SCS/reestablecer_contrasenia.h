@@ -15,6 +15,11 @@ public:
     explicit reestablecer_Contrasenia(QWidget *parent = nullptr);
     ~reestablecer_Contrasenia();
 
+private slots:
+    void on_Reestablecer_clicked();
+
+    void on_Regresar_2_clicked();
+
 private:
     Ui::reestablecer_Contrasenia *ui;
 };
