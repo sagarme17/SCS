@@ -2,6 +2,8 @@
 #include "ui_inicio.h"
 #include "administrador.h"
 #include "alumno.h"
+#include "reestablecer_contrasenia.h"
+#include "ui_reestablecer_contrasenia.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -108,4 +110,11 @@ void inicio::on_Inicio_sesion_clicked()
 void inicio::on_pushButton_clicked()
 {
     close();
+}
+
+void inicio::on_Olvidaste_Contrasena_clicked()
+{
+    reestablecer_Contrasenia  a(this);
+  a.setWindowTitle("Ingresar matricula");
+   a.exec();
 }

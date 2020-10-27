@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="SRC.qrc">
+    <normaloff>:/Images/1490820813-6_82408.png</normaloff>:/Images/1490820813-6_82408.png</iconset>
+  </property>
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
