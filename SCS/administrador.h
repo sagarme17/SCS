@@ -22,9 +22,12 @@ private slots:
 
     void on_Cerrar_Sesion_clicked();
 
+    void on_est_Materias_cursando_clicked();
+
 private:
     Ui::administrador *ui;
     QString Id_Administrador;
+    QString PDFESTADISTICA;
     QSqlDatabase mdb;
 };
 
