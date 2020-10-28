@@ -10,6 +10,7 @@
 #define UI_ADMINISTRADOR_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGroupBox>
@@ -38,6 +39,7 @@ public:
     QLabel *label_14;
     QPushButton *Cerrar_Sesion;
     QPushButton *Cambio;
+    QPushButton *est_Materias_cursando;
     QLabel *label_4;
     QLabel *label_16;
     QGroupBox *groupBox;
@@ -48,6 +50,9 @@ public:
         if (administrador->objectName().isEmpty())
             administrador->setObjectName(QString::fromUtf8("administrador"));
         administrador->resize(740, 560);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/Images/1490820813-6_82408.png"), QSize(), QIcon::Normal, QIcon::Off);
+        administrador->setWindowIcon(icon);
         administrador->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         groupBox_2 = new QGroupBox(administrador);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
@@ -154,6 +159,13 @@ public:
 "       border:none;\n"
 "       outline:none;\n"
 ""));
+        est_Materias_cursando = new QPushButton(groupBox_4);
+        est_Materias_cursando->setObjectName(QString::fromUtf8("est_Materias_cursando"));
+        est_Materias_cursando->setGeometry(QRect(250, 30, 91, 81));
+        est_Materias_cursando->setStyleSheet(QString::fromUtf8("       background:transparent;\n"
+"       border:none;\n"
+"       outline:none;\n"
+""));
         label_4 = new QLabel(groupBox_2);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(340, 0, 81, 81));
@@ -210,6 +222,7 @@ public:
         label_14->setText(QString());
         Cerrar_Sesion->setText(QApplication::translate("administrador", "Cerrar sesi\303\263n", nullptr));
         Cambio->setText(QString());
+        est_Materias_cursando->setText(QString());
         label_4->setText(QString());
         label_16->setText(QString());
         groupBox->setTitle(QString());
