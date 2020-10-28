@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>materias_por_cursar</class>
+ <widget class="QDialog" name="materias_por_cursar">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>841</width>
+    <height>610</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="SRC.qrc">
+    <normaloff>:/Images/1490820813-6_82408.png</normaloff>:/Images/1490820813-6_82408.png</iconset>
+  </property>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>-20</x>
+     <y>0</y>
+     <width>861</width>
+     <height>611</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QTableWidget" name="Tabla1">
+    <property name="geometry">
+     <rect>
+      <x>59</x>
+      <y>150</y>
+      <width>751</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: #1DE9B6;  </string>
+    </property>
+    <column>
+     <property name="text">
+      <string>Código</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Nombre</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Horas_PT</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Creditos</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Cursando</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Seleccionar</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>196</x>
+      <y>40</y>
+      <width>481</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
+background:transparent;
+
+</string>
+    </property>
+    <property name="text">
+     <string>MATERIAS POR CURSAR</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>63</x>
+      <y>9</y>
+      <width>111</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="SRC.qrc">:/Images/check-form_116472.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>10</y>
+      <width>111</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="SRC.qrc">:/Images/checklist_102320.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>682</x>
+      <y>491</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1DE9B6; 
+font: 14pt 75 &quot;Times New Roman&quot;;
+border:none;
+hover!pressed:border: 5px solid blue;</string>
+    </property>
+    <property name="text">
+     <string>Aceptar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>67</x>
+      <y>492</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FF4081;
+font: 14pt 75 &quot;Times New Roman&quot;;
+border:none;
+hover!pressed:border: 5px solid blue;</string>
+    </property>
+    <property name="text">
+     <string>Regresar</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>14</x>
+      <y>-6</y>
+      <width>851</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1DE9B6;  
+border: 1px solid #1DE9B6;
+    border-radius: 20px;
+    margin-top: 0.5em;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>label_4</zorder>
+   <zorder>Tabla1</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>pushButton_2</zorder>
+  </widget>
+ </widget>
+ <resources>
+  <include location="SRC.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -17,6 +17,30 @@
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QGroupBox" name="groupBox_2">
+  <property name="windowIcon">
+   <iconset resource="SRC.qrc">
+    <normaloff>:/Images/1490820813-6_82408.png</normaloff>:/Images/1490820813-6_82408.png</iconset>
+  </property>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>-10</y>
+     <width>431</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #1DE9B6;  
+border: 1px solid #1DE9B6;
+    border-radius: 20px;
+    margin-top: 0.5em;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
      <x>0</x>

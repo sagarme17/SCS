@@ -3,7 +3,6 @@
 #include "administrador.h"
 #include "alumno.h"
 #include "reestablecer_contrasenia.h"
-
 #include <QDebug>
 #include <QMessageBox>
 #include <QWidget>
