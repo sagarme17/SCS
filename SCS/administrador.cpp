@@ -73,7 +73,7 @@ void administrador::on_est_Materias_cursando_clicked()
          Porcentaje = (Matricula * 100)/total2016;
          MatriculaS = QString::number(Porcentaje);
          qDebug() << Porcentaje;
- PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%";
+ PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%"+"<br>"+"<br>"+"<br>";
      }
      qDebug()<< PDFESTADISTICA;
      estadistico.prepare("select Código, count(Matricula) from cursando where Matricula between 201700000 and 201800000 group by código;");
@@ -90,7 +90,7 @@ void administrador::on_est_Materias_cursando_clicked()
           Porcentaje = (Matricula * 100)/total2017;
           MatriculaS = QString::number(Porcentaje);
           qDebug() << Porcentaje;
-  PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%";
+  PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%"+"<br>"+"<br>"+"<br>";
       }
       qDebug()<< PDFESTADISTICA;
 
