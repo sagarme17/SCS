@@ -40,6 +40,7 @@ public:
     QPushButton *Cerrar_Sesion;
     QPushButton *Cambio;
     QPushButton *est_Materias_cursando;
+    QPushButton *Restablecer_contras;
     QLabel *label_4;
     QLabel *label_16;
     QGroupBox *groupBox;
@@ -166,6 +167,28 @@ public:
 "       border:none;\n"
 "       outline:none;\n"
 ""));
+        Restablecer_contras = new QPushButton(groupBox_4);
+        Restablecer_contras->setObjectName(QString::fromUtf8("Restablecer_contras"));
+        Restablecer_contras->setEnabled(true);
+        Restablecer_contras->setGeometry(QRect(120, 270, 151, 91));
+        Restablecer_contras->setStyleSheet(QString::fromUtf8("\n"
+"       background:transparent;\n"
+"       border:none;\n"
+"       outline:none;"));
+        label_5->raise();
+        label_6->raise();
+        label_7->raise();
+        label_8->raise();
+        label_9->raise();
+        label_10->raise();
+        label_11->raise();
+        label_12->raise();
+        label_13->raise();
+        label_14->raise();
+        Cerrar_Sesion->raise();
+        Restablecer_contras->raise();
+        est_Materias_cursando->raise();
+        Cambio->raise();
         label_4 = new QLabel(groupBox_2);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(340, 0, 81, 81));
@@ -223,6 +246,7 @@ public:
         Cerrar_Sesion->setText(QApplication::translate("administrador", "Cerrar sesi\303\263n", nullptr));
         Cambio->setText(QString());
         est_Materias_cursando->setText(QString());
+        Restablecer_contras->setText(QString());
         label_4->setText(QString());
         label_16->setText(QString());
         groupBox->setTitle(QString());

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1088</width>
+    <width>893</width>
     <height>668</height>
    </rect>
   </property>
@@ -35,9 +35,9 @@
    <widget class="QTableWidget" name="Tabla1">
     <property name="geometry">
      <rect>
-      <x>183</x>
+      <x>80</x>
       <y>180</y>
-      <width>751</width>
+      <width>711</width>
       <height>351</height>
      </rect>
     </property>
@@ -97,7 +97,7 @@ background-color: #1DE9B6;  </string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>190</x>
       <y>40</y>
       <width>511</width>
       <height>81</height>
@@ -141,7 +141,7 @@ background:transparent;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>922</x>
+      <x>730</x>
       <y>22</y>
       <width>111</width>
       <height>101</height>
@@ -161,7 +161,7 @@ background:transparent;
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>800</x>
+      <x>620</x>
       <y>570</y>
       <width>131</width>
       <height>31</height>
@@ -202,7 +202,7 @@ border: 2px ;
      <rect>
       <x>29</x>
       <y>2</y>
-      <width>1031</width>
+      <width>831</width>
       <height>161</height>
      </rect>
     </property>

@@ -96,7 +96,7 @@ void administrador::on_est_Materias_cursando_clicked()
       qDebug()<< PDFESTADISTICA;
 
     QString html =
-            "<img src='C:/Users/saul-/OneDrive/Escritorio/SCS/SCS/SCS/Images/buap.jfif' width='100' height='100'>"
+            "<img src='C:/Users/HP/Desktop/SCS/Images/FCC.jfif' width='100' height='100'>"
          "</div>"
          "<div align=right>"
             "PUEBLA,"+QDate::currentDate().toString()+
@@ -120,12 +120,12 @@ void administrador::on_est_Materias_cursando_clicked()
     QPrinter printer(QPrinter::PrinterResolution);
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setPaperSize(QPrinter::A4);
-    printer.setOutputFileName("C:/Users/saul-/OneDrive/Escritorio/Estadisticos.pdf");
+    printer.setOutputFileName("C:/Users/HP/Desktop/Estadisticos.pdf");
     printer.setPageMargins(QMarginsF(15, 15, 15, 15));
 
     document.print(&printer);
 
-    QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/saul-/OneDrive/Escritorio/Estadisticos.pdf"));
+    QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/HP/Desktop/Estadisticos.pdf"));
 }
 
 void administrador::on_Restablecer_contras_clicked()

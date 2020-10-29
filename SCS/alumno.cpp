@@ -4,6 +4,7 @@
 #include "foto.h"
 #include "materias_por_cursar.h"
 #include "ui_materias_por_cursar.h"
+#include <QMessageBox>
 
 alumno::alumno(QString Matricula, QWidget *parent) :
     QDialog(parent),
@@ -11,6 +12,7 @@ alumno::alumno(QString Matricula, QWidget *parent) :
 {
     ui->setupUi(this);
     this->Matricula=Matricula;
+    this->mdb=QSqlDatabase::database("Connection");
 }
 
 alumno::~alumno()
@@ -44,7 +46,18 @@ void alumno::on_Cambiar_Foto_clicked()
 
 void alumno::on_Cambio_al_2_clicked()
 {
-    materias_por_cursar PorCursar(Matricula);
-    PorCursar.setWindowTitle("Materias por cursar");
-    PorCursar.exec();
+    if(mdb.open()){
+        QSqlQuery porcur(mdb);
+        porcur.prepare("select * from porcursar where matricula='"+Matricula+"'");
+        porcur.exec();
+        if(porcur.next()){
+            QMessageBox::warning(this,"Solicitud enviada","Ya has llenado la solicitud de materias por cursar.\nGracias.","Aceptar");
+        }
+        else{
+            materias_por_cursar PorCursar(Matricula,this);
+            PorCursar.setWindowTitle("Materias por cursar");
+            PorCursar.exec();
+        }
+    }
+
 }

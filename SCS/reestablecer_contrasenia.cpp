@@ -27,10 +27,29 @@ void reestablecer_Contrasenia::on_Reestablecer_clicked()
     QString matri;
     matri=ui->Matricula->text();
     QSqlQuery query1(mdb);
-    query1.prepare("insert into solicitud(matricula) value('"+matri+"')");
+    query1.prepare("select * from alumno where matricula='"+matri+"'");
     query1.exec();
-    query1.next();
-    qDebug()<<matri;
+    if(query1.next()){
+        query1.clear();
+        query1.prepare("select * from solicitud where matricula='"+matri+"'");
+        query1.exec();
+        if(query1.next()){
+           QMessageBox::information(this,"Solicitud enviada","Tu solicitud se a enviado anteriormente, espera a que el administrador la acepte.","Aceptar");
+            close();
+        }
+        else{
+            query1.clear();
+            query1.prepare("insert into solicitud(matricula) value('"+matri+"')");
+            query1.exec();
+            query1.next();
+            QMessageBox::information(this,"Solicitud enviada","Tu solicitud ha sido envida, espera a que el administrador la acepte.","Aceptar");
+            close();
+        }
+    }
+    else{
+        QMessageBox::critical(this,"Error","Matricula Invalida.","Aceptar");
+        ui->Matricula->clear();
+    }
 
 }
 

@@ -165,6 +165,7 @@ void materias_por_cursar::on_pushButton_clicked()
               {
 
                    QMessageBox::information(this,"Materias cargadas","Tus materias han sido enviadas","Aceptar");
+                   close();
               }
             }
 
