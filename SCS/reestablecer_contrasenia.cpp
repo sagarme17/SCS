@@ -1,5 +1,7 @@
 #include "reestablecer_contrasenia.h"
 #include "ui_reestablecer_contrasenia.h"
+#include "restablecer_contrasena1.h"
+#include "ui_restablecer_contrasena1.h"
 #include "administrador.h"
 #include "alumno.h"
 #include <QDebug>
@@ -29,6 +31,7 @@ void reestablecer_Contrasenia::on_Reestablecer_clicked()
     query1.exec();
     query1.next();
     qDebug()<<matri;
+
 }
 
 void reestablecer_Contrasenia::on_Regresar_2_clicked()

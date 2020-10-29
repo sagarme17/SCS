@@ -25,6 +25,7 @@ private slots:
 private:
     Ui::reestablecer_Contrasenia *ui;
     QSqlDatabase mdb;
+    QString Id_Usuario;
 };
 
 

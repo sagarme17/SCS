@@ -35,15 +35,15 @@
    <widget class="QTableWidget" name="Tabla1">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>200</x>
       <y>150</y>
-      <width>501</width>
+      <width>401</width>
       <height>291</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(0, 170, 0);
-background-color: #1DE9B6;  </string>
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: #1DE9B6;</string>
     </property>
     <column>
      <property name="text">
@@ -88,7 +88,7 @@ background:transparent;
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="Restablecer">
     <property name="geometry">
      <rect>
       <x>595</x>
@@ -100,12 +100,12 @@ background:transparent;
     <property name="styleSheet">
      <string notr="true">background-color: #1DE9B6; 
 font: 14pt 75 &quot;Times New Roman&quot;;
-
 border: 2px ;
-    border-radius: 9px;</string>
+border-radius: 9px;</string>
+
     </property>
     <property name="text">
-     <string>Aceptar</string>
+     <string>Restablecer</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -120,9 +120,9 @@ border: 2px ;
     <property name="styleSheet">
      <string notr="true">background-color: #FF4081;
 font: 14pt 75 &quot;Times New Roman&quot;;
-
 border: 2px ;
-    border-radius: 9px;</string>
+border-radius: 9px;</string>
+
     </property>
     <property name="text">
      <string>Regresar</string>
@@ -157,8 +157,8 @@ border: 1px solid #1DE9B6;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: transparent;
-</string>
+     <string notr="true">background-color: transparent;</string>
+
     </property>
     <property name="text">
      <string/>
@@ -195,7 +195,7 @@ border: 1px solid #1DE9B6;
    <zorder>label_4</zorder>
    <zorder>Tabla1</zorder>
    <zorder>label</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>Restablecer</zorder>
    <zorder>pushButton_2</zorder>
    <zorder>label_2</zorder>
    <zorder>label_3</zorder>

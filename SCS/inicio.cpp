@@ -114,6 +114,7 @@ void inicio::on_pushButton_clicked()
 
 void inicio::on_Olvidaste_Contrasena_clicked()
 {
+
     reestablecer_Contrasenia  a(this);
   a.setWindowTitle("Ingresar matricula");
    a.exec();

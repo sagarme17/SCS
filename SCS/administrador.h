@@ -24,6 +24,8 @@ private slots:
 
     void on_est_Materias_cursando_clicked();
 
+    void on_Restablecer_contras_clicked();
+
 private:
     Ui::administrador *ui;
     QString Id_Administrador;
