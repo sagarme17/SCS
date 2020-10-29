@@ -9,7 +9,6 @@
 #include <QWidget>
 #include <QtSql/QSqlDatabase>
 
-
 reestablecer_Contrasenia::reestablecer_Contrasenia(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::reestablecer_Contrasenia)
@@ -32,9 +31,6 @@ void reestablecer_Contrasenia::on_Reestablecer_clicked()
     query1.exec();
     query1.next();
     qDebug()<<matri;
-   restablecer_contrasena1 Contra(Id_Usuario,this);
-    Contra.setWindowTitle("Recuperar Contraseña");
-    Contra.exec();
 
 }
 

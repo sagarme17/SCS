@@ -1,5 +1,5 @@
 #include "administrador.h"
-#include "Cambiar_contrasena.h"
+#include "cambiar_contrasena.h"
 #include "ui_administrador.h"
 #include "restablecer_contrasena1.h"
 
