@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="SRC.qrc">
+    <normaloff>:/Images/1490820813-6_82408.png</normaloff>:/Images/1490820813-6_82408.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
@@ -34,9 +38,9 @@
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>40</x>
       <y>130</y>
-      <width>311</width>
+      <width>291</width>
       <height>411</height>
      </rect>
     </property>
@@ -54,7 +58,7 @@
       <rect>
        <x>10</x>
        <y>90</y>
-       <width>291</width>
+       <width>271</width>
        <height>41</height>
       </rect>
      </property>
@@ -81,7 +85,7 @@ border: 2px solid gray;
       <rect>
        <x>10</x>
        <y>40</y>
-       <width>291</width>
+       <width>271</width>
        <height>41</height>
       </rect>
      </property>
@@ -103,7 +107,7 @@ border: 2px solid gray;
     <widget class="QPushButton" name="Inicio_sesion">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>80</x>
        <y>230</y>
        <width>131</width>
        <height>41</height>
@@ -132,7 +136,7 @@ hover!pressed:border: 5px solid blue;
     <widget class="QPushButton" name="Olvidaste_Contrasena">
      <property name="geometry">
       <rect>
-       <x>70</x>
+       <x>60</x>
        <y>270</y>
        <width>171</width>
        <height>31</height>
@@ -154,7 +158,7 @@ font: 10pt 75 &quot;Times New Roman&quot;;</string>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>120</x>
        <y>160</y>
        <width>51</width>
        <height>61</height>
@@ -197,7 +201,7 @@ background:transparent;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>140</x>
       <y>10</y>
       <width>81</width>
       <height>81</height>
@@ -221,8 +225,8 @@ background:transparent;
      <rect>
       <x>10</x>
       <y>-10</y>
-      <width>351</width>
-      <height>271</height>
+      <width>361</width>
+      <height>151</height>
      </rect>
     </property>
     <property name="styleSheet">

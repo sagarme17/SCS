@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="SRC.qrc">
+    <normaloff>:/Images/1490820813-6_82408.png</normaloff>:/Images/1490820813-6_82408.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
@@ -64,7 +68,7 @@
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>30</y>
+      <y>20</y>
       <width>91</width>
       <height>41</height>
      </rect>
@@ -154,7 +158,7 @@ hover!pressed:border: 5px solid blue;</string>
        <x>10</x>
        <y>190</y>
        <width>381</width>
-       <height>131</height>
+       <height>160</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -293,7 +297,7 @@ hover!pressed:border: 5px solid blue;</string>
       <x>10</x>
       <y>-10</y>
       <width>421</width>
-      <height>181</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="styleSheet">
