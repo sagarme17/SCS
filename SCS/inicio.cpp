@@ -113,6 +113,5 @@ void inicio::on_pushButton_clicked()
 void inicio::on_Olvidaste_Contrasena_clicked()
 {
     reestablecer_Contrasenia windows(this);
-    windows.setWindowTitle("restablecer contraseña");
-    windows.exec();
+    close();
 }

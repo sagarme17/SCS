@@ -1,6 +1,7 @@
 #include "administrador.h"
 #include "Cambiar_contrasena.h"
 #include "ui_administrador.h"
+#include "restablecer_contrasena1.h"
 
 #include <QPrinter>
 #include <QPdfWriter>
@@ -125,4 +126,11 @@ void administrador::on_est_Materias_cursando_clicked()
     document.print(&printer);
 
     QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/saul-/OneDrive/Escritorio/Estadisticos.pdf"));
+}
+
+void administrador::on_Restablecer_contras_clicked()
+{
+    restablecer_contrasena1 windo(NULL,nullptr);
+    windo.setWindowTitle("Restablecer contraseñas");
+    windo.exec();
 }

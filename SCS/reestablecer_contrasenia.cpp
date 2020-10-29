@@ -1,5 +1,7 @@
 #include "reestablecer_contrasenia.h"
 #include "ui_reestablecer_contrasenia.h"
+#include "restablecer_contrasena1.h"
+#include "ui_restablecer_contrasena1.h"
 #include "administrador.h"
 #include "alumno.h"
 #include <QDebug>
@@ -30,7 +32,7 @@ void reestablecer_Contrasenia::on_Reestablecer_clicked()
     query1.exec();
     query1.next();
     qDebug()<<matri;
-   restablecer_contrasena1 Contra(this);
+   restablecer_contrasena1 Contra(Id_Usuario,this);
     Contra.setWindowTitle("Recuperar Contraseña");
     Contra.exec();
 
