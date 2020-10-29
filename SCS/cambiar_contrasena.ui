@@ -36,7 +36,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>130</y>
+      <y>100</y>
       <width>271</width>
       <height>281</height>
      </rect>
@@ -46,6 +46,25 @@
     </property>
     <property name="pixmap">
      <pixmap resource="SRC.qrc">:/Images/skill_102344.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>410</y>
+      <width>111</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="SRC.qrc">:/Images/1486503785-authorisation-lock-padlock-password-privacy-safe-security_81267.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -67,8 +86,8 @@
    <widget class="QLabel" name="Alumno">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>50</y>
+      <x>150</x>
+      <y>40</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -86,8 +105,8 @@ background:transparent;
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>20</y>
+      <x>170</x>
+      <y>10</y>
       <width>131</width>
       <height>41</height>
      </rect>
@@ -302,7 +321,7 @@ background: transparent;
       <x>10</x>
       <y>-10</y>
       <width>431</width>
-      <height>201</height>
+      <height>141</height>
      </rect>
     </property>
     <property name="styleSheet">

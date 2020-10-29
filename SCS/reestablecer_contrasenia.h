@@ -1,8 +1,6 @@
 #ifndef REESTABLECER_CONTRASENIA_H
 #define REESTABLECER_CONTRASENIA_H
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QtSql>
+
 #include <QDialog>
 
 namespace Ui {
@@ -24,9 +22,6 @@ private slots:
 
 private:
     Ui::reestablecer_Contrasenia *ui;
-    QSqlDatabase mdb;
 };
-
-
 
 #endif // REESTABLECER_CONTRASENIA_H

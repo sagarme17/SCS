@@ -4,9 +4,6 @@
 #include <QDateTime>
 #include <QMessageBox>
 #include <QCheckBox>
-
-
-#include <QPushButton>
 #include <QDebug>
 
 materias_por_cursar::materias_por_cursar(QString matricula,QWidget *parent) :
@@ -17,7 +14,6 @@ materias_por_cursar::materias_por_cursar(QString matricula,QWidget *parent) :
     this->matricula=matricula;
     this->mdb=QSqlDatabase::database("Connection");
      qDebug()<<"ENTRO A EL CONTRUCTOR";
-     this->Materias=0;
     LlenarTabla();
 }
 
@@ -28,175 +24,52 @@ materias_por_cursar::~materias_por_cursar()
 
 void materias_por_cursar::LlenarTabla()
 {
-   //MateriasCursando();
-   MateriasNuevas();
-}
-
-void materias_por_cursar::on_pushButton_2_clicked()
-{
-    close();
-}
-
-
-
-void materias_por_cursar::MateriasNuevas()
-{
-
     if(mdb.open())
     {
-         qDebug()<<"MATERIAS NUEVAS";
-        QSqlQuery query1(mdb),query2(mdb);
+         qDebug()<<"ENTRO A LLENAR TABLA";
+        QSqlQuery query1(mdb),query2(mdb),registro(mdb),query3(mdb);
+        //QString matriculaA=QString::number(matricula);
 
         ui->Tabla1->setRowCount(0);
 
-
-
-        query1.prepare("CALL TABLA('"+matricula+"')"); //PROCEDIMIENTO QUE MUESTRA LAS MATERIAS CON PRERREQUISITOS
+        query1.prepare("select materia.Código,Nombre,Horas_PeriodoPT,Creditos from materia inner join cursando on materia.Código=cursando.Código where cursando.Matricula='"+matricula+"'");
         query1.exec();
 
-        query2.prepare("select materia.Código,Nombre,Horas_PeriodoPT,Creditos from materia inner join cursando on materia.Código=cursando.Código where cursando.Matricula='"+matricula+"'"); //CURSANDO
+        query2.prepare("");
         query2.exec();
+       // query1.next();
 
-        while (query2.next()) {
-
+        while (query1.next()) {
+              //QComboBox* combo=new QComboBox();
             QCheckBox* MateriasxCursar=new QCheckBox();
-             //QPushButton* MateriasxCursar=new QPushButton();
+            //QCheckBox* MateriasCursando=new QCheckBox();
             QLabel* cursando=new QLabel();
+            cursando->setText("CURSANDO");
 
+            QTableWidgetItem *uno=new QTableWidgetItem(query1.value(0).toString());
+            QTableWidgetItem *dos=new QTableWidgetItem(query1.value(1).toString());
+            QTableWidgetItem *tres=new QTableWidgetItem(query1.value(2).toString());
+            QTableWidgetItem *cuatro=new QTableWidgetItem(query1.value(3).toString());
+            //QTableWidgetItem *cinco=new QTableWidgetItem(query1.value(4).toString());
+           // QTableWidgetItem *seis=new QTableWidgetItem(query1.value(5).toString());
 
-            //MateriasxCursar->setText("CLIKC");
-
-             cursando->setText("CURSANDO");
-          //MateriasCursando();
-            QTableWidgetItem *uno=new QTableWidgetItem(query2.value(0).toString());
-            QTableWidgetItem *dos=new QTableWidgetItem(query2.value(1).toString());
-            QTableWidgetItem *tres=new QTableWidgetItem(query2.value(2).toString());
-
-            QTableWidgetItem *cuatro=new QTableWidgetItem(query2.value(3).toString());
 
             ui->Tabla1->setRowCount(ui->Tabla1->rowCount()+1);
             ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,0,uno);
             ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,1,dos);
             ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,2,tres);
             ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,3,cuatro);
+            //ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,4,cinco);
 
             ui->Tabla1->setCellWidget(ui->Tabla1->rowCount()-1,5,MateriasxCursar);
-
-            ui->Tabla1->setCellWidget(ui->Tabla1->rowCount()-1,4,cursando); //AQUI ESTAN LAS CURSANDO
-
-            connect(MateriasxCursar,SIGNAL(stateChanged(int)),this,SLOT(BoxChecked()));
-
-    }
-
-        while(query1.next())
-        {
-
-            QCheckBox* MateriasxCursar=new QCheckBox();
-                       //QPushButton* MateriasxCursar=new QPushButton();
-                      QLabel* cursando=new QLabel();
-
-
-                      //MateriasxCursar->setText("CLIKC");
-
-                       cursando->setText("CURSANDO");
-                    //MateriasCursando();
-                      QTableWidgetItem *uno=new QTableWidgetItem(query1.value(0).toString());
-                      QTableWidgetItem *dos=new QTableWidgetItem(query1.value(1).toString());
-                      QTableWidgetItem *tres=new QTableWidgetItem(query1.value(2).toString());
-
-                      QTableWidgetItem *cuatro=new QTableWidgetItem(query1.value(3).toString());
-
-                      ui->Tabla1->setRowCount(ui->Tabla1->rowCount()+1);
-                      ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,0,uno);
-                      ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,1,dos);
-                      ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,2,tres);
-                      ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,3,cuatro);
-
-                      ui->Tabla1->setCellWidget(ui->Tabla1->rowCount()-1,5,MateriasxCursar);
-                      //if(query2.next())
-                      //{
-                          //ui->Tabla1->setCellWidget(ui->Tabla1->rowCount()-1,4,cursando);
-                      //}
-                      //MateriasxCursar->stateChanged->emit(checkbox->checkState())
-                       //connect(MateriasxCursar,SIGNAL(clicked()),this,SLOT(BoxChecked()));
-
-                      connect(MateriasxCursar,SIGNAL(stateChanged(int)),this,SLOT(BoxChecked()));
-
-
-
+            ui->Tabla1->setCellWidget(ui->Tabla1->rowCount()-1,4,cursando);
         }
-  }
 
 
-
-}
-
-
-
-
-void materias_por_cursar::on_pushButton_clicked()
-{
-    QSqlQuery query1(mdb);
-    QCheckBox *b;
-    if(Materias<6)
-    {
-        qDebug()<<"TE FALTAAAAAAN";
-        QMessageBox::critical(this,"Error","Te faltan materias por seleccionar","Aceptar");
-
-        }else
-            {
-                qDebug()<<"MATERIAS";
-              for( int i=0; i<ui->Tabla1->rowCount(); i++)
-             {
-
-                b=qobject_cast<QCheckBox*>(ui->Tabla1->cellWidget(i,5));
-                  if(b->isChecked())
-                 {
-
-                 qDebug()<<ui->Tabla1->item(i,0)->text();
-                 query1.prepare("INSERT INTO porcursar (`Matricula`, `Código`) VALUES ('"+matricula+"', '"+ui->Tabla1->item(i,0)->text()+"')");
-                 query1.exec();
-                 query1.next();
-
-                 }
-              }
-
-              if(!query1.next()) //TIEMPOS?
-              {
-
-                   QMessageBox::information(this,"Materias cargadas","Tus materias han sido enviadas","Aceptar");
-              }
-            }
-
-}
-
-
-void materias_por_cursar::BoxChecked()
-{
-
-    QCheckBox * a;
-    a=qobject_cast<QCheckBox*>(ui->Tabla1->cellWidget(ui->Tabla1->currentRow(),5));
-
-    if(a->isChecked() && Materias<6)
-       {
-           qDebug()<<"Se selecciono";
-           Materias++;
-            qDebug()<<Materias;
-            //qDebug()<<ui->Tabla1->item(0,0)->text();
-
-       }else if(!a->isChecked())
-       {
-           qDebug()<<"Se desmarco";
-           Materias--;
-            qDebug()<<Materias;
-       }
-    else if(Materias>=6)
-    {
-       // Materias++;
-        a->setChecked(false);  // NO PICAR DE NUEVOOOOO
-        QMessageBox::critical(this,"Error","Se debe seleccionar solo 6 materias","Aceptar");
-                 qDebug()<<Materias;
     }
-
 }
-//QMessageBox::critical(this,"Error","Se debe seleccionar al menos 6 materias","Aceptar");
+
+void materias_por_cursar::on_pushButton_2_clicked()
+{
+    close();
+}

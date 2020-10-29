@@ -20,23 +20,13 @@ public:
 
     void LlenarTabla();
 
-    void MateriasNuevas();
-    //void MateriasCursando();
-
-
-
-
 private slots:
     void on_pushButton_2_clicked();
-    void BoxChecked();
-
-    void on_pushButton_clicked();
 
 private:
     Ui::materias_por_cursar *ui;
     QString matricula;
       QSqlDatabase mdb;
-      int Materias;
 };
 
 #endif // MATERIAS_POR_CURSAR_H

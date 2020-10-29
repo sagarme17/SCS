@@ -415,7 +415,7 @@ hover!pressed:border: 5px solid blue;
       <x>10</x>
       <y>-10</y>
       <width>411</width>
-      <height>171</height>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
