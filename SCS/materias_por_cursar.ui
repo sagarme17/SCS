@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>841</width>
-    <height>610</height>
+    <width>1088</width>
+    <height>668</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,10 +20,10 @@
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>-20</x>
+     <x>0</x>
      <y>0</y>
-     <width>861</width>
-     <height>611</height>
+     <width>1101</width>
+     <height>691</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -35,10 +35,10 @@
    <widget class="QTableWidget" name="Tabla1">
     <property name="geometry">
      <rect>
-      <x>59</x>
-      <y>150</y>
+      <x>183</x>
+      <y>180</y>
       <width>751</width>
-      <height>291</height>
+      <height>351</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -49,40 +49,58 @@ background-color: #1DE9B6;  </string>
      <property name="text">
       <string>Código</string>
      </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
     </column>
     <column>
      <property name="text">
       <string>Nombre</string>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
      </property>
     </column>
     <column>
      <property name="text">
       <string>Horas_PT</string>
      </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
     </column>
     <column>
      <property name="text">
       <string>Creditos</string>
      </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Cursando</string>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Seleccionar</string>
+      <string>Estado</string>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Marcar</string>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
      </property>
     </column>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>196</x>
+      <x>300</x>
       <y>40</y>
-      <width>481</width>
-      <height>51</height>
+      <width>511</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -101,11 +119,14 @@ background:transparent;
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>63</x>
-      <y>9</y>
+      <x>61</x>
+      <y>24</y>
       <width>111</width>
       <height>101</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;</string>
     </property>
     <property name="text">
      <string/>
@@ -120,11 +141,15 @@ background:transparent;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>10</y>
+      <x>922</x>
+      <y>22</y>
       <width>111</width>
       <height>101</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+</string>
     </property>
     <property name="pixmap">
      <pixmap resource="SRC.qrc">:/Images/checklist_102320.png</pixmap>
@@ -136,17 +161,18 @@ background:transparent;
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>682</x>
-      <y>491</y>
-      <width>121</width>
+      <x>800</x>
+      <y>570</y>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #1DE9B6; 
 font: 14pt 75 &quot;Times New Roman&quot;;
-border:none;
-hover!pressed:border: 5px solid blue;</string>
+
+border: 2px ;
+    border-radius: 9px;</string>
     </property>
     <property name="text">
      <string>Aceptar</string>
@@ -155,8 +181,8 @@ hover!pressed:border: 5px solid blue;</string>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>67</x>
-      <y>492</y>
+      <x>190</x>
+      <y>570</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -164,8 +190,8 @@ hover!pressed:border: 5px solid blue;</string>
     <property name="styleSheet">
      <string notr="true">background-color: #FF4081;
 font: 14pt 75 &quot;Times New Roman&quot;;
-border:none;
-hover!pressed:border: 5px solid blue;</string>
+border: 2px ;
+    border-radius: 9px;</string>
     </property>
     <property name="text">
      <string>Regresar</string>
@@ -174,10 +200,10 @@ hover!pressed:border: 5px solid blue;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>14</x>
-      <y>-6</y>
-      <width>851</width>
-      <height>131</height>
+      <x>29</x>
+      <y>2</y>
+      <width>1031</width>
+      <height>161</height>
      </rect>
     </property>
     <property name="styleSheet">
