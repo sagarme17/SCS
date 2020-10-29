@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="SRC.qrc">
-    <normaloff>:/Images/1490820813-6_82408.png</normaloff>:/Images/1490820813-6_82408.png</iconset>
-  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
@@ -332,7 +328,7 @@ hover!pressed:border: 5px solid blue;
     <widget class="QLabel" name="Marcar">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>240</x>
        <y>60</y>
        <width>101</width>
        <height>101</height>
@@ -387,24 +383,17 @@ hover!pressed:border: 5px solid blue;
       <string/>
      </property>
     </widget>
-    <widget class="QPushButton" name="Cambio_al_2">
+    <widget class="QCommandLinkButton" name="commandLinkButton">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>70</y>
-       <width>91</width>
-       <height>81</height>
+       <x>160</x>
+       <y>10</y>
+       <width>172</width>
+       <height>41</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">
-       background:transparent;
-       border:none;
-       outline:none;
-</string>
-     </property>
      <property name="text">
-      <string/>
+      <string>CommandLinkButton</string>
      </property>
     </widget>
    </widget>
@@ -414,7 +403,7 @@ hover!pressed:border: 5px solid blue;
       <x>10</x>
       <y>-10</y>
       <width>431</width>
-      <height>131</height>
+      <height>191</height>
      </rect>
     </property>
     <property name="styleSheet">

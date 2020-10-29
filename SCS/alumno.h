@@ -28,8 +28,6 @@ private slots:
 
     void on_Cambiar_Foto_clicked();
 
-    void on_Cambio_al_2_clicked();
-
 private:
     Ui::alumno *ui;
     QString Matricula;

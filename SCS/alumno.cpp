@@ -2,8 +2,6 @@
 #include "cambiar_contrasena.h"
 #include "ui_alumno.h"
 #include "foto.h"
-#include "materias_por_cursar.h"
-#include "ui_materias_por_cursar.h"
 
 alumno::alumno(QString Matricula, QWidget *parent) :
     QDialog(parent),
@@ -40,11 +38,4 @@ void alumno::on_Cambiar_Foto_clicked()
     Foto camb_foto(Matricula, this);
     camb_foto.setWindowTitle("Actualizar Perfil");
     camb_foto.exec();
-}
-
-void alumno::on_Cambio_al_2_clicked()
-{
-    materias_por_cursar PorCursar(Matricula);
-    PorCursar.setWindowTitle("Materias por cursar");
-    PorCursar.exec();
 }

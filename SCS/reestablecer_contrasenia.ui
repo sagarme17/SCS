@@ -6,214 +6,265 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>387</width>
-    <height>352</height>
+    <width>626</width>
+    <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="SRC.qrc">
-    <normaloff>:/Images/1490820813-6_82408.png</normaloff>:/Images/1490820813-6_82408.png</iconset>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
-  <widget class="QLabel" name="label_7">
+  <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>-10</x>
-     <y>-10</y>
-     <width>431</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #1DE9B6;  
-border: 1px solid #1DE9B6;
-    border-radius: 20px;
-    margin-top: 0.5em;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
+     <x>0</x>
      <y>0</y>
-     <width>71</width>
-     <height>81</height>
+     <width>631</width>
+     <height>431</height>
     </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: transparent</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="SRC.qrc">:/Images/pencils_120694.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="Alumno">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>40</y>
-     <width>171</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
-background:transparent;
-
-</string>
-   </property>
-   <property name="text">
-    <string>Contraseña</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>10</y>
-     <width>191</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
-background:transparent;
-
-</string>
-   </property>
-   <property name="text">
-    <string>Reestablecer</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>10</y>
-     <width>71</width>
-     <height>71</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: transparent</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="SRC.qrc">:/Images/laptop-1_102326.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QGroupBox" name="groupBox">
-   <property name="geometry">
-    <rect>
-     <x>-10</x>
-     <y>90</y>
-     <width>401</width>
-     <height>261</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
-  border: 2px solid gray;
-    border-radius: 9px;
-    margin-top: 0.5em;</string>
    </property>
    <property name="title">
     <string/>
    </property>
-   <widget class="QLineEdit" name="Matricula">
+   <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>50</y>
-      <width>249</width>
-      <height>38</height>
+      <x>270</x>
+      <y>-10</y>
+      <width>351</width>
+      <height>201</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;Times New Roman&quot;;
-color: rgb(0,0,0);
-background: transparent;
-</string>
+     <string notr="true">background-color: #1DE9B6;  
+border: 1px solid #1DE9B6;
+    border-radius: 20px;
+    margin-top: 0.5em;</string>
     </property>
     <property name="text">
      <string/>
     </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Normal</enum>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-    <property name="placeholderText">
-     <string>Matricula</string>
-    </property>
    </widget>
-   <widget class="QPushButton" name="Regresar_2">
+   <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>170</y>
-      <width>131</width>
+      <x>270</x>
+      <y>0</y>
+      <width>71</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="SRC.qrc">:/Images/pencils_120694.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>0</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="SRC.qrc">:/Images/laptop-1_102326.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>20</y>
+      <width>191</width>
       <height>41</height>
      </rect>
     </property>
-    <property name="mouseTracking">
-     <bool>true</bool>
+    <property name="styleSheet">
+     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
+background:transparent;
+
+</string>
     </property>
-    <property name="focusPolicy">
-     <enum>Qt::ClickFocus</enum>
+    <property name="text">
+     <string>Reestablecer</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Alumno">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>50</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #FF4081;
+     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
+background:transparent;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Contraseña</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>100</y>
+      <width>331</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);
+  border: 2px solid gray;
+    border-radius: 9px;
+    margin-top: 0.5em;</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLineEdit" name="Matricula">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>80</y>
+       <width>191</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;Times New Roman&quot;;
+color: rgb(0,0,0);
+background: transparent;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Normal</enum>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="placeholderText">
+      <string>Matricula</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Regresar_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>180</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="mouseTracking">
+      <bool>true</bool>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::ClickFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #FF4081;
 font: 14pt 75 &quot;Times New Roman&quot;;
 border:none;
 hover!pressed:border: 5px solid blue;
 </string>
-    </property>
-    <property name="text">
-     <string>Regresar</string>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Reestablecer">
-    <property name="geometry">
-     <rect>
-      <x>250</x>
-      <y>170</y>
-      <width>131</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #1DE9B6; 
+     </property>
+     <property name="text">
+      <string>Regresar</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Reestablecer">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>180</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #1DE9B6; 
 font: 14pt 75 &quot;Times New Roman&quot;;
 border:none;
 hover!pressed:border: 5px solid blue;</string>
+     </property>
+     <property name="text">
+      <string>Actualizar</string>
+     </property>
+     <property name="autoDefault">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>0</y>
+      <width>271</width>
+      <height>431</height>
+     </rect>
     </property>
-    <property name="text">
-     <string>Actualizar</string>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
-    <property name="autoDefault">
-     <bool>true</bool>
+    <property name="title">
+     <string/>
     </property>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>251</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="SRC.qrc">:/Images/32officeicons-2_89706.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
