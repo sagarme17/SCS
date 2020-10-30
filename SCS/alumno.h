@@ -15,7 +15,7 @@ class alumno : public QDialog
 
 public:
     explicit alumno(QString Matricula, QWidget *parent = nullptr);
-
+    void primera();
 
     ~alumno();
 
