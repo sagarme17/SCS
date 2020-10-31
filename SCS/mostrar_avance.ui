@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mostrar_avance</class>
+ <widget class="QDialog" name="mostrar_avance">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1291</width>
+    <height>773</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>-50</x>
+     <y>-70</y>
+     <width>1341</width>
+     <height>851</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>70</y>
+      <width>1281</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1DE9B6;  
+border: 1px solid #1DE9B6;
+    border-radius: 20px;
+    margin-top: 0.5em;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Mapa">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>170</y>
+      <width>1041</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="SRC.qrc">:/Images/Mapa.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_001">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>480</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 001</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Titulo">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>80</y>
+      <width>511</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
+background:transparent;
+
+</string>
+    </property>
+    <property name="text">
+     <string>AVANCE CURRICULAR</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Regresar">
+    <property name="geometry">
+     <rect>
+      <x>1160</x>
+      <y>450</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FF4081;
+font: 14pt 75 &quot;Times New Roman&quot;;
+border: 2px ;
+    border-radius: 9px;
+</string>
+    </property>
+    <property name="text">
+     <string>Regresar</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Siguiente">
+    <property name="geometry">
+     <rect>
+      <x>1160</x>
+      <y>370</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1DE9B6; 
+font: 14pt 75 &quot;Times New Roman&quot;;
+border: 2px ;
+    border-radius: 9px;</string>
+    </property>
+    <property name="text">
+     <string>Siguiente</string>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_003">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>360</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 003</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_004">
+    <property name="geometry">
+     <rect>
+      <x>317</x>
+      <y>484</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 004</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_005">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>540</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 005</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_007">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>320</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 007</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_008">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>320</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 008</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_252">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>480</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 252</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_010">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>480</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 010</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_261">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>482</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 261</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_251">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>320</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 251</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_254">
+    <property name="geometry">
+     <rect>
+      <x>668</x>
+      <y>483</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS_254</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FGUS_002">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>760</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FGUS 002</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CCOS_601">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>600</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>CCOS 601</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FGUS_004">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>710</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FGUS 004</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FGUS_005">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>710</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FGUS 005 </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FGUS_006">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>710</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FGUS 006</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ICCS_001">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>310</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ICCS 001</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FGUS_007">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>710</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>FGUS 007</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ICCS_002">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>370</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ICCS 002</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ICCS_003">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>420</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ICCS 003</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ICCS_004">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>370</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ICCS 004</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ICCS_005">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>430</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ICCS 005</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ICCS_006">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>320</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ICCS 006</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ICCS_007">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>370</y>
+      <width>55</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ICCS007</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="SRC.qrc"/>
+ </resources>
+ <connections/>
+</ui>
