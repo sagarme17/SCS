@@ -4,6 +4,7 @@
 #include "foto.h"
 #include "materias_por_cursar.h"
 #include "ui_materias_por_cursar.h"
+#include "mostrar_avance.h"
 #include <QMessageBox>
 
 alumno::alumno(QString Matricula, QWidget *parent) :
@@ -63,6 +64,7 @@ void alumno::on_Cambio_al_2_clicked()
 
 }
 
+
 void alumno::primera()
 {
     if(mdb.open())
@@ -80,4 +82,12 @@ void alumno::primera()
          windows.exec();
         }
     }
+
+void alumno::on_Cambio_al_3_clicked()
+{
+    mostrar_avance mostrar(this);
+    mostrar.setWindowTitle("Mostrar Avance");
+    mostrar.exec();
+
+
 }
