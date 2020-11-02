@@ -31,12 +31,21 @@ void Cambiar_Contrasena::on_Actualizar_clicked()
         {
        if(ui->Contrasea->text()==ui->Confirmar_Contrasea->text())
        {
-        contra.clear();
-        contra.prepare("Update usuario set Contraseña ='"+ui->Contrasea->text()+"' where Id_Usuario='"+id_usuario+"'");
-        contra.exec();
-        contra.next();
-        QMessageBox::information(this,"Actualizado","Su contraseña ha sido actualizada.","Aceptar");
-        close();
+         if(ui->Contrasea->text()!=id_usuario && ui->Confirmar_Contrasea->text()!=id_usuario)
+          {
+            contra.prepare("Update usuario set Contraseña ='"+ui->Contrasea->text()+"' where Id_Usuario='"+id_usuario+"'");
+            contra.exec();
+            contra.next();
+            QMessageBox::information(this,"Actualizado","Su contraseña ha sido actualizada.","Aceptar");
+            contra.clear();
+            close();
+          }
+          else
+          {
+             ui->Contrasea->clear();
+             ui->Confirmar_Contrasea->clear();
+             QMessageBox::critical(this,"Error","La contraseña no debe ser igual a tu matricula.","Aceptar");
+          }
        }
        else{
            QMessageBox::critical(this,"Error","La contraseña no coincide.","Aceptar");
