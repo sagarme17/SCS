@@ -3,6 +3,8 @@
 #include<QDateTime>
 #include <QDate>
 #include <QDebug>
+#include <iostream>
+using namespace std;
 
 baseDatos::baseDatos()
 {
@@ -279,5 +281,107 @@ bool baseDatos::MarcarMateriasPorCursar(int matricula, QString codigo)
         qDebug()<<"Se ha cargado la materia "+codigo+" al alumno "+matriculaA;
         return false;
     }
+
+}
+bool baseDatos::VisualizarAvance(int matricula)
+{
+    QSqlQuery acceso(mDatabase),query1(mDatabase),query2(mDatabase),query3(mDatabase);
+    QSqlQuery query4(mDatabase),query5(mDatabase),query6(mDatabase);
+    QSqlQuery query7(mDatabase),query8(mDatabase),query9(mDatabase);
+    QSqlQuery numMaterias(mDatabase);
+    QString matriculaA=QString::number(matricula),cod,totalN,totalPeriodo,totalNC,totalNP;
+    int total=0,cred,hora,totalH=0,totalHC=0,totalHP=0,totalC=0,totalP=0;
+    int matA=0,matC=0,matP=0;
+    acceso.prepare("Select * from alumno where Matricula='"+matriculaA+"'");
+    acceso.exec();
+    if(acceso.next())
+      {
+        qDebug()<<"Matricula Existente";
+        /*----------------------------*/
+        query1.prepare("select Código from alumno inner join aprobado on alumno.Matricula=aprobado.Matricula where alumno.Matricula='"+matriculaA+"'");
+        query1.exec();
+        qDebug()<<"------Materias Aprobadas------";
+        while (query1.next()) {
+            matA++;
+            cod=query1.value(0).toString();
+            qDebug()<<"Código_Materia es: "+cod;
+            query2.prepare("select Creditos from materia where Código='"+cod+"'");
+            query2.exec();
+            query3.prepare("select Horas_PeriodoPT from materia where Código='"+cod+"'");
+            query3.exec();
+           if(query2.next() and query3.next())
+            {
+                cred=query2.value(0).toInt();
+                hora=query3.value(0).toInt();
+                qDebug()<<"Creditos: "+QString::number(cred);
+                qDebug()<<"Horas_Periodo : "+QString::number(hora);
+                total+=cred;
+                totalH+=hora;
+            }
+        }
+        totalN=QString::number(total);
+        qDebug()<<"Tiene "+QString::number(matA)+" materias aprobadas";
+        qDebug()<<"El total de creditos APROBADOS son: "+totalN;
+        qDebug()<<"El total de horas(Teoria y practica) APROBADAS son: "+QString::number(totalH);
+        /*----------------------------*/
+        query4.prepare("select Código from alumno inner join cursando on alumno.Matricula=cursando.Matricula where alumno.Matricula='"+matriculaA+"'");
+        query4.exec();
+        qDebug()<<"------Materias cursando------";
+        while (query4.next()) {
+            matC++;
+            cod=query4.value(0).toString();
+            qDebug()<<"Código_Materia es: "+cod;
+            query5.prepare("select Creditos from materia where Código='"+cod+"'");
+            query5.exec();
+            query6.prepare("select Horas_PeriodoPT from materia where Código='"+cod+"'");
+            query6.exec();
+           if(query5.next() and query6.next())
+            {
+                cred=query5.value(0).toInt();
+                hora=query6.value(0).toInt();
+                qDebug()<<"Creditos: "+QString::number(cred);
+                qDebug()<<"Horas_Periodo : "+QString::number(hora);
+                totalC+=cred;
+                totalHC+=hora;
+            }
+        }
+        totalNC=QString::number(totalC);
+        qDebug()<<"Tiene "+QString::number(matC)+" materias cursando";
+        qDebug()<<"El total de creditos CURSANDO son: "+totalNC;
+        qDebug()<<"El total de horas(Teoria y practica) CURSANDO son: "+QString::number(totalHC);
+        /*-------------------------------*/
+        query7.prepare("select Código from alumno inner join porcursar on alumno.Matricula=porcursar.Matricula where alumno.Matricula='"+matriculaA+"'");
+        query7.exec();
+        qDebug()<<"------Materias PorCursar------";
+        while (query7.next()) {
+            matP++;
+            cod=query7.value(0).toString();
+            qDebug()<<"Código_Materia es: "+cod;
+            query8.prepare("select Creditos from materia where Código='"+cod+"'");
+            query8.exec();
+            query9.prepare("select Horas_PeriodoPT from materia where Código='"+cod+"'");
+            query9.exec();
+           if(query8.next() and query9.next())
+            {
+                cred=query8.value(0).toInt();
+                hora=query9.value(0).toInt();
+                qDebug()<<"Creditos: "+QString::number(cred);
+                qDebug()<<"Horas_Periodo : "+QString::number(hora);
+                totalP+=cred;
+                totalHP+=hora;
+            }
+        }
+        totalNP=QString::number(totalP);
+        qDebug()<<"Tiene "+QString::number(matP)+" materias por cursar";
+        qDebug()<<"El total de creditos POR CURSAR son: "+totalNP;
+        qDebug()<<"El total de horas(Teoria y practica) POR CURSAR son: "+QString::number(totalHP);
+
+
+        return true;
+    }else
+       {
+            qDebug()<<"Matricula NO Existente";
+            return false;
+        }
 
 }

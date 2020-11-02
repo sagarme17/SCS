@@ -23,6 +23,8 @@ public:
     bool BuscarSolicitud(int);
     bool RestablecerContrasena(int);
     bool MarcarMateriasPorCursar(int,QString);
+    /*---Pruebas Sprint 3---*/
+    bool VisualizarAvance(int);
 
 
 
