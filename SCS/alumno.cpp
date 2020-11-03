@@ -82,12 +82,11 @@ void alumno::primera()
          windows.exec();
         }
     }
+}
 
 void alumno::on_Cambio_al_3_clicked()
 {
-    mostrar_avance mostrar(this);
+    mostrar_avance mostrar(Matricula,this);
     mostrar.setWindowTitle("Mostrar Avance");
     mostrar.exec();
-
-
 }
