@@ -71,7 +71,41 @@ void mostrar_avance::cursando()
     case 11:
         ui->FGUS_002->setStyleSheet("border-image: url(:/Images/Reloj.png);");
         break;
-    case 48:
+        /*Tercer Semestre*/
+    case 12:
+        ui->CCOS_008->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 13:
+        ui->ICCS_004->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 14:
+        ui->ICCS_005->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 15:
+        ui->CCOS_010->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 16:
+        ui->CCOS_005->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 17:
+        ui->FGUS_006->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+        /*Cuarto sementre*/
+    case 18:
+        ui->ICCS_006->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 19:
+        ui->ICCS_007->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 20:
+        ui->CCOS_261->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 21:
+        ui->CCOS_013->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 22:
+        ui->FGUS_007->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+   case 48:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_600.bmp)");
         break;
     case 49:
@@ -86,6 +120,30 @@ void mostrar_avance::cursando()
      case 52:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_601.bmp)");
         break;
+        /*OptativasChio*/
+    case 53:
+        ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_607.bmp)");
+        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 54:
+        ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_608.bmp)");
+        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    case 55:
+       ui->Optativa_1->setStyleSheet("borde-image: url(:/Images/ICCS _602.bmp)");
+       ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+       break;
+    case 56:
+       ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_607.bmp)");
+       ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+       break;
+    case 57:
+       ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_264.bmp)");
+       ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+       break;
+
+
+
     }
 }
 }
@@ -137,6 +195,40 @@ void mostrar_avance::aprobada()
     case 11:
         ui->FGUS_002->setStyleSheet("border-image: url(:/Images/Palomita.png);");
         break;
+        /*Tercer semestre*/
+    case 12:
+        ui->CCOS_008->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 13:
+        ui->ICCS_004->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 14:
+        ui->ICCS_005->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 15:
+        ui->CCOS_010->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 16:
+        ui->CCOS_005->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 17:
+        ui->FGUS_006->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+        /*Cuarto sementre*/
+    case 18:
+        ui->ICCS_006->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 19:
+        ui->ICCS_007->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 20:
+        ui->CCOS_261->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 21:
+        ui->CCOS_013->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 22:
+        ui->FGUS_007->setStyleSheet("border-image: url(:/Images/Palomita.png);");
     case 48:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_600.bmp)");
         break;
@@ -151,6 +243,27 @@ void mostrar_avance::aprobada()
        break;
     case 52:
        ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_601.bmp)");
+       break;
+    /*OptativasChio*/
+    case 53:
+        ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_607.bmp)");
+        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 54:
+        ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_608.bmp)");
+        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 55:
+       ui->Optativa_1->setStyleSheet("borde-image: url(:/Images/ICCS _602.bmp)");
+       ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    case 56:
+       ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_607.bmp)");
+       ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+       break;
+    case 57:
+       ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_264.bmp)");
+       ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
        break;
     }
 }
