@@ -34,8 +34,8 @@ void mostrar_avance::cursando()
     while(query4.next())
     {
        abd=query4.value(0).toInt();
-       qDebug()<<"jale";
-       qDebug()<<abd;
+      //Debug()<<"jale";
+      //Debug()<<abd;
     switch(abd)
     {
     case 1:
@@ -105,20 +105,63 @@ void mostrar_avance::cursando()
         break;
     case 22:
         ui->FGUS_007->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+    //QUINTO
+    case 23:
+        ui->CCOS_251->setStyleSheet("image: url(:/Images/Reloj.png);");
+        //ui->CCOS_251->setStyleSheet( "background:transparent; border:none; outline:none;");
+        break;
+     case 24:
+         ui->ICCS_250->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+     case  25:
+         ui->CCOS_252->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+     case 26:
+         ui->ISCO_201->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+     case  27:
+         ui->ISCO_200->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+     //SEXTO SEMESTRE
+     case 28:
+         ui->ICCS_259->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+     case  29:
+         ui->ICCS_253->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+      case 30:
+         ui->ICCS_256->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+      case  31:
+         ui->CCOS_254->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+       case 32:
+         ui->IDDS_001->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+
+
+//OPTATIVAS ESTEBAN
+
    case 48:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_600.bmp)");
+         ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
         break;
     case 49:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_605.bmp)");
+         ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
         break;
      case 50:
         ui->Optativa_1->setStyleSheet("borde-image: url(:/Images/ICCS _601.bmp)");
+         ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
         break;
      case 51:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_603.bmp)");
+         ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
         break;
      case 52:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_601.bmp)");
+         ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
         break;
         /*OptativasChio*/
     case 53:
@@ -142,6 +185,33 @@ void mostrar_avance::cursando()
        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Reloj.png);");
        break;
 
+       //SIMULACION OPTV1
+    case 58:
+        ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_606.bmp)");
+        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+        //COMPUTO BASICO OPTV1
+     case 59:
+         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_604.bmp)");
+         ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+         //ARQUITECTURA AVNZD DE COMPU. OPTV2
+     case 60:
+         ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_611.bmp)");
+         ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+         //INVESTIGACION DE OPERACIONES OPTV2
+     case 61:
+         ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_608.bmp)");
+         ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+         //SUPER COMPUTO OPTV2
+     case 62:
+            ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_609.bmp)");
+            ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+            break;
+
+
 
 
     }
@@ -158,12 +228,12 @@ void mostrar_avance::aprobada()
     while(query.next())
     {
        r=query.value(0).toInt();
-       qDebug()<<"jal";
-       qDebug()<<r;
+      //Debug()<<"jal";
+      //Debug()<<r;
     switch(r)
     {
     case 1:
-        ui->ICCS_001->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        ui->ICCS_001->setStyleSheet("image: url(:/Images/Palomita.png);");
         break;
     case 2:
         ui->CCOS_003->setStyleSheet("border-image: url(:/Images/Palomita.png);");
@@ -229,20 +299,62 @@ void mostrar_avance::aprobada()
         break;
     case 22:
         ui->FGUS_007->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+   //QUINTO
+     case 23:
+        ui->CCOS_251->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+     case 24:
+        ui->ICCS_250->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+     case  25:
+         ui->CCOS_252->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+         break;
+     case 26:
+         ui->ISCO_201->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+         break;
+     case  27:
+          ui->ISCO_200->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+          break;
+   //SEXTO SEMESTRE
+     case 28:
+           ui->ICCS_259->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+     case  29:
+           ui->ICCS_253->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+     case 30:
+           ui->ICCS_256->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+     case  31:
+           ui->CCOS_254->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+     case 32:
+           ui->IDDS_001->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+
+
+
+
     case 48:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_600.bmp)");
+        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
         break;
     case 49:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_605.bmp)");
+         ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
         break;
     case 50:
        ui->Optativa_1->setStyleSheet("borde-image: url(:/Images/ICCS _601.bmp)");
+        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
        break;
     case 51:
        ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_603.bmp)");
+        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
        break;
     case 52:
        ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_601.bmp)");
+        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
        break;
     /*OptativasChio*/
     case 53:
@@ -265,6 +377,34 @@ void mostrar_avance::aprobada()
        ui->Optativa_1->setStyleSheet("border-image: url(:/Images/CCOS_264.bmp)");
        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
        break;
+
+    //SIMULACION OPTV1
+    case 58:
+       ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_606.bmp)");
+       ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+       break;
+    //COMPUTO BASICO OPTV1
+    case 59:
+        ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_604.bmp)");
+        ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    //ARQUITECTURA AVNZD DE COMPU. OPTV2
+    case 60:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_611.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    //INVESTIGACION DE OPERACIONES OPTV2
+    case 61:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_608.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+    //SUPER COMPUTO OPTV2
+     case 62:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_609.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+
+
     }
 }
 }
