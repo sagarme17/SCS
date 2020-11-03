@@ -85,28 +85,6 @@ border: 1px solid #1DE9B6;
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="Titulo">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>80</y>
-      <width>511</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 25pt &quot;Berlin Sans FB Demi&quot;;
-background:transparent;
-
-</string>
-    </property>
-    <property name="text">
-     <string>AVANCE CURRICULAR</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QPushButton" name="Regresar">
     <property name="geometry">
      <rect>
@@ -427,7 +405,7 @@ border: 2px ;
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background:transparent;
+     <string notr="true"> background-color:transparent;
        border:none;
        outline:none;
 
@@ -1192,6 +1170,78 @@ border: 2px ;
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>510</y>
+      <width>47</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>VERDE</zorder>
+   <zorder>Mapa</zorder>
+   <zorder>CCOS_001</zorder>
+   <zorder>Regresar</zorder>
+   <zorder>CCOS_003</zorder>
+   <zorder>CCOS_004</zorder>
+   <zorder>CCOS_005</zorder>
+   <zorder>CCOS_007</zorder>
+   <zorder>CCOS_008</zorder>
+   <zorder>CCOS_252</zorder>
+   <zorder>CCOS_010</zorder>
+   <zorder>CCOS_261</zorder>
+   <zorder>CCOS_251</zorder>
+   <zorder>CCOS_254</zorder>
+   <zorder>FGUS_002</zorder>
+   <zorder>FGUS_004</zorder>
+   <zorder>FGUS_005</zorder>
+   <zorder>FGUS_006</zorder>
+   <zorder>FGUS_007</zorder>
+   <zorder>ICCS_002</zorder>
+   <zorder>ICCS_003</zorder>
+   <zorder>ICCS_004</zorder>
+   <zorder>ICCS_005</zorder>
+   <zorder>ICCS_006</zorder>
+   <zorder>ICCS_007</zorder>
+   <zorder>ICCS_254</zorder>
+   <zorder>ICCS_250</zorder>
+   <zorder>ICCS_251</zorder>
+   <zorder>ICCS_253</zorder>
+   <zorder>ICCS_255</zorder>
+   <zorder>ICCS_259</zorder>
+   <zorder>ICCS_257</zorder>
+   <zorder>ICCS_258</zorder>
+   <zorder>ICCS_256</zorder>
+   <zorder>ICCS_260</zorder>
+   <zorder>ICCS_262</zorder>
+   <zorder>IDCC_002</zorder>
+   <zorder>ICCS_261</zorder>
+   <zorder>IDDS_001</zorder>
+   <zorder>IDDS_002</zorder>
+   <zorder>ISCC_201</zorder>
+   <zorder>ISCC_202</zorder>
+   <zorder>SSCC_100</zorder>
+   <zorder>PPCc_101</zorder>
+   <zorder>ISCO_201</zorder>
+   <zorder>ICCS_252</zorder>
+   <zorder>FGUS_001</zorder>
+   <zorder>ISCO_200</zorder>
+   <zorder>CCOS_013</zorder>
+   <zorder>OPTATIVA_DESIT</zorder>
+   <zorder>Optativa_1</zorder>
+   <zorder>Optativa_2</zorder>
+   <zorder>Codigo_optativa2</zorder>
+   <zorder>Codigo_optativa1</zorder>
+   <zorder>Codigo_OptavivaDesit</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>ICCS_001</zorder>
+   <zorder>label_3</zorder>
   </widget>
  </widget>
  <resources>
