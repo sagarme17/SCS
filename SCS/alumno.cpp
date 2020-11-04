@@ -79,6 +79,7 @@ void alumno::primera()
         {
          Cambiar_Contrasena windows(Matricula, this);
          windows.setWindowTitle("Cambiar contraseña primera vez");
+         QMessageBox::information(this,"Actualizar contraseña","Se requiere que actualize su contraseña para continuar.\nGracias.","Aceptar");
          windows.exec();
         }
     }

@@ -26,6 +26,8 @@ private slots:
 
     void on_Restablecer_contras_clicked();
 
+    void on_est_materias_aprobadas_clicked();
+
 private:
     Ui::administrador *ui;
     QString Id_Administrador;
