@@ -34,10 +34,7 @@ void alumno::on_Cerrar_Sesion_clicked()
     close();
 }
 
-void alumno::on_Cambiar_Foto_objectNameChanged(const QString &objectName)
-{
 
-}
 
 void alumno::on_Cambiar_Foto_clicked()
 {

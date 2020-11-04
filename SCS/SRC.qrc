@@ -51,5 +51,6 @@
         <file>Images/ICCS_616.bmp</file>
         <file>Images/ICCS_617.bmp</file>
         <file>Images/Palomita.png</file>
+        <file>Images/logo_FCC.png</file>
     </qresource>
 </RCC>
