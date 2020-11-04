@@ -171,6 +171,23 @@ void mostrar_avance::cursando()
         case 42:
          ui->IDCC_002->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
          break;
+         // Noveno Semestre
+         case 43:
+         ui->ICCS_262->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+         break;
+        case 44:
+        ui->ISCC_202->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+        break;
+        case 45:
+        ui->SSCC_100->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+        break;
+        case 46:
+        ui->PPCc_101->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+        break;
+        case 47:
+        ui->IDDS_002->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+        break;
+
 
 
 //OPTATIVAS ESTEBAN
@@ -267,7 +284,27 @@ void mostrar_avance::cursando()
         ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
         ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
         break;
-
+        //Saul
+     case 68:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
+        break;
+     case 69:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
+        break;
+     case 70:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
+        break;
+     case 71:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
+        break;
+     case 72:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
+        break;
 
 
 
@@ -425,6 +462,24 @@ void mostrar_avance::aprobada()
            ui->IDCC_002->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
            break;
 
+           // Noveno Semestre
+           case 43:
+           ui->ICCS_262->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+           break;
+          case 44:
+          ui->ISCC_202->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+          break;
+          case 45:
+          ui->SSCC_100->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+          break;
+          case 46:
+          ui->PPCc_101->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+          break;
+          case 47:
+          ui->IDDS_002->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+          break;
+//OPTATIVAS
+
     case 48:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_600.bmp)");
         ui->Codigo_optativa1->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
@@ -517,6 +572,29 @@ void mostrar_avance::aprobada()
        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
        break;
+
+       //Saul
+    case 68:
+       ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+       ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
+       break;
+    case 69:
+       ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+       ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
+       break;
+    case 70:
+       ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+       ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
+       break;
+    case 71:
+       ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+       ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
+       break;
+    case 72:
+       ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+       ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
+       break;
+
 
 
 
