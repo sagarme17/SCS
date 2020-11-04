@@ -31,6 +31,7 @@ private slots:
     void RestablecerContra();
     void MateriasPorCursar();
     void MapaGrafico();
+    void GenerarEstAprobado();
 
 
 };
@@ -80,19 +81,23 @@ void Pruebas0::Solicitud_p1()
 }
 void Pruebas0::Solicitud_p2()
 {
-     QCOMPARE(conexion->BuscarSolicitud(201624489),true);
+     //QCOMPARE(conexion->BuscarSolicitud(201624489),true);
 }
 void Pruebas0::RestablecerContra()
 {
-    QVERIFY(conexion->RestablecerContrasena(201617942));
+   // QVERIFY(conexion->RestablecerContrasena(201617942));
 }
 void Pruebas0::MateriasPorCursar()
 {
-    QCOMPARE(conexion->MarcarMateriasPorCursar(201617942,"CCOS 007"),true);
+   // QCOMPARE(conexion->MarcarMateriasPorCursar(201617942,"CCOS 007"),true);
 }
 void Pruebas0::MapaGrafico()
 {
    QCOMPARE(conexion->VisualizarAvance(201617847),true);
+}
+void Pruebas0::GenerarEstAprobado()
+{
+    QCOMPARE(conexion->generarPDFAprobado(201624489),true);
 }
 QTEST_APPLESS_MAIN(Pruebas0)
 

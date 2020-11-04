@@ -25,6 +25,7 @@ public:
     bool MarcarMateriasPorCursar(int,QString);
     /*---Pruebas Sprint 3---*/
     bool VisualizarAvance(int);
+    bool generarPDFAprobado(int);
 
 
 

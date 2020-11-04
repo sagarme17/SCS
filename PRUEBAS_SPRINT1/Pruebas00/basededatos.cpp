@@ -283,6 +283,7 @@ bool baseDatos::MarcarMateriasPorCursar(int matricula, QString codigo)
     }
 
 }
+/*---Tercer Sprint---*/
 bool baseDatos::VisualizarAvance(int matricula)
 {
     QSqlQuery acceso(mDatabase),query1(mDatabase),query2(mDatabase),query3(mDatabase);
@@ -377,6 +378,48 @@ bool baseDatos::VisualizarAvance(int matricula)
         qDebug()<<"El total de horas(Teoria y practica) POR CURSAR son: "+QString::number(totalHP);
 
 
+        return true;
+    }else
+       {
+            qDebug()<<"Matricula NO Existente";
+            return false;
+        }
+
+}
+bool baseDatos::generarPDFAprobado(int matricula)
+{
+    QSqlQuery acceso(mDatabase),query1(mDatabase),query2(mDatabase),query3(mDatabase);
+    QString matriculaA=QString::number(matricula),cod,totalN,totalPeriodo;
+    int total=0,cred,hora,totalH=0;
+    acceso.prepare("Select * from alumno where Matricula='"+matriculaA+"'");
+    acceso.exec();
+    if(acceso.next())
+      {
+        qDebug()<<"Matricula Existente";
+        query1.prepare("select Código from alumno inner join aprobado on alumno.Matricula=aprobado.Matricula where alumno.Matricula='"+matriculaA+"'");
+        query1.exec();
+        qDebug()<<"------Materias Aprobadas------";
+        while (query1.next()) {
+            cod=query1.value(0).toString();
+            qDebug()<<"Código_Materia es: "+cod;
+            query2.prepare("select Creditos from materia where Código='"+cod+"'");
+            query2.exec();
+            query3.prepare("select Horas_PeriodoPT from materia where Código='"+cod+"'");
+            query3.exec();
+           if(query2.next() and query3.next())
+            {
+                cred=query2.value(0).toInt();
+                hora=query3.value(0).toInt();
+                qDebug()<<"Creditos: "+QString::number(cred);
+                qDebug()<<"Horas_Periodo : "+QString::number(hora);
+                total+=cred;
+                totalH+=hora;
+            }
+
+        }
+        totalN=QString::number(total);
+        qDebug()<<"El total de creditos aprobados son: "+totalN;
+        qDebug()<<"El total de horas(Teoria y practica) aprobados son: "+QString::number(totalH);
         return true;
     }else
        {
