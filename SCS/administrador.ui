@@ -164,7 +164,7 @@ background:transparent;
       <string notr="true">font: 75 12pt &quot;Berlin Sans FB Demi&quot;;</string>
      </property>
      <property name="text">
-      <string>Est. materias cursadas</string>
+      <string>Est. materias aprobadas</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -398,6 +398,24 @@ hover!pressed:border: 5px solid blue;
      <property name="styleSheet">
       <string notr="true">
        background:transparent;
+       border:none;
+       outline:none;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="est_materias_aprobadas">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>140</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">       background:transparent;
        border:none;
        outline:none;</string>
      </property>
