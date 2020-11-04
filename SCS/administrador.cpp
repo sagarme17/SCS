@@ -7,7 +7,7 @@
 #include <QPdfWriter>
 #include <QTextDocument>
 #include <QDesktopServices>
-
+#include <QMessageBox>
 
 
 administrador::administrador(QString Id_Administrador,QWidget *parent) :
@@ -137,6 +137,7 @@ void administrador::on_Restablecer_contras_clicked()
 
 void administrador::on_est_materias_aprobadas_clicked()
 {
+     QMessageBox::information(this,"PDF Cursadas","El PDF con la estadistica se guardo en tu escritorio.\nGracias.","Aceptar");
     int total2016, total2017,Matricula,Porcentaje;
     QSqlQuery estadistico(mdb);
     QString Codigo, Nonbre,MatriculaS;
