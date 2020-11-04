@@ -139,6 +139,38 @@ void mostrar_avance::cursando()
        case 32:
          ui->IDDS_001->setStyleSheet("border-image: url(:/Images/Reloj.png);");
          break;
+     //SEPTIMO SEMESTRE
+       case 33:
+         ui->ICCS_260->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+       case 34:
+         ui->ICCS_257->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+       case 35:
+         ui->ISCC_201->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+       case 36:
+         ui->ICCS_251->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+       case 37:
+         ui->ICCS_258->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+      //OCTAVO SEMESTRE
+        case 38:
+         ui->ICCS_254->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+        case 39:
+         ui->ICCS_261->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+        case 40:
+         ui->ICCS_255->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+        case 41:
+         ui->ICCS_252->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
+        case 42:
+         ui->IDCC_002->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+         break;
 
 
 //OPTATIVAS ESTEBAN
@@ -210,6 +242,34 @@ void mostrar_avance::cursando()
             ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_609.bmp)");
             ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
             break;
+         //SISTEMAS INTERACTIVOS MODERNOS
+     case 63:
+            ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_610.bmp)");
+            ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+            break;
+         //WEB SEMÁNTICO
+     case 64:
+            ui->Optativa_2->setStyleSheet("border-image: url(:/Images/CCOS_600.bmp)");
+            ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+            break;
+         //ALMACENAMIENTO DE DATOS
+     case 65:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_614.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+         //CONTROL DIGITAL
+     case 66:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_613.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+        //ROBÓTICA APLICADA
+     case 67:
+        ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+        ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Reloj.png);");
+        break;
+
+
+
 
 
 
@@ -332,9 +392,38 @@ void mostrar_avance::aprobada()
      case 32:
            ui->IDDS_001->setStyleSheet("border-image: url(:/Images/Palomita.png);");
            break;
-
-
-
+   //SEPTIMO SEMESTRE
+     case 33:
+           ui->ICCS_260->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+     case 34:
+           ui->ICCS_257->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+     case 35:
+           ui->ISCC_201->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+     case 36:
+           ui->ICCS_251->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+     case 37:
+           ui->ICCS_258->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+   //OCTAVO SEMESTRE
+      case 38:
+           ui->ICCS_254->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+      case 39:
+           ui->ICCS_261->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+      case 40:
+           ui->ICCS_255->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+      case 41:
+           ui->ICCS_252->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+      case 42:
+           ui->IDCC_002->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
 
     case 48:
         ui->Optativa_1->setStyleSheet("border-image: url(:/Images/ICCS_600.bmp)");
@@ -403,6 +492,32 @@ void mostrar_avance::aprobada()
         ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_609.bmp)");
         ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png);");
         break;
+        //SISTEMAS INTERACTIVOS MODERNOS
+    case 63:
+           ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_610.bmp)");
+           ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+        //WEB SEMÁNTICO
+    case 64:
+           ui->Optativa_2->setStyleSheet("border-image: url(:/Images/CCOS_600.bmp)");
+           ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+           break;
+        //ALMACENAMIENTO DE DATOS
+    case 65:
+       ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_614.bmp)");
+       ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+       break;
+        //CONTROL DIGITAL
+    case 66:
+       ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_613.bmp)");
+       ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+        break;
+       //ROBÓTICA APLICADA
+    case 67:
+       ui->Optativa_2->setStyleSheet("border-image: url(:/Images/ICCS_617.bmp)");
+       ui->Codigo_optativa2->setStyleSheet("border-image: url(:/Images/Palomita.png);");
+       break;
+
 
 
     }
