@@ -28,6 +28,8 @@ private slots:
 
     void on_est_materias_aprobadas_clicked();
 
+    void on_est_materias_porcursar_clicked();
+
 private:
     Ui::administrador *ui;
     QString Id_Administrador;

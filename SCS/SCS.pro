@@ -23,6 +23,7 @@ SOURCES += \
     foto.cpp \
     inicio.cpp \
     main.cpp \
+    materias_aprobadas.cpp \
     materias_por_cursar.cpp \
     mostrar_avance.cpp \
     reestablecer_contrasenia.cpp \
@@ -34,6 +35,7 @@ HEADERS += \
     cambiar_contrasena.h \
     foto.h \
     inicio.h \
+    materias_aprobadas.h \
     materias_por_cursar.h \
     mostrar_avance.h \
     reestablecer_contrasenia.h \
@@ -45,6 +47,7 @@ FORMS += \
     cambiar_contrasena.ui \
     foto.ui \
     inicio.ui \
+    materias_aprobadas.ui \
     materias_por_cursar.ui \
     mostrar_avance.ui \
     reestablecer_contrasenia.ui \

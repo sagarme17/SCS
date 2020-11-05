@@ -45,6 +45,7 @@ void administrador::on_Cerrar_Sesion_clicked()
 
 void administrador::on_est_Materias_cursando_clicked()
 {
+       QMessageBox::information(this,"PDF Materias cursando","El PDF con la estadistica se guardo en tu escritorio.\nGracias.","Aceptar");
     int total2016, total2017,Matricula,Porcentaje;
     QSqlQuery estadistico(mdb);
     QString Codigo, Nonbre,MatriculaS;
@@ -96,20 +97,26 @@ void administrador::on_est_Materias_cursando_clicked()
       qDebug()<< PDFESTADISTICA;
 
     QString html =
-            "<img src='C:/Users/HP/Desktop/SCS/Images/FCC.jfif' width='100' height='100'>"
+            "<H1 align=center>ESTADISTICO MATERIAS CURSANDO </H1>"
+            "<br>"
+            "<img src='C:/Users/esteban/Desktop/git 7/SCS/SCS/Images/FCC.jfif' width='150' height='150'>"
          "</div>"
          "<div align=right>"
             "PUEBLA,"+QDate::currentDate().toString()+
          "</div>"
          "<br>"
-          "<br>"
-            "<div align=left>"
-            "ESTADISTICA MATERIAS CURSANDO<br>"
-         "<br>"
-         "<br>"
+         "<div align=center>"
+         "<H3>"
+         "BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA"
+         "<br>""<br>"
+         "FACULTAD DE CIENCIAS DE LA COMPUTACIÓN"
+         "</H3>"
+         "</div>"
         "<p align=justify>"
-           "LISTADO "
+         "<h4>""LISTADO""</h4>"
+          "<FONT FACE=times new roman>"
             +PDFESTADISTICA+
+            "</FONT>"
             "</p>"
             "<br>"
             "<br>"
@@ -137,7 +144,7 @@ void administrador::on_Restablecer_contras_clicked()
 
 void administrador::on_est_materias_aprobadas_clicked()
 {
-     QMessageBox::information(this,"PDF Cursadas","El PDF con la estadistica se guardo en tu escritorio.\nGracias.","Aceptar");
+     QMessageBox::information(this,"PDF Materias aprobadas","El PDF con la estadistica se guardo en tu escritorio.\nGracias.","Aceptar");
     int total2016, total2017,Matricula,Porcentaje;
     QSqlQuery estadistico(mdb);
     QString Codigo, Nonbre,MatriculaS;
@@ -189,20 +196,26 @@ void administrador::on_est_materias_aprobadas_clicked()
       qDebug()<< PDFESTADISTICA;
 
     QString html =
-            "<img src='C:/Users/esteban/Desktop/git 6/SCS/SCS/Images/FCC.jfif' width='100' height='100'>"
+            "<H1 align=center>ESTADISTICO MATERIAS APROBADAS </H1>"
+            "<br>"
+            "<img src='C:/Users/esteban/Desktop/git 7/SCS/SCS/Images/FCC.jfif' width='150' height='150'>"
          "</div>"
          "<div align=right>"
             "PUEBLA,"+QDate::currentDate().toString()+
          "</div>"
          "<br>"
-          "<br>"
-            "<div align=left>"
-            "ESTADISTICA MATERIAS Aprobadas<br>"
-         "<br>"
-         "<br>"
+            "<div align=center>"
+            "<H3>"
+            "BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA"
+            "<br>""<br>"
+            "FACULTAD DE CIENCIAS DE LA COMPUTACIÓN"
+            "</H3>"
+            "</div>"
         "<p align=justify>"
-           "LISTADO "
+           "<h4>""LISTADO""</h4>"
+            "<FONT FACE=times new roman>"
             +PDFESTADISTICA+
+            "</FONT>"
             "</p>"
             "<br>"
             "<br>"
@@ -219,4 +232,96 @@ void administrador::on_est_materias_aprobadas_clicked()
     document.print(&printer);
 
     QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/esteban/Desktop/EstadisticosA.pdf"));
+}
+
+void administrador::on_est_materias_porcursar_clicked()
+{
+   QMessageBox::information(this,"PDF materias por cursar","El PDF con la estadistica se guardo en tu escritorio.\nGracias.","Aceptar");
+   int total2016, total2017,Matricula,Porcentaje;
+   QSqlQuery estadistico(mdb);
+   QString Codigo, Nonbre,MatriculaS;
+   estadistico.prepare("select count(*) from porcursar  where Matricula Between 201600000 and 201700000");
+   estadistico.exec();
+   if(estadistico.next())
+   {
+       total2016 = estadistico.value(0).toInt();
+   }
+   estadistico.prepare("select count(*) from porcursar where Matricula Between 201700000 and 201800000");
+   estadistico.exec();
+   if(estadistico.next())
+   {
+       total2017 = estadistico.value(0).toInt();
+   }
+   estadistico.prepare("select Código, count(Matricula) from porcursar where Matricula between 201600000 and 201700000 group by código;");
+   estadistico.exec();
+    while(estadistico.next()){
+        Codigo = estadistico.value(0).toString();
+        Matricula = estadistico.value(1).toInt();
+        //qDebug()<<Matricula;
+        QSqlQuery Nombre(mdb);
+        Nombre.prepare("select Nombre from Materia where Código = '"+Codigo+"'");
+        Nombre.exec();
+        Nombre.next();
+        Nonbre = Nombre.value(0).toString();
+
+        Porcentaje = Matricula;
+        MatriculaS = QString::number(Porcentaje);
+        qDebug() << Porcentaje;
+PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " ""alumnos 2016"" "+"<br>"+"<br>"+"<br>";
+    }
+    qDebug()<< PDFESTADISTICA;
+    estadistico.prepare("select Código, count(Matricula) from porcursar where Matricula between 201700000 and 201800000 group by código;");
+    estadistico.exec();
+     while(estadistico.next()){
+         Codigo = estadistico.value(0).toString();
+         Matricula = estadistico.value(1).toInt();
+         QSqlQuery Nombre(mdb);
+         Nombre.prepare("select Nombre from Materia where Código = '"+Codigo+"'");
+         Nombre.exec();
+         Nombre.next();
+         Nonbre = Nombre.value(0).toString();
+
+         Porcentaje = Matricula;
+         MatriculaS = QString::number(Porcentaje);
+         qDebug() << Porcentaje;
+ PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " ""alumnos 2017"" "+"<br>"+"<br>"+"<br>";
+     }
+     qDebug()<< PDFESTADISTICA;
+
+   QString html =
+           "<H1 align=center>ESTADISTICO MATERIAS POR CURSAR </H1>"
+           "<br>"
+           "<img src='C:/Users/esteban/Desktop/git 7/SCS/SCS/Images/FCC.jfif' width='150' height='150'>"
+        "</div>"
+        "<div align=right>"
+           "PUEBLA,"+QDate::currentDate().toString()+
+        "</div>"
+        "<div align=center>"
+        "<H3>"
+        "BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA"
+        "<br>""<br>"
+        "FACULTAD DE CIENCIAS DE LA COMPUTACIÓN"
+        "</H3>"
+        "</div>"
+       "<p align=justify>"
+        "<h4>""LISTADO""</h4>"
+         "<FONT FACE=times new roman>"
+           +PDFESTADISTICA+
+           "</FONT>"
+           "</p>"
+           "<br>"
+           "<br>"
+           "<br>";
+   QTextDocument document;
+   document.setHtml(html);
+
+   QPrinter printer(QPrinter::PrinterResolution);
+   printer.setOutputFormat(QPrinter::PdfFormat);
+   printer.setPaperSize(QPrinter::A4);
+   printer.setOutputFileName("C:/Users/esteban/Desktop/EstadisticosP.pdf");
+   printer.setPageMargins(QMarginsF(15, 15, 15, 15));
+
+   document.print(&printer);
+
+   QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/esteban/Desktop/EstadisticosP.pdf"));
 }

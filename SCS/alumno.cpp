@@ -4,6 +4,8 @@
 #include "foto.h"
 #include "materias_por_cursar.h"
 #include "ui_materias_por_cursar.h"
+#include "materias_aprobadas.h"
+#include "ui_materias_aprobadas.h"
 #include "mostrar_avance.h"
 #include <QMessageBox>
 
@@ -87,4 +89,11 @@ void alumno::on_Cambio_al_3_clicked()
     mostrar_avance mostrar(Matricula,this);
     mostrar.setWindowTitle("Mostrar Avance");
     mostrar.exec();
+}
+
+void alumno::on_Cambio_al_4_clicked()
+{
+    materias_aprobadas aprobada(Matricula,this);
+    aprobada.setWindowTitle("Materias arobadas");
+    aprobada.exec();
 }
