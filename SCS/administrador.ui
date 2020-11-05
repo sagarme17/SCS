@@ -423,6 +423,24 @@ hover!pressed:border: 5px solid blue;
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="est_materias_porcursar">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>20</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">       background:transparent;
+       border:none;
+       outline:none;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
