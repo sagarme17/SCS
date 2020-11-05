@@ -12,3 +12,8 @@ materias_aprobadas::~materias_aprobadas()
 {
     delete ui;
 }
+
+void materias_aprobadas::on_Regresar_clicked()
+{
+    close();
+}
