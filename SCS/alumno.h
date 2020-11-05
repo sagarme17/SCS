@@ -32,6 +32,8 @@ private slots:
 
     void on_Cambio_al_3_clicked();
 
+    void on_Cambio_al_4_clicked();
+
 private:
     Ui::alumno *ui;
     QString Matricula;

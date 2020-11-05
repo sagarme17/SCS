@@ -12,7 +12,7 @@ class materias_aprobadas : public QDialog
     Q_OBJECT
 
 public:
-    explicit materias_aprobadas(QWidget *parent = nullptr);
+    explicit materias_aprobadas(QString, QWidget *parent = nullptr);
     ~materias_aprobadas();
 
 private:
