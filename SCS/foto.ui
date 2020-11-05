@@ -166,15 +166,22 @@ hover!pressed:border: 5px solid blue;</string>
        <widget class="QLabel" name="Nombre">
         <property name="font">
          <font>
-          <family>Palatino Linotype</family>
-          <pointsize>16</pointsize>
+          <family>Berlin Sans FB Demi</family>
+          <pointsize>9</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">font: 9pt &quot;Berlin Sans FB Demi&quot;;
+</string>
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
@@ -182,15 +189,22 @@ hover!pressed:border: 5px solid blue;</string>
        <widget class="QLabel" name="Matricula">
         <property name="font">
          <font>
-          <family>Palatino Linotype</family>
-          <pointsize>16</pointsize>
+          <family>Berlin Sans FB Demi</family>
+          <pointsize>9</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">font: 9pt &quot;Berlin Sans FB Demi&quot;;
+</string>
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
@@ -198,15 +212,22 @@ hover!pressed:border: 5px solid blue;</string>
        <widget class="QLabel" name="Carrera">
         <property name="font">
          <font>
-          <family>Palatino Linotype</family>
-          <pointsize>16</pointsize>
+          <family>Berlin Sans FB Demi</family>
+          <pointsize>9</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">font: 9pt &quot;Berlin Sans FB Demi&quot;;
+</string>
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>

@@ -37,6 +37,8 @@ Foto::Foto(QString idusuario, QWidget *parent) :
     ui->aver->setPixmap(pix);
     qDebug() << "Encontro la imagen";
 
+    Datos();
+
     }
 }
 
@@ -45,6 +47,28 @@ Foto::~Foto()
     delete ui;
 
 }
+
+void Foto::Datos()
+{
+    QSqlQuery query1(mdb),query2(mdb);
+    QString nombre,matricula;
+    query1.prepare("Select Nombre,ApPaterno,ApMaterno from usuario where Id_usuario='"+Matricula+"'");
+    query1.exec();
+    if(query1.next())
+    {
+        nombre=query1.value(0).toString();
+        ui->Nombre->setText(nombre);
+    }
+    query2.prepare("Select Id_usuario from usuario where Id_usuario='"+Matricula+"'");
+    query2.exec();
+    if(query2.next())
+    {
+        matricula=query2.value(0).toString();
+        ui->Matricula->setText(matricula);
+    }
+    ui->Carrera->setText("Ing. en Ciencias de la Computación");
+}
+
 
 void Foto::on_Actualizar_clicked()
 {
@@ -69,4 +93,9 @@ void Foto::on_Actualizar_clicked()
 
 
 
+}
+
+void Foto::on_Regresar_clicked()
+{
+    close();
 }

@@ -15,6 +15,9 @@ public:
     explicit materias_aprobadas(QString, QWidget *parent = nullptr);
     ~materias_aprobadas();
 
+private slots:
+    void on_Regresar_clicked();
+
 private:
     Ui::materias_aprobadas *ui;
 };
