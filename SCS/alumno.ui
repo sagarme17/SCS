@@ -335,7 +335,7 @@ hover!pressed:border: 5px solid blue;
        <x>250</x>
        <y>20</y>
        <width>91</width>
-       <height>81</height>
+       <height>91</height>
       </rect>
      </property>
      <property name="text">
@@ -354,7 +354,7 @@ hover!pressed:border: 5px solid blue;
        <x>150</x>
        <y>260</y>
        <width>91</width>
-       <height>91</height>
+       <height>101</height>
       </rect>
      </property>
      <property name="text">
@@ -393,7 +393,7 @@ hover!pressed:border: 5px solid blue;
        <x>250</x>
        <y>30</y>
        <width>91</width>
-       <height>71</height>
+       <height>81</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -433,7 +433,7 @@ hover!pressed:border: 5px solid blue;
        <x>60</x>
        <y>140</y>
        <width>91</width>
-       <height>81</height>
+       <height>91</height>
       </rect>
      </property>
      <property name="text">
@@ -471,7 +471,7 @@ hover!pressed:border: 5px solid blue;
        <x>250</x>
        <y>140</y>
        <width>91</width>
-       <height>81</height>
+       <height>91</height>
       </rect>
      </property>
      <property name="text">
@@ -507,7 +507,7 @@ hover!pressed:border: 5px solid blue;
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>140</y>
+       <y>150</y>
        <width>91</width>
        <height>81</height>
       </rect>
