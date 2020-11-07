@@ -94,6 +94,6 @@ void alumno::on_Cambio_al_3_clicked()
 void alumno::on_Cambio_al_4_clicked()
 {
     materias_aprobadas aprobada(Matricula,this);
-    aprobada.setWindowTitle("Materias arobadas");
+    aprobada.setWindowTitle("Materias aprobadas");
     aprobada.exec();
 }

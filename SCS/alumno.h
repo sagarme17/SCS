@@ -24,8 +24,6 @@ private slots:
 
     void on_Cerrar_Sesion_clicked();
 
-
-
     void on_Cambiar_Foto_clicked();
 
     void on_Cambio_al_2_clicked();

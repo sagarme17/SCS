@@ -124,9 +124,9 @@ background:transparent;
    <widget class="QTableWidget" name="marcar">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>130</x>
       <y>180</y>
-      <width>711</width>
+      <width>611</width>
       <height>351</height>
      </rect>
     </property>
@@ -135,6 +135,18 @@ background:transparent;
 background-color: #1DE9B6;  
 </string>
     </property>
+    <property name="columnCount">
+     <number>6</number>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderHighlightSections">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
     <column>
      <property name="text">
       <string>Codigo</string>
@@ -160,19 +172,19 @@ background-color: #1DE9B6;
     </column>
     <column>
      <property name="text">
-      <string>Estado</string>
+      <string>Marcar</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Marcar</string>
+      <string>Cambiar</string>
      </property>
     </column>
    </widget>
    <widget class="QPushButton" name="Regresar">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>370</x>
       <y>570</y>
       <width>131</width>
       <height>31</height>
@@ -186,25 +198,6 @@ border: 2px ;
     </property>
     <property name="text">
      <string>Regresar</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Aceptar">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>570</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #1DE9B6; 
-font: 14pt 75 &quot;Times New Roman&quot;;
-border: 2px ;
-    border-radius: 9px;</string>
-    </property>
-    <property name="text">
-     <string>Aceptar</string>
     </property>
    </widget>
   </widget>
