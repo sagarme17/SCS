@@ -22,10 +22,7 @@ public:
 private slots:
     void on_Regresar_clicked();
 
-    void btnEstclicked();
-    void cambioCombo(const QString &);
-
-
+    void on_Actualizar_clicked();
 
 private:
     Ui::materias_aprobadas *ui;
