@@ -27,7 +27,8 @@ SOURCES += \
     materias_por_cursar.cpp \
     mostrar_avance.cpp \
     reestablecer_contrasenia.cpp \
-    restablecer_contrasena1.cpp
+    restablecer_contrasena1.cpp \
+    visualizar_materias.cpp
 
 HEADERS += \
     administrador.h \
@@ -39,7 +40,8 @@ HEADERS += \
     materias_por_cursar.h \
     mostrar_avance.h \
     reestablecer_contrasenia.h \
-    restablecer_contrasena1.h
+    restablecer_contrasena1.h \
+    visualizar_materias.h
 
 FORMS += \
     administrador.ui \
@@ -51,7 +53,8 @@ FORMS += \
     materias_por_cursar.ui \
     mostrar_avance.ui \
     reestablecer_contrasenia.ui \
-    restablecer_contrasena1.ui
+    restablecer_contrasena1.ui \
+    visualizar_materias.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

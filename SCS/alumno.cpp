@@ -6,6 +6,8 @@
 #include "ui_materias_por_cursar.h"
 #include "materias_aprobadas.h"
 #include "ui_materias_aprobadas.h"
+#include "visualizar_materias.h"
+#include "ui_visualizar_materias.h"
 #include "mostrar_avance.h"
 #include <QMessageBox>
 
@@ -96,4 +98,11 @@ void alumno::on_Cambio_al_4_clicked()
     materias_aprobadas aprobada(Matricula,this);
     aprobada.setWindowTitle("Materias aprobadas");
     aprobada.exec();
+}
+
+void alumno::on_Cambio_al_6_clicked()
+{
+    visualizar_materias materias(Matricula,this);
+    materias.setWindowTitle("Proyección de materias");
+    materias.exec();
 }
