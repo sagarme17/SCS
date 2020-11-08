@@ -124,9 +124,9 @@ background:transparent;
    <widget class="QTableWidget" name="marcar">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>180</x>
       <y>180</y>
-      <width>611</width>
+      <width>531</width>
       <height>351</height>
      </rect>
     </property>
@@ -136,7 +136,7 @@ background-color: #1DE9B6;
 </string>
     </property>
     <property name="columnCount">
-     <number>6</number>
+     <number>5</number>
     </property>
     <attribute name="horizontalHeaderVisible">
      <bool>true</bool>
@@ -149,7 +149,7 @@ background-color: #1DE9B6;
     </attribute>
     <column>
      <property name="text">
-      <string>Codigo</string>
+      <string>Código</string>
      </property>
      <property name="textAlignment">
       <set>AlignCenter</set>
@@ -167,25 +167,20 @@ background-color: #1DE9B6;
     </column>
     <column>
      <property name="text">
-      <string>Creditos</string>
+      <string>Créditos</string>
      </property>
     </column>
     <column>
      <property name="text">
-      <string>Marcar</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Cambiar</string>
+      <string>Estado</string>
      </property>
     </column>
    </widget>
    <widget class="QPushButton" name="Regresar">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>570</y>
+      <x>90</x>
+      <y>590</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -198,6 +193,28 @@ border: 2px ;
     </property>
     <property name="text">
      <string>Regresar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Actualizar">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>590</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1DE9B6; 
+font: 14pt 75 &quot;Times New Roman&quot;;
+border: 2px ;
+    border-radius: 9px;</string>
+    </property>
+    <property name="text">
+     <string>Actualizar</string>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
