@@ -26,7 +26,9 @@ public:
     /*---Pruebas Sprint 3---*/
     bool VisualizarAvance(int);
     bool generarPDFAprobado(int);
-
+    /*---Pruebas Sprint 4 --*/
+    bool VisualizarProyeccion(int);
+    bool marcar_Materias(int, QString,QString);
 
 
 

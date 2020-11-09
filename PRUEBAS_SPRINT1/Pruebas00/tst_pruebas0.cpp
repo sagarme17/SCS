@@ -32,6 +32,9 @@ private slots:
     void MateriasPorCursar();
     void MapaGrafico();
     void GenerarEstAprobado();
+    void visualizarProyeccion();
+    void marcar_Materias();
+
 
 
 };
@@ -93,12 +96,21 @@ void Pruebas0::MateriasPorCursar()
 }
 void Pruebas0::MapaGrafico()
 {
-   QCOMPARE(conexion->VisualizarAvance(201617847),true);
+   //QCOMPARE(conexion->VisualizarAvance(201617847),true);
 }
 void Pruebas0::GenerarEstAprobado()
 {
-    QCOMPARE(conexion->generarPDFAprobado(201624489),true);
+    //QCOMPARE(conexion->generarPDFAprobado(201624489),true);
 }
+void Pruebas0::visualizarProyeccion()
+{
+   // QCOMPARE(conexion->VisualizarProyeccion(201617587),true);
+}
+void Pruebas0::marcar_Materias()
+{
+    QCOMPARE(conexion->marcar_Materias(201617587,"FGUS 001","Aprobada"),true);
+}
+
 QTEST_APPLESS_MAIN(Pruebas0)
 
 #include "tst_pruebas0.moc"
