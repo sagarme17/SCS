@@ -17,6 +17,7 @@ class visualizar_materias : public QDialog
 public:
     explicit visualizar_materias(QString matricula,QWidget *parent = nullptr);
     ~visualizar_materias();
+    void LlenarTabla();
 
 private slots:
     void on_Regresar_clicked();
