@@ -146,15 +146,15 @@ bool baseDatos::generarPDF(int matricula)
     if(acceso.next())
       {
         qDebug()<<"Matricula Existente";
-        query1.prepare("select Código from alumno inner join cursando on alumno.Matricula=cursando.Matricula where alumno.Matricula='"+matriculaA+"'");
+        query1.prepare("select Codigo from alumno inner join cursando on alumno.Matricula=cursando.Matricula where alumno.Matricula='"+matriculaA+"'");
         query1.exec();
         qDebug()<<"------Materias cursando------";
         while (query1.next()) {
             cod=query1.value(0).toString();
-            qDebug()<<"Código_Materia es: "+cod;
-            query2.prepare("select Creditos from materia where Código='"+cod+"'");
+            qDebug()<<"Codigo_Materia es: "+cod;
+            query2.prepare("select Creditos from materia where Codigo='"+cod+"'");
             query2.exec();
-            query3.prepare("select Horas_PeriodoPT from materia where Código='"+cod+"'");
+            query3.prepare("select Horas_PeriodoPT from materia where Codigo='"+cod+"'");
             query3.exec();
            if(query2.next() and query3.next())
             {
@@ -243,19 +243,19 @@ bool baseDatos::MarcarMateriasPorCursar(int matricula, QString codigo)
     QSqlQuery query1(mDatabase),query2(mDatabase),registro(mDatabase),query3(mDatabase);
     QString matriculaA=QString::number(matricula),pre;
     /*Verifico se la materia que quiero marcar tiene prerequisito*/
-    query1.prepare("select CódigoPre from materia inner join prerequisito on materia.Código=prerequisito.Código where prerequisito.Código='"+codigo+"'");
+    query1.prepare("select CodigoPre from materia inner join prerequisito on materia.Codigo=prerequisito.Codigo where prerequisito.Codigo='"+codigo+"'");
     query1.exec();
     if(query1.next()) {
         pre=query1.value(0).toString();
         qDebug()<<"Materia con prerequisito "+pre;
         /*Verifico que esta como prerequisito ya la aprobe*/
-        query2.prepare("select Código from alumno inner join aprobado on alumno.Matricula=aprobado.Matricula where aprobado.Matricula='"+matriculaA+"' and aprobado.Código='"+pre+"'");
+        query2.prepare("select Codigo from alumno inner join aprobado on alumno.Matricula=aprobado.Matricula where aprobado.Matricula='"+matriculaA+"' and aprobado.Codigo='"+pre+"'");
         query2.exec();
         if(query2.next())
         {
             qDebug()<<"La materia prerequisito "+pre+" esta aprobada";
             /*Cargar materia a tabla de porcursar*/
-            if(registro.exec("INSERT INTO porcursar (`Matricula`, `Código`) VALUES ('"+matriculaA+"', '"+codigo+"')"))
+            if(registro.exec("INSERT INTO porcursar (`Matricula`, `Codigo`) VALUES ('"+matriculaA+"', '"+codigo+"')"))
             {
                 qDebug()<<"Materia "+codigo+ "marcada como PorCursar";
                 return true;
@@ -268,14 +268,14 @@ bool baseDatos::MarcarMateriasPorCursar(int matricula, QString codigo)
         }
         else
         {
-           qDebug()<<"La materia con código "+pre+" no esta aprobada";
+           qDebug()<<"La materia con Codigo "+pre+" no esta aprobada";
            return false;
         }
     }else
     {
         qDebug()<<"Materia SIN prerequisito ";
         qDebug()<<"Se restablecio la contraseña del alumno: "+matriculaA;
-        query2.prepare("INSERT INTO porcursar (`Matricula`, `Código`) VALUES ('"+matriculaA+"', '"+codigo+"')");
+        query2.prepare("INSERT INTO porcursar (`Matricula`, `Codigo`) VALUES ('"+matriculaA+"', '"+codigo+"')");
         query2.exec();
         query2.next();
         qDebug()<<"Se ha cargado la materia "+codigo+" al alumno "+matriculaA;
@@ -299,16 +299,16 @@ bool baseDatos::VisualizarAvance(int matricula)
       {
         qDebug()<<"Matricula Existente";
         /*----------------------------*/
-        query1.prepare("select Código from alumno inner join aprobado on alumno.Matricula=aprobado.Matricula where alumno.Matricula='"+matriculaA+"'");
+        query1.prepare("select Codigo from alumno inner join aprobado on alumno.Matricula=aprobado.Matricula where alumno.Matricula='"+matriculaA+"'");
         query1.exec();
         qDebug()<<"------Materias Aprobadas------";
         while (query1.next()) {
             matA++;
             cod=query1.value(0).toString();
-            qDebug()<<"Código_Materia es: "+cod;
-            query2.prepare("select Creditos from materia where Código='"+cod+"'");
+            qDebug()<<"Codigo_Materia es: "+cod;
+            query2.prepare("select Creditos from materia where Codigo='"+cod+"'");
             query2.exec();
-            query3.prepare("select Horas_PeriodoPT from materia where Código='"+cod+"'");
+            query3.prepare("select Horas_PeriodoPT from materia where Codigo='"+cod+"'");
             query3.exec();
            if(query2.next() and query3.next())
             {
@@ -325,16 +325,16 @@ bool baseDatos::VisualizarAvance(int matricula)
         qDebug()<<"El total de creditos APROBADOS son: "+totalN;
         qDebug()<<"El total de horas(Teoria y practica) APROBADAS son: "+QString::number(totalH);
         /*----------------------------*/
-        query4.prepare("select Código from alumno inner join cursando on alumno.Matricula=cursando.Matricula where alumno.Matricula='"+matriculaA+"'");
+        query4.prepare("select Codigo from alumno inner join cursando on alumno.Matricula=cursando.Matricula where alumno.Matricula='"+matriculaA+"'");
         query4.exec();
         qDebug()<<"------Materias cursando------";
         while (query4.next()) {
             matC++;
             cod=query4.value(0).toString();
-            qDebug()<<"Código_Materia es: "+cod;
-            query5.prepare("select Creditos from materia where Código='"+cod+"'");
+            qDebug()<<"Codigo_Materia es: "+cod;
+            query5.prepare("select Creditos from materia where Codigo='"+cod+"'");
             query5.exec();
-            query6.prepare("select Horas_PeriodoPT from materia where Código='"+cod+"'");
+            query6.prepare("select Horas_PeriodoPT from materia where Codigo='"+cod+"'");
             query6.exec();
            if(query5.next() and query6.next())
             {
@@ -351,16 +351,16 @@ bool baseDatos::VisualizarAvance(int matricula)
         qDebug()<<"El total de creditos CURSANDO son: "+totalNC;
         qDebug()<<"El total de horas(Teoria y practica) CURSANDO son: "+QString::number(totalHC);
         /*-------------------------------*/
-        query7.prepare("select Código from alumno inner join porcursar on alumno.Matricula=porcursar.Matricula where alumno.Matricula='"+matriculaA+"'");
+        query7.prepare("select Codigo from alumno inner join porcursar on alumno.Matricula=porcursar.Matricula where alumno.Matricula='"+matriculaA+"'");
         query7.exec();
         qDebug()<<"------Materias PorCursar------";
         while (query7.next()) {
             matP++;
             cod=query7.value(0).toString();
-            qDebug()<<"Código_Materia es: "+cod;
-            query8.prepare("select Creditos from materia where Código='"+cod+"'");
+            qDebug()<<"Codigo_Materia es: "+cod;
+            query8.prepare("select Creditos from materia where Codigo='"+cod+"'");
             query8.exec();
-            query9.prepare("select Horas_PeriodoPT from materia where Código='"+cod+"'");
+            query9.prepare("select Horas_PeriodoPT from materia where Codigo='"+cod+"'");
             query9.exec();
            if(query8.next() and query9.next())
             {
@@ -396,15 +396,15 @@ bool baseDatos::generarPDFAprobado(int matricula)
     if(acceso.next())
       {
         qDebug()<<"Matricula Existente";
-        query1.prepare("select Código from alumno inner join aprobado on alumno.Matricula=aprobado.Matricula where alumno.Matricula='"+matriculaA+"'");
+        query1.prepare("select Codigo from alumno inner join aprobado on alumno.Matricula=aprobado.Matricula where alumno.Matricula='"+matriculaA+"'");
         query1.exec();
         qDebug()<<"------Materias Aprobadas------";
         while (query1.next()) {
             cod=query1.value(0).toString();
-            qDebug()<<"Código_Materia es: "+cod;
-            query2.prepare("select Creditos from materia where Código='"+cod+"'");
+            qDebug()<<"Codigo_Materia es: "+cod;
+            query2.prepare("select Creditos from materia where Codigo='"+cod+"'");
             query2.exec();
-            query3.prepare("select Horas_PeriodoPT from materia where Código='"+cod+"'");
+            query3.prepare("select Horas_PeriodoPT from materia where Codigo='"+cod+"'");
             query3.exec();
            if(query2.next() and query3.next())
             {
@@ -438,20 +438,20 @@ bool baseDatos::VisualizarProyeccion(int matricula){
     if(acceso.next())
       {
         qDebug()<<"Matricula Existente";
-        query1.prepare("select Código from aprobado where matricula ='"+matriculaA+"'");
+        query1.prepare("select Codigo from aprobado where matricula ='"+matriculaA+"'");
         query1.exec();
         qDebug()<<"------Proyeccion de materias------";
         while (query1.next()) {
             cod=query1.value(0).toString();
-            //qDebug()<<"Código_Materia es: "+cod;
-            query2.prepare("select código from prerequisito where códigoPre ='"+cod+"'");
+            //qDebug()<<"Codigo_Materia es: "+cod;
+            query2.prepare("select Codigo from prerequisito where CodigoPre ='"+cod+"'");
             query2.exec();
            while(query2.next()){
            CODIGOPRE = query2.value(0).toString();
            qDebug()<<"Codigo Materia: "+ CODIGOPRE;
-            query3.prepare("select Horas_PeriodoPT from materia where Código = '"+cod+"'");
+            query3.prepare("select Horas_PeriodoPT from materia where Codigo = '"+cod+"'");
             query3.exec();
-            query4.prepare("select Creditos from materia where Código='"+cod+"'");
+            query4.prepare("select Creditos from materia where Codigo='"+cod+"'");
             query4.exec();
             if(query3.next() and query4.next())
              {
@@ -484,20 +484,20 @@ bool baseDatos::marcar_Materias(int matricula,QString codigo, QString decision){
     if(acceso.next())
       {
         if(decision == "Aprobada"){
-        query1.prepare("INSERT INTO aprobado (Matricula, Código) VALUES ('"+matriculaA+"', '"+codigo+"')");
+        query1.prepare("INSERT INTO aprobado (Matricula, Codigo) VALUES ('"+matriculaA+"', '"+codigo+"')");
         query1.exec();
         query1.next();
             qDebug()<<"Materia aprobada" + codigo;
             query1.clear();
 
-            query2.prepare("DELETE FROM cursando WHERE (Matricula = '"+matriculaA+"') and (Código = '"+codigo+"')");
+            query2.prepare("DELETE FROM cursando WHERE (Matricula = '"+matriculaA+"') and (Codigo = '"+codigo+"')");
             query2.exec();
             query2.next();
             query2.clear();
             qDebug()<<"Materia Eliminada de tabla " + codigo;
 
        }else if(decision == "Reprobada"){
-        query3.prepare("DELETE FROM cursando WHERE (Matricula = '"+matriculaA+"') and (Código = '"+codigo+"')");
+        query3.prepare("DELETE FROM cursando WHERE (Matricula = '"+matriculaA+"') and (Codigo = '"+codigo+"')");
         query3.exec();
         query3.next();
         query3.clear();
@@ -510,5 +510,62 @@ bool baseDatos::marcar_Materias(int matricula,QString codigo, QString decision){
               return false;
     }
 
+
+}
+bool baseDatos::generar_PDF_MateriasCursando(int matricula){
+    QSqlQuery acceso(mDatabase),query1(mDatabase),query2(mDatabase),query3(mDatabase);
+    QSqlQuery query4(mDatabase),query5(mDatabase),query6(mDatabase);
+    QSqlQuery query7(mDatabase),query8(mDatabase),query9(mDatabase);
+    QSqlQuery numMaterias(mDatabase);
+    QString matriculaA=QString::number(matricula),Codigo,Nonbre,totalPeriodo,totalNC,totalNP;
+    int total2016=0,total2017=0,Matricula,Porcentaje=0;
+    acceso.prepare("Select * from administrador where Id_Administrador='"+matriculaA+"'");
+    acceso.exec();
+    if(acceso.next()){
+        qDebug()<<"Acceso Permitido";
+        query1.prepare("select count(*) from porcursar  where Matricula Between 201600000 and 201700000;");
+        query1.exec();
+        if(query1.next()){
+            total2016 = query1.value(0).toInt();
+            qDebug()<<"El total de 2016: "+ QString::number(total2016);
+        }
+        query1.prepare("select count(*) from porcursar where Matricula Between 201700000 and 201800000");
+        query1.exec();
+        if(query1.next()){
+            total2017 = query1.value(0).toInt();
+            qDebug()<<"El total de 2017: "+ QString::number(total2017);
+        }
+
+        query2.prepare("select Código, count(Matricula) from porcursar where Matricula between 201600000 and 201700000 group by Código;");
+        query2.exec();
+        while (query2.next()) {
+            Codigo = query2.value(0).toString();
+            Matricula = query2.value(1).toInt();
+            query3.prepare("select Nombre from Materia where Código = '"+Codigo+"'");
+            query3.exec();
+            query3.next();
+            Nonbre = query3.value(0).toString();
+
+            Porcentaje = Matricula;
+            qDebug()<< "  "+ Codigo+ " "+ Nonbre+ " "+ " "+Porcentaje+ " Alumnos 2016";
+        }
+        query2.prepare("select Código, count(Matricula) from porcursar where Matricula between 201700000 and 201800000 group by Código;");
+        query2.exec();
+        while (query2.next()) {
+            Codigo = query2.value(0).toString();
+            Matricula = query2.value(1).toInt();
+            query3.prepare("select Nombre from Materia where Código = '"+Codigo+"'");
+            query3.exec();
+            query3.next();
+            Nonbre = query3.value(0).toString();
+
+            Porcentaje = Matricula;
+            qDebug()<< "  "+ Codigo+ " "+ Nonbre+ " "+ " "+Porcentaje+ " Alumnos 2017";
+        }
+    return true;
+    }else{
+        qDebug()<<"ERROR_ NO SE GENERA ESTADISTICA";
+    return false;
+    }
 
 }

@@ -29,6 +29,8 @@ public:
     /*---Pruebas Sprint 4 --*/
     bool VisualizarProyeccion(int);
     bool marcar_Materias(int, QString,QString);
+    bool generar_PDF_MateriasCursando(int);
+
 
 
 

@@ -34,6 +34,7 @@ private slots:
     void GenerarEstAprobado();
     void visualizarProyeccion();
     void marcar_Materias();
+    void generar_PDF_Por_Cursar();
 
 
 
@@ -108,7 +109,11 @@ void Pruebas0::visualizarProyeccion()
 }
 void Pruebas0::marcar_Materias()
 {
-    QCOMPARE(conexion->marcar_Materias(201617587,"FGUS 001","Aprobada"),true);
+    //QCOMPARE(conexion->marcar_Materias(201617587,"FGUS 001","Aprobada"),true);
+}
+void Pruebas0::generar_PDF_Por_Cursar()
+{
+    QCOMPARE(conexion->generar_PDF_MateriasCursando(202000000),true);
 }
 
 QTEST_APPLESS_MAIN(Pruebas0)
