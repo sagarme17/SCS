@@ -569,3 +569,51 @@ bool baseDatos::generar_PDF_MateriasCursando(int matricula){
     }
 
 }
+
+bool baseDatos::generar_pdf_formato_kardex(int matricula)
+{
+    QSqlQuery a(mDatabase),b(mDatabase);
+    int Matricula,Porcentaje;
+    QString matriculaA=QString::number(matricula);
+    QString MatriculaS;
+    a.prepare("select * from aprobado where Matricula='"+matriculaA+"'");
+    a.exec();
+    if(a.next())
+    {
+        qDebug()<<"matricula con materias aprobadas";
+        return true;
+        b.prepare("select count(*) from aprobado where Matricula='"+matriculaA+"'");
+        b.exec();
+        Matricula= b.value(1).toInt();
+        Porcentaje = (Matricula * 100)/50;
+        MatriculaS = QString::number(Porcentaje);
+        qDebug() << "Este es tu avanze en la carrera "+Porcentaje;
+    }
+    else
+    {
+        qDebug()<<"Matricula invalida ";
+        return false;
+    }
+}
+
+bool baseDatos::marcar_materias_cursando(int matricula, QString codigo, QString decision)
+{
+     QSqlQuery acceso(mDatabase),query1(mDatabase),query2(mDatabase),query3(mDatabase);
+     QString matriculaA=QString::number(matricula),cod,totalN,totalPeriodo;
+     acceso.prepare("Select * from alumno where Matricula='"+matriculaA+"'");
+     acceso.exec();
+     if(acceso.next())
+       {
+         if(decision == "Marcada"){
+         query1.prepare("INSERT INTO cursando (Matricula, Código) VALUES ('"+matriculaA+"', '"+codigo+"')");
+         query1.exec();
+         query1.next();
+             qDebug()<<"Materia cursando " + codigo;
+             query1.clear();
+             return true;
+        }
+     }else{
+         qDebug()<<"Deben ser 6 materias";
+               return false;
+     }
+}
