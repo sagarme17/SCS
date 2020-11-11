@@ -30,6 +30,9 @@ public:
     bool VisualizarProyeccion(int);
     bool marcar_Materias(int, QString,QString);
     bool generar_PDF_MateriasCursando(int);
+    /*---Pruebas Sprint 5---*/
+    bool generar_pdf_formato_kardex(int);
+    bool marcar_materias_cursando(int,QString,QString);
 
 
 
