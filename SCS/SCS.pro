@@ -23,6 +23,7 @@ SOURCES += \
     foto.cpp \
     inicio.cpp \
     main.cpp \
+    marcar_materias_cursando.cpp \
     materias_aprobadas.cpp \
     materias_por_cursar.cpp \
     mostrar_avance.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     cambiar_contrasena.h \
     foto.h \
     inicio.h \
+    marcar_materias_cursando.h \
     materias_aprobadas.h \
     materias_por_cursar.h \
     mostrar_avance.h \
@@ -49,6 +51,7 @@ FORMS += \
     cambiar_contrasena.ui \
     foto.ui \
     inicio.ui \
+    marcar_materias_cursando.ui \
     materias_aprobadas.ui \
     materias_por_cursar.ui \
     mostrar_avance.ui \
