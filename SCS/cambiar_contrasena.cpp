@@ -56,5 +56,18 @@ void Cambiar_Contrasena::on_Actualizar_clicked()
 
 void Cambiar_Contrasena::on_Regresar_clicked()
 {
+    QSqlQuery regre;
+    QString re;
+    regre.prepare("select Contraseña from usuario where Id_Usuario='"+id_usuario+"'");
+    regre.exec();
+    regre.next();
+    re=regre.value(0).toString();
+    if(id_usuario==re)
+    {
     close();
+    }
+    else
+    {
+         QMessageBox::critical(this,"Error","La contraseña no debe ser igual a tu matricula.","Aceptar");
+    }
 }

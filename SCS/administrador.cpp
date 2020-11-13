@@ -8,6 +8,7 @@
 #include <QTextDocument>
 #include <QDesktopServices>
 #include <QMessageBox>
+#include <QFileDialog>
 
 
 administrador::administrador(QString Id_Administrador,QWidget *parent) :
@@ -45,7 +46,6 @@ void administrador::on_Cerrar_Sesion_clicked()
 
 void administrador::on_est_Materias_cursando_clicked()
 {
-       QMessageBox::information(this,"PDF Materias cursando","El PDF con la estadistica se guardo en tu escritorio.\nGracias.","Aceptar");
     int total2016, total2017,Matricula,Porcentaje;
     QSqlQuery estadistico(mdb);
     QString Codigo, Nonbre,MatriculaS;
@@ -75,9 +75,9 @@ void administrador::on_est_Materias_cursando_clicked()
          Porcentaje = (Matricula * 100)/total2016;
          MatriculaS = QString::number(Porcentaje);
          qDebug() << Porcentaje;
- PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%"+"<br>"+"<br>"+"<br>";
+ Cursando += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%"+"<br>"+"<br>"+"<br>";
      }
-     qDebug()<< PDFESTADISTICA;
+     qDebug()<< Cursando;
      estadistico.prepare("select Código, count(Matricula) from cursando where Matricula between 201700000 and 201800000 group by código;");
      estadistico.exec();
       while(estadistico.next()){
@@ -92,9 +92,9 @@ void administrador::on_est_Materias_cursando_clicked()
           Porcentaje = (Matricula * 100)/total2017;
           MatriculaS = QString::number(Porcentaje);
           qDebug() << Porcentaje;
-  PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%"+"<br>"+"<br>"+"<br>";
+  Cursando += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%"+"<br>"+"<br>"+"<br>";
       }
-      qDebug()<< PDFESTADISTICA;
+      qDebug()<< Cursando;
 
     QString html =
             "<H1 align=center>ESTADISTICO MATERIAS CURSANDO </H1>"
@@ -115,24 +115,27 @@ void administrador::on_est_Materias_cursando_clicked()
         "<p align=justify>"
          "<h4>""LISTADO""</h4>"
           "<FONT FACE=times new roman>"
-            +PDFESTADISTICA+
+            +Cursando+
             "</FONT>"
             "</p>"
             "<br>"
             "<br>"
             "<br>";
-    QTextDocument document;
-    document.setHtml(html);
+    QTextDocument docume;
+    docume.setHtml(html);
 
     QPrinter printer(QPrinter::PrinterResolution);
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setPaperSize(QPrinter::A4);
-    printer.setOutputFileName("C:/Users/esteban/Desktop/Estadisticos.pdf");
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Guardar Archivo"),
+                                   "C:/Users/HP/Desktop/Estadistico materias cursando.pdf",
+                                   tr("PDF-Files (*.pdf)"));
+    printer.setOutputFileName(fileName);
     printer.setPageMargins(QMarginsF(15, 15, 15, 15));
 
-    document.print(&printer);
+    docume.print(&printer);
 
-    QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/esteban/Desktop/Estadisticos.pdf"));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(fileName));
 }
 
 void administrador::on_Restablecer_contras_clicked()
@@ -144,7 +147,6 @@ void administrador::on_Restablecer_contras_clicked()
 
 void administrador::on_est_materias_aprobadas_clicked()
 {
-     QMessageBox::information(this,"PDF Materias aprobadas","El PDF con la estadistica se guardo en tu escritorio.\nGracias.","Aceptar");
     int total2016, total2017,Matricula,Porcentaje;
     QSqlQuery estadistico(mdb);
     QString Codigo, Nonbre,MatriculaS;
@@ -174,9 +176,9 @@ void administrador::on_est_materias_aprobadas_clicked()
          Porcentaje = (Matricula * 100)/total2016;
          MatriculaS = QString::number(Porcentaje);
          qDebug() << Porcentaje;
- PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%"+"<br>"+"<br>"+"<br>";
+ Aprobada += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%"+"<br>"+"<br>"+"<br>";
      }
-     qDebug()<< PDFESTADISTICA;
+     qDebug()<< Aprobada;
      estadistico.prepare("select Código, count(Matricula) from aprobado where Matricula between 201700000 and 201800000 group by código;");
      estadistico.exec();
       while(estadistico.next()){
@@ -191,9 +193,9 @@ void administrador::on_est_materias_aprobadas_clicked()
           Porcentaje = (Matricula * 100)/total2017;
           MatriculaS = QString::number(Porcentaje);
           qDebug() << Porcentaje;
-  PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%"+"<br>"+"<br>"+"<br>";
+  Aprobada += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " "+ "%"+"<br>"+"<br>"+"<br>";
       }
-      qDebug()<< PDFESTADISTICA;
+      qDebug()<< Aprobada;
 
     QString html =
             "<H1 align=center>ESTADISTICO MATERIAS APROBADAS </H1>"
@@ -214,29 +216,31 @@ void administrador::on_est_materias_aprobadas_clicked()
         "<p align=justify>"
            "<h4>""LISTADO""</h4>"
             "<FONT FACE=times new roman>"
-            +PDFESTADISTICA+
+            +Aprobada+
             "</FONT>"
             "</p>"
             "<br>"
             "<br>"
             "<br>";
-    QTextDocument document;
-    document.setHtml(html);
+    QTextDocument documento;
+    documento.setHtml(html);
 
     QPrinter printer(QPrinter::PrinterResolution);
     printer.setOutputFormat(QPrinter::PdfFormat);
     printer.setPaperSize(QPrinter::A4);
-    printer.setOutputFileName("C:/Users/esteban/Desktop/EstadisticosA.pdf");
+    QString Name = QFileDialog::getSaveFileName(this, tr("Guardar Archivo"),
+                                   "C:/Users/HP/Desktop/Estadistico materias aprobadas.pdf",
+                                   tr("PDF-Files (*.pdf)"));
+    printer.setOutputFileName(Name);
     printer.setPageMargins(QMarginsF(15, 15, 15, 15));
 
-    document.print(&printer);
+    documento.print(&printer);
 
-    QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/esteban/Desktop/EstadisticosA.pdf"));
+    QDesktopServices::openUrl(QUrl::fromLocalFile(Name));
 }
 
 void administrador::on_est_materias_porcursar_clicked()
 {
-   QMessageBox::information(this,"PDF materias por cursar","El PDF con la estadistica se guardo en tu escritorio.\nGracias.","Aceptar");
    int total2016, total2017,Matricula,Porcentaje;
    QSqlQuery estadistico(mdb);
    QString Codigo, Nonbre,MatriculaS;
@@ -267,9 +271,9 @@ void administrador::on_est_materias_porcursar_clicked()
         Porcentaje = Matricula;
         MatriculaS = QString::number(Porcentaje);
         qDebug() << Porcentaje;
-PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " ""alumnos 2016"" "+"<br>"+"<br>"+"<br>";
+PCursar += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " ""alumnos 2016"" "+"<br>"+"<br>"+"<br>";
     }
-    qDebug()<< PDFESTADISTICA;
+    qDebug()<< PCursar;
     estadistico.prepare("select Código, count(Matricula) from porcursar where Matricula between 201700000 and 201800000 group by código;");
     estadistico.exec();
      while(estadistico.next()){
@@ -284,9 +288,9 @@ PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " ""alumnos 2016
          Porcentaje = Matricula;
          MatriculaS = QString::number(Porcentaje);
          qDebug() << Porcentaje;
- PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " ""alumnos 2017"" "+"<br>"+"<br>"+"<br>";
+ PCursar += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " ""alumnos 2017"" "+"<br>"+"<br>"+"<br>";
      }
-     qDebug()<< PDFESTADISTICA;
+     qDebug()<< PCursar;
 
    QString html =
            "<H1 align=center>ESTADISTICO MATERIAS POR CURSAR </H1>"
@@ -306,7 +310,7 @@ PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " ""alumnos 2016
        "<p align=justify>"
         "<h4>""LISTADO""</h4>"
          "<FONT FACE=times new roman>"
-           +PDFESTADISTICA+
+           +PCursar+
            "</FONT>"
            "</p>"
            "<br>"
@@ -315,13 +319,16 @@ PDFESTADISTICA += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " ""alumnos 2016
    QTextDocument document;
    document.setHtml(html);
 
-   QPrinter printer(QPrinter::PrinterResolution);
-   printer.setOutputFormat(QPrinter::PdfFormat);
-   printer.setPaperSize(QPrinter::A4);
-   printer.setOutputFileName("C:/Users/esteban/Desktop/EstadisticosP.pdf");
-   printer.setPageMargins(QMarginsF(15, 15, 15, 15));
+   QPrinter printe(QPrinter::PrinterResolution);
+   printe.setOutputFormat(QPrinter::PdfFormat);
+   printe.setPaperSize(QPrinter::A4);
+   QString file = QFileDialog::getSaveFileName(this, tr("Guardar Archivo"),
+                                  "C:/Users/HP/Desktop/Estadistico materias por cursar.pdf",
+                                  tr("PDF-Files (*.pdf)"));
+   printe.setOutputFileName(file);
+   printe.setPageMargins(QMarginsF(15, 15, 15, 15));
 
-   document.print(&printer);
+   document.print(&printe);
 
-   QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/esteban/Desktop/EstadisticosP.pdf"));
+   QDesktopServices::openUrl(QUrl::fromLocalFile(file));
 }

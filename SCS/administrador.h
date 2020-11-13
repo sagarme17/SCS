@@ -33,7 +33,9 @@ private slots:
 private:
     Ui::administrador *ui;
     QString Id_Administrador;
-    QString PDFESTADISTICA;
+    QString Cursando;
+    QString Aprobada;
+    QString PCursar;
     QSqlDatabase mdb;
 };
 
