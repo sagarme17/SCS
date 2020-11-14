@@ -524,6 +524,9 @@ hover!pressed:border: 5px solid blue;
      </property>
     </widget>
     <widget class="QPushButton" name="Cambio_al_5">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>250</x>

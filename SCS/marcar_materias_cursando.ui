@@ -28,12 +28,12 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QTableWidget" name="Tabla1">
+   <widget class="QTableWidget" name="tablacursando">
     <property name="geometry">
      <rect>
       <x>80</x>
       <y>180</y>
-      <width>711</width>
+      <width>721</width>
       <height>351</height>
      </rect>
     </property>
@@ -67,15 +67,7 @@ background-color: #1DE9B6;  </string>
     </column>
     <column>
      <property name="text">
-      <string>Creditos</string>
-     </property>
-     <property name="textAlignment">
-      <set>AlignCenter</set>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Estado</string>
+      <string>Créditos</string>
      </property>
      <property name="textAlignment">
       <set>AlignCenter</set>
@@ -213,7 +205,7 @@ border: 1px solid #1DE9B6;
     </property>
    </widget>
    <zorder>label_4</zorder>
-   <zorder>Tabla1</zorder>
+   <zorder>tablacursando</zorder>
    <zorder>MateriasCursando</zorder>
    <zorder>label_2</zorder>
    <zorder>label_3</zorder>

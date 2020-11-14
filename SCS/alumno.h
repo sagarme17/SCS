@@ -18,6 +18,7 @@ public:
     void primera();
 
     ~alumno();
+    void Verificarbotones();
 
 private slots:
     void on_Cambio_al_clicked();
@@ -33,6 +34,8 @@ private slots:
     void on_Cambio_al_4_clicked();
 
     void on_Cambio_al_6_clicked();
+
+    void on_Cambio_al_5_clicked();
 
 private:
     Ui::alumno *ui;
