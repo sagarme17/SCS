@@ -22,7 +22,6 @@ alumno::alumno(QString Matricula, QWidget *parent) :
     ui->setupUi(this);
     this->Matricula=Matricula;
     this->mdb=QSqlDatabase::database("Connection");
-    primera();
     Verificarbotones();
 }
 
@@ -114,26 +113,6 @@ void alumno::on_Cambio_al_2_clicked()
 
 }
 
-
-void alumno::primera()
-{
-    if(mdb.open())
-    {
-        QSqlQuery amd(mdb);
-        QString bla;
-        amd.prepare("Select Contraseña from usuario where id_usuario='"+Matricula+"'");
-        amd.exec();
-        amd.next();
-        bla=amd.value(0).toString();
-        if(bla==Matricula)
-        {
-         Cambiar_Contrasena windows(Matricula, this);
-         windows.setWindowTitle("Cambiar contraseña primera vez");
-         QMessageBox::information(this,"Actualizar contraseña","Se requiere que actualize su contraseña para continuar.\nGracias.","Aceptar");
-         windows.exec();
-        }
-    }
-}
 
 void alumno::on_Cambio_al_3_clicked()
 {

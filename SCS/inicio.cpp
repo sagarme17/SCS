@@ -4,6 +4,8 @@
 #include "alumno.h"
 #include "reestablecer_contrasenia.h"
 #include "ui_reestablecer_contrasenia.h"
+#include "cambiar_contrasena.h"
+#include "ui_cambiar_contrasena.h"
 
 #include <QDebug>
 #include <QMessageBox>
@@ -94,11 +96,28 @@ void inicio::on_Inicio_sesion_clicked()
    }
    if(alumnoRes=="TRUE")
    {
+       QSqlQuery a(mdb);
+       QString aa,bb;
+       a.prepare("Select Id_Usuario,Contraseña from usuario where id_usuario='"+id+"'");
+       a.exec();
+       a.next();
+       aa=a.value(0).toString();
+       bb=a.value(1).toString();
+       if(aa!=bb)
+       {
        alumno alumn(idusuario,this);
        alumn.setWindowTitle("alumno");
        alumn.exec();
        ui->Contrasena->clear();
        ui->Matricula->clear();
+       }
+       else
+       {
+           Cambiar_Contrasena windows(id,this);
+           windows.setWindowTitle("Cambiar contraseña primera vez");
+           windows.exec();
+           ui->Contrasena->clear();
+       }
    }
 }else{
            QMessageBox::critical(this,"Error","Contraseña incorrecta","Aceptar");
