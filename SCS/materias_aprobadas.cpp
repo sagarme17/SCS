@@ -54,7 +54,9 @@ void materias_aprobadas::LlenarTableAprobada()
             ui->marcar->setItem(ui->marcar->rowCount()-1,2,tres);
             ui->marcar->setItem(ui->marcar->rowCount()-1,3,cuatro);
             ui->marcar->setCellWidget(ui->marcar->rowCount()-1,4,combo);
+            //ui->marcar->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
         }
+        ui->marcar->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
 
     }
 
@@ -74,34 +76,37 @@ void materias_aprobadas::on_Actualizar_clicked()
                  return;
              }
            }
-
-         for(int i=0;i<tam;i++)
+         if(!QMessageBox::question(this,"Enviar Cambios","¿Está seguro de sus elecciones?","Aceptar","Cancelar"))
           {
-            QComboBox *combo;
-            qDebug()<<"Entro for";
-            combo=qobject_cast<QComboBox*>(ui->marcar->cellWidget(i,4));
-             if(combo->currentText()=="Aprobada"){
-                 alta.prepare("INSERT INTO aprobado (Matricula, Código) VALUES ('"+matricula+"', '"+ui->marcar->item(i,0)->text()+"')");
-                 alta.exec();
-                 alta.next();
-                 alta.clear();
+             for(int i=0;i<tam;i++)
+              {
+                QComboBox *combo;
+                qDebug()<<"Entro for";
+                combo=qobject_cast<QComboBox*>(ui->marcar->cellWidget(i,4));
+                 if(combo->currentText()=="Aprobada"){
+                     alta.prepare("INSERT INTO aprobado (Matricula, Código) VALUES ('"+matricula+"', '"+ui->marcar->item(i,0)->text()+"')");
+                     alta.exec();
+                     alta.next();
+                     alta.clear();
 
-                 eliminar.prepare("DELETE FROM cursando WHERE (Matricula = '"+matricula+"') and (Código = '"+ui->marcar->item(i,0)->text()+"')");
-                 eliminar.exec();
-                 eliminar.next();
-                 eliminar.clear();
-             }else
-            if(combo->currentText() =="Reprobada"){
-                 eliminar.prepare("DELETE FROM cursando WHERE (Matricula = '"+matricula+"') and (Código = '"+ui->marcar->item(i,0)->text()+"')");
-                 eliminar.exec();
-                 eliminar.next();
-                 eliminar.clear();
-                }
-             else return;
+                     eliminar.prepare("DELETE FROM cursando WHERE (Matricula = '"+matricula+"') and (Código = '"+ui->marcar->item(i,0)->text()+"')");
+                     eliminar.exec();
+                     eliminar.next();
+                     eliminar.clear();
+                 }else
+                if(combo->currentText() =="Reprobada"){
+                     eliminar.prepare("DELETE FROM cursando WHERE (Matricula = '"+matricula+"') and (Código = '"+ui->marcar->item(i,0)->text()+"')");
+                     eliminar.exec();
+                     eliminar.next();
+                     eliminar.clear();
+                    }
+                 else return;
 
-         }
+             }
+           }else return;
          QMessageBox::information(this,"Actualizado","Su avance se ha actualizado.","Aceptar");
          LlenarTableAprobada();
+         close();
      }//For
 }
 
