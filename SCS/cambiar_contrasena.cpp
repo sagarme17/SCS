@@ -9,6 +9,7 @@ Cambiar_Contrasena::Cambiar_Contrasena(QString id_usuario, QWidget *parent) :
     ui->setupUi(this);
     this->id_usuario=id_usuario;
     this->mdb=QSqlDatabase::database("Connection");
+    revisar();
 }
 
 Cambiar_Contrasena::~Cambiar_Contrasena()
@@ -56,7 +57,25 @@ void Cambiar_Contrasena::on_Actualizar_clicked()
 
 void Cambiar_Contrasena::on_Regresar_clicked()
 {
-    QSqlQuery regre;
+    QSqlQuery regre(mdb);
+    QString re;
+    regre.prepare("select Contraseña from usuario where Id_Usuario='"+id_usuario+"'");
+    regre.exec();
+    regre.next();
+    re=regre.value(0).toString();
+    if(id_usuario!=re)
+    {
+    close();
+    }
+    else
+    {
+         QMessageBox::critical(this,"Error","La contraseña no debe ser igual a tu matricula.","Aceptar");
+    }
+}
+
+void Cambiar_Contrasena::revisar()
+{
+    QSqlQuery regre(mdb);
     QString re;
     regre.prepare("select Contraseña from usuario where Id_Usuario='"+id_usuario+"'");
     regre.exec();
@@ -64,10 +83,6 @@ void Cambiar_Contrasena::on_Regresar_clicked()
     re=regre.value(0).toString();
     if(id_usuario==re)
     {
-    close();
-    }
-    else
-    {
-         QMessageBox::critical(this,"Error","La contraseña no debe ser igual a tu matricula.","Aceptar");
+        QMessageBox::warning(this,"Actualizar contraseña","Su contraseña debe actualizarse antes de continuar.","Aceptar");
     }
 }

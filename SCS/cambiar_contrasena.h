@@ -16,6 +16,7 @@ class Cambiar_Contrasena : public QDialog
 public:
     explicit Cambiar_Contrasena(QString, QWidget *parent = nullptr);
     ~Cambiar_Contrasena();
+    void revisar();
 
 private slots:
     void on_Actualizar_clicked();
