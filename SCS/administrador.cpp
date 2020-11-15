@@ -27,6 +27,8 @@ administrador::administrador(QString Id_Administrador,QWidget *parent) :
 }
 }
 
+
+
 administrador::~administrador()
 {
     delete ui;

@@ -212,7 +212,7 @@ background:transparent;
       <x>30</x>
       <y>90</y>
       <width>391</width>
-      <height>451</height>
+      <height>471</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -265,8 +265,8 @@ background:transparent;
     <widget class="QLabel" name="Cambiar_Contrasena">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>350</y>
+       <x>20</x>
+       <y>240</y>
        <width>181</width>
        <height>41</height>
       </rect>
@@ -285,7 +285,7 @@ background:transparent;
      <property name="geometry">
       <rect>
        <x>250</x>
-       <y>400</y>
+       <y>417</y>
        <width>131</width>
        <height>41</height>
       </rect>
@@ -352,7 +352,7 @@ hover!pressed:border: 5px solid blue;
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>260</y>
+       <y>140</y>
        <width>91</width>
        <height>101</height>
       </rect>
@@ -371,7 +371,7 @@ hover!pressed:border: 5px solid blue;
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>270</y>
+       <y>150</y>
        <width>91</width>
        <height>81</height>
       </rect>
@@ -430,8 +430,8 @@ hover!pressed:border: 5px solid blue;
     <widget class="QLabel" name="Marcar_2">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>140</y>
+       <x>250</x>
+       <y>20</y>
        <width>91</width>
        <height>91</height>
       </rect>
@@ -449,8 +449,8 @@ hover!pressed:border: 5px solid blue;
     <widget class="QLabel" name="Marcar_Materias_2">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>220</y>
+       <x>200</x>
+       <y>100</y>
        <width>181</width>
        <height>41</height>
       </rect>
@@ -469,7 +469,7 @@ hover!pressed:border: 5px solid blue;
      <property name="geometry">
       <rect>
        <x>250</x>
-       <y>140</y>
+       <y>20</y>
        <width>91</width>
        <height>91</height>
       </rect>
@@ -488,7 +488,7 @@ hover!pressed:border: 5px solid blue;
      <property name="geometry">
       <rect>
        <x>200</x>
-       <y>220</y>
+       <y>100</y>
        <width>181</width>
        <height>41</height>
       </rect>
@@ -506,8 +506,8 @@ hover!pressed:border: 5px solid blue;
     <widget class="QPushButton" name="Cambio_al_4">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>150</y>
+       <x>250</x>
+       <y>30</y>
        <width>91</width>
        <height>81</height>
       </rect>
@@ -530,7 +530,7 @@ hover!pressed:border: 5px solid blue;
      <property name="geometry">
       <rect>
        <x>250</x>
-       <y>140</y>
+       <y>30</y>
        <width>91</width>
        <height>81</height>
       </rect>
@@ -550,7 +550,7 @@ hover!pressed:border: 5px solid blue;
      <property name="geometry">
       <rect>
        <x>250</x>
-       <y>260</y>
+       <y>140</y>
        <width>91</width>
        <height>101</height>
       </rect>
@@ -568,8 +568,8 @@ hover!pressed:border: 5px solid blue;
     <widget class="QLabel" name="Visualizar_Avance_2">
      <property name="geometry">
       <rect>
-       <x>200</x>
-       <y>350</y>
+       <x>210</x>
+       <y>240</y>
        <width>181</width>
        <height>41</height>
       </rect>
@@ -587,8 +587,66 @@ hover!pressed:border: 5px solid blue;
     <widget class="QPushButton" name="Cambio_al_6">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>270</y>
+       <x>252</x>
+       <y>148</y>
+       <width>91</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+       background:transparent;
+       border:none;
+       outline:none;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Contrasena_2">
+     <property name="geometry">
+      <rect>
+       <x>156</x>
+       <y>280</y>
+       <width>91</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="SRC.qrc">:/Images/cv_102350.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Visualizar_Avance_3">
+     <property name="geometry">
+      <rect>
+       <x>111</x>
+       <y>377</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Berlin Sans FB Demi&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Avance Kardex</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Cambio_al_7">
+     <property name="geometry">
+      <rect>
+       <x>156</x>
+       <y>293</y>
        <width>91</width>
        <height>81</height>
       </rect>

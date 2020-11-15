@@ -17,29 +17,34 @@ Foto::Foto(QString idusuario, QWidget *parent) :
 {
     ui->setupUi(this);
     this->Matricula=idusuario;
-
     this->mdb=QSqlDatabase::database("Connection");
+    Act();
+    Datos();
+
+
+}
+
+void Foto::Act()
+{
+    //this->mdb=QSqlDatabase::database("Connection");
     QSqlQuery query1(mdb);
-    QSqlQuery query(mdb);
+   // QSqlQuery query(mdb);
     QByteArray foto;
 
-
-    query.prepare("SELECT img FROM perfil where matricula= '"+idusuario+"'");
-    query.exec();
-    query.last();
-    foto = query.value(0).toByteArray();
+    query1.prepare("SELECT img FROM perfil where matricula= '"+Matricula+"'");
+    query1.exec();
+    query1.last();
+    foto = query1.value(0).toByteArray();
 
     if(!foto.isNull())
      {
     QPixmap pix(141,141);
 
-    pix.loadFromData(query.value(0).toByteArray());
+    pix.loadFromData(query1.value(0).toByteArray());
     ui->aver->setPixmap(pix);
+   // ui->aver->repaint();
     qDebug() << "Encontro la imagen";
-
-    Datos();
-
-    }
+}
 }
 
 Foto::~Foto()
@@ -91,7 +96,7 @@ void Foto::on_Actualizar_clicked()
 
         QMessageBox::critical(this,"Actualizar","Cierra esta Pestaña para actualizar los cambios");
 
-
+        Act();
 
 }
 
