@@ -18,6 +18,7 @@ public:
     explicit Foto(QString idusuario,QWidget *parent = nullptr);
     ~Foto();
     void Datos();
+    void Act();
 
 private slots:
     void on_Actualizar_clicked();

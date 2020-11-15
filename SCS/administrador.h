@@ -17,6 +17,7 @@ public:
     explicit administrador(QString Id_Administrador,QWidget *parent = nullptr);
     ~administrador();
 
+
 private slots:
     void on_Cambio_clicked();
 

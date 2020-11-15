@@ -37,10 +37,18 @@ private slots:
 
     void on_Cambio_al_5_clicked();
 
+    void on_Cambio_al_7_clicked();
+
 private:
     Ui::alumno *ui;
     QString Matricula;
     QSqlDatabase mdb;
+    QString Avances;
+    QString CursandoM;
+    QString Kardex;
+    QString Datos;
+    QString FotoA;
+
 
 
 };
