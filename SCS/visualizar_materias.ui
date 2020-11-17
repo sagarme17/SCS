@@ -117,9 +117,9 @@ background:transparent;
    <widget class="QTableWidget" name="visualizar">
     <property name="geometry">
      <rect>
-      <x>235</x>
+      <x>115</x>
       <y>180</y>
-      <width>411</width>
+      <width>661</width>
       <height>351</height>
      </rect>
     </property>
@@ -131,9 +131,6 @@ background-color: #1DE9B6;
     <column>
      <property name="text">
       <string>Código</string>
-     </property>
-     <property name="textAlignment">
-      <set>AlignCenter</set>
      </property>
     </column>
     <column>
@@ -148,7 +145,7 @@ background-color: #1DE9B6;
     </column>
     <column>
      <property name="text">
-      <string>Creditos</string>
+      <string>Créditos</string>
      </property>
     </column>
    </widget>
