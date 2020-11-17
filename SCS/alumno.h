@@ -19,6 +19,7 @@ public:
 
     ~alumno();
     void Verificarbotones();
+    void Aprobadas();
 
 private slots:
     void on_Cambio_al_clicked();
@@ -48,6 +49,10 @@ private:
     QString Kardex;
     QString Datos;
     QString FotoA;
+    QString Horas;
+    QString HorasCd;
+    QString CreditosAp;
+    QString CreditosCp;
 
 
 

@@ -164,48 +164,56 @@ void alumno::on_Cambio_al_5_clicked()
    }
 }
 
+
+void alumno::Aprobadas()
+{
+
+}
 void alumno::on_Cambio_al_7_clicked()
 {
     {
      //QMessageBox::information(this,"Cardex Avance","Selecciona la ruta en la que deseas guardar tu kardex.\nGracias.");
        int total=0,Porcentaje;
-       QSqlQuery    estadistico(mdb),NOMBRE(mdb), cursando(mdb),foto(mdb);//,estadistico2(mdb);
+       QSqlQuery    estadistico(mdb),NOMBRE(mdb), cursando(mdb),foto(mdb), logo(mdb),horas(mdb),horasC(mdb),escudo(mdb),creditosA(mdb),creditosC(mdb);
        QString Codigo, Nonbre,Avance,nombre,ApellidoM,ApellidoP,Mat;
        QString CodigoC, NombreC,CodigoQ;
-       QString HorasPeriodoC, CreditosC, HorasPeridoA, CreditosA;
+       QString HorasPeriodoC, CreditosC, HorasPeriodoA, CreditosA;
 
+
+       //FOTO DEL LOGO
+
+       logo.prepare("SELECT imgen FROM fotos where Id_foto=3");
+       logo.exec();
+       logo.next();
+            QByteArray guardarlogo=logo.value(0).toByteArray();
+            QPixmap pixmapL;
+            QBuffer bufferL(&guardarlogo);
+            pixmapL.save(&bufferL, "PNG");
+            QString urlL = QString("<img src=\"data:image/png;base64,") + guardarlogo.toBase64() + "\"/ >";
+
+
+       //FOTO BUAP
+
+        escudo.prepare("SELECT imgen FROM fotos where Id_foto=2");
+        escudo.exec();
+        escudo.next();
+             QByteArray guardarescudo=escudo.value(0).toByteArray();
+             QPixmap pixmapE;
+             QBuffer bufferE(&guardarescudo);
+             pixmapL.save(&bufferE, "PNG");
+             QString urlE = QString("<img src=\"data:image/png;base64,") + guardarescudo.toBase64() + "\"/ >";
+
+
+       //FOTO DEL ALUMNO
 
        foto.prepare("select img from perfil where matricula='"+Matricula+"'");
        foto.exec();
        foto.next();
-
            QByteArray guardarfoto=foto.value(0).toByteArray();
            QPixmap pixmap;
-            pixmap.scaled(QSize(50,50),Qt::KeepAspectRatio);
            QBuffer buffer(&guardarfoto);
-               pixmap.save(&buffer, "PNG");
-               QString url = QString("<img src=\"data:image/png;base64,") + guardarfoto.toBase64() + "\"/ >";
-   // FotoA+= url+ "<br>";
-
-
-
-        /*verfoto.prepare("SELECT img FROM perfil where matricula= '"+Matricula+"'");
-        verfoto.exec();
-        if(verfoto.next())
-        {
-            QByteArray array=verfoto.value(0).toByteArray();
-            QPixmap pixmap;
-            pixmap.loadFromData(array);
-
-            //QString name = QString("%1.png").arg(verfoto.value(0));
-            QString name = QFileDialog::getSaveFileName(this,tr("Guardar"),"D:/FOTOOO/Alumno.jpg",tr("JPG-FILES (*.jpg)"));
-            // QString fileName2 = QDir().filePath(name);
-        qDebug()<<"NO SEEEEEEEEEEEEEEEEE"+name;
-                //QPixmap pixmap;
-             pixmap.loadFromData(verfoto.value(0).toByteArray());
-             pixmap.save(name);
-
-        }*/
+           pixmap.save(&buffer, "PNG");
+           QString url = QString("<img src=\"data:image/png;base64,") + guardarfoto.toBase64() + "\"/ >";
 
 
 
@@ -220,39 +228,34 @@ void alumno::on_Cambio_al_7_clicked()
            Mat=NOMBRE.value(3).toString();
        }
 
-       Datos += "<br>" "Alumno/a: "+ nombre+ " "+ApellidoP+" "+ApellidoM+" "+"<br>" "Matricula:" +Mat+"<br>" "Programa Educativo:Ing. en Ciencias de la computación";
+       Datos += "<br>" "Alumno/a: "+ nombre+ " "+ApellidoP+" "+ApellidoM+" "+"<br>" "Matricula:" +Mat+"<br>" "Programa Educativo:Ing. en Ciencias de la Computación";
 
+       //ESTADISTICO
        estadistico.prepare("select count(*) from aprobado  where Matricula='"+Matricula+"'");
        estadistico.exec();
         if(estadistico.next()){
-
             total= estadistico.value(0).toInt();
         }
-        //qDebug()<<"TOTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL"+total;
 
         estadistico.prepare("select Código from aprobado where Matricula='"+Matricula+"'");
         estadistico.exec();
         while(estadistico.next())
         {
             Codigo = estadistico.value(0).toString();
-            //Matricula1 = estadistico.value(1).toInt();
             QSqlQuery Nombre(mdb);
-            Nombre.prepare("select Nombre,Horas_PeriodoPT,Creditos from Materia where Código = '"+Codigo+"'");
+            Nombre.prepare("select Nombre, Código from materia where Código = '"+Codigo+"'");
             Nombre.exec();
             Nombre.next();
             Nonbre = Nombre.value(0).toString();
-            HorasPeridoA=Nombre.value(1).toString();
-            CreditosA=Nombre.value(2).toString();
-
-           // Kardex += "<br>"+ Codigo+ " "+ Nonbre+ "................................................" +HorasPeridoA+ "     " +CreditosA+ "<br>";
             Kardex += "<br>"+ Codigo+ " "+ Nonbre+ "<br>";
          }
 
         Porcentaje = (total * 100)/50;
         Avance = QString::number(Porcentaje);
-        //qDebug() << "TU PORCENTAJE DE AVANCE ES:"+Porcentaje;
-         Avances+= "<br>" "Tu avance es del: "   +Avance+ "  " " ""%"" "+"<br>"+"<br>"+"<br>";
+        Avances+= "<br>" "Tu avance es del: "   +Avance+ "  " " ""%"" "+"<br>"+"<br>"+"<br>";
+//*******************************************************************************************************************
 
+        //MATERIAS CURSANDO
          cursando.prepare("select Código from cursando  where Matricula='"+Matricula+"'");
          cursando.exec();
          while(cursando.next())
@@ -260,37 +263,96 @@ void alumno::on_Cambio_al_7_clicked()
              CodigoQ=cursando.value(0).toString();
 
              QSqlQuery cursando2(mdb);
-             cursando2.prepare("Select Nombre, Horas_PeriodoPT,Creditos from Materia where Código='"+CodigoQ+"'");
+             cursando2.prepare("Select Nombre from materia where Código='"+CodigoQ+"'");
              cursando2.exec();
              cursando2.next();
-             NombreC=cursando2.value(0).toString();
-             HorasPeriodoC=cursando2.value(1).toString();
-             CreditosC=cursando2.value(2).toString();
-             //CodigoC=cursando.value(0).toString();
-             //NombreC=cursando.value(1).toString();
-             //horasC=cursando.value(2).toString();
-             //creditosC=cursando.value(3).toString();
-             // CursandoM+= "<br>"+CodigoQ+" "+ NombreC+ "................................................" +HorasPeriodoC+ " " +CreditosC+ "<br>";
+                NombreC=cursando2.value(0).toString();
+
              CursandoM+= "<br>"+CodigoQ+" "+ NombreC+ "<br>";
          }
 
-          //qDebug()<<CursandoM;
+         // HORAS APROBADAS
+         horas.prepare("select Código from aprobado  where Matricula='"+Matricula+"'");
+         horas.exec();
+         while(horas.next())
+         {
+             CodigoQ=horas.value(0).toString();
+
+             QSqlQuery horas2(mdb);
+             horas2.prepare("Select Horas_PeriodoPT from materia where Código='"+CodigoQ+"'");
+             horas2.exec();
+             horas2.next();
+                  HorasPeriodoA=horas2.value(0).toString();
+
+             Horas+= "<br>"+HorasPeriodoA+ "<br>";
+
+         }
+
+        //HORAS CURSANDO
+         horasC.prepare("select Código from cursando  where Matricula='"+Matricula+"'");
+         horasC.exec();
+         while(horasC.next())
+         {
+             CodigoQ=horasC.value(0).toString();
+             QSqlQuery horasC2(mdb);
+             horasC2.prepare("Select Horas_PeriodoPT from materia where Código='"+CodigoQ+"'");
+             horasC2.exec();
+             horasC2.next();
+                  HorasPeriodoC=horasC2.value(0).toString();
+
+             HorasCd+= "<br>"+HorasPeriodoC+ "<br>";
+
+         }
+
+        //CREDITOS APROBADOS
+         creditosA.prepare("select Código from aprobado  where Matricula='"+Matricula+"'");
+         creditosA.exec();
+         while(creditosA.next())
+         {
+             CodigoQ=creditosA.value(0).toString();
+
+             QSqlQuery CreditosA1(mdb);
+             CreditosA1.prepare("Select Creditos from materia where Código='"+CodigoQ+"'");
+             CreditosA1.exec();
+             CreditosA1.next();
+             CreditosA=CreditosA1.value(0).toString();
+
+             CreditosAp+= "<br>"+CreditosA+ "<br>";
+
+         }
+
+         //CREDITOS CURSANDO
+         creditosC.prepare("select Código from cursando  where Matricula='"+Matricula+"'");
+         creditosC.exec();
+         while(creditosC.next())
+         {
+             CodigoQ=creditosC.value(0).toString();
+
+             QSqlQuery CreditosC1(mdb);
+             CreditosC1.prepare("Select Creditos from materia where Código='"+CodigoQ+"'");
+             CreditosC1.exec();
+             CreditosC1.next();
+             CreditosC=CreditosC1.value(0).toString();
+             CreditosCp+= "<br>"+CreditosC+ "<br>";
+
+         }
 
 
 
-
-
-        //qDebug()<< PDFESTADISTICA;
        QString html =
-               "<img src='D:/Descargas/logo_FCC.png' width='200' height='100'>"
+               "<img src=\"data:image/png;base64," + guardarlogo.toBase64() + "\" width='200' height='100' / >"
+               "<img src=\"data:image/png;base64," + guardarescudo.toBase64() + "\" width='120' height='120' align='right' / >"
+               "<br>"
                "<H1 align=center>KARDEX DE AVANCE</H1>"
                "<br>"
 
-            "</div>"
+
             "<div align=right>"
-               "Heroico Estado de Puebla "+QDate::currentDate().toString("dddd MMMM d yyyy")+
+               "Heroico Estado de Puebla a "+QDate::currentDate().toString( "dddd  d , MMMM  , yyyy")+
             "</div>"
             "<br>"
+
+
                "<div align=center>"
                "<H2>"
                "BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA"
@@ -298,39 +360,70 @@ void alumno::on_Cambio_al_7_clicked()
                "FACULTAD DE CIENCIAS DE LA COMPUTACIÓN"
                "</H2>"
                "</div>"
-               "<p>"
-               //"<img src='+pixmap+'>"
-               //"FOTO"
-               //"<?php mysql_connect('localhost','root');  mysql_select_db('scs');  $re=mysql_query('Select img from perfil where matricula=201617587');    $f=mysql_fetch_array($re);     header('Content-type: image/x-png');  echo $f['imagen'];  ?>"
-                //"<img src=\"data:image/png;base64,"  + guardarfoto.toBase64()  + "\"width='100' height='100'/  >"
-               //+FotoA+
-               "</p>"
+
+               "<table>"
+               "<tbody>"
+                "<td>"
            "<p align=justify>"
               "<h3>"
                +Datos+
-              // "<img src=\"data:image/png;base64,"  + guardarfoto.toBase64()  + "\"width='100' height='100',lign='right' , hspace='1' , border='5'                 /  >"
-
-                //"<div aling=right>""<img src=\"data:image/png;base64,"  + guardarfoto.toBase64()  + "\"width='100' height='100'/  >" "</div"
                "</h3>"
                "</p>"
+               "</td>"
+               "<td>"     "<img src=\"data:image/png;base64,"  + guardarfoto.toBase64()  + "\" width='100' height='100' align='right'/  >" "</td>"
+
+
+               "</tbody>"
+               "</table>"
+
+               "<br>"
+               "<br>"
+
 
                "<FONT FACE=times new roman font size=4>"
 
-               "<img src=\"data:image/png;base64,"  + guardarfoto.toBase64()  + "\" width='100' height='100' align='right'/  >"
-               "<h3>"
-               "Materias aprobadas"
-               "</h3>"
-                 +Kardex+
-               "<h3>"
-               "Materias cursando"
-               "</h3>"
-               +CursandoM+
+               "<table>"
+
+                "<tbody>"
+
+                "<tr>"
+               "<td>"
+                 "<h3>" "Materias Aprobadas"  "</h3>"    +Kardex+
+               "</td>"
+               "<td align='center'>" "<h3>" "Horas""</h3>" +Horas+ "</td>"
+               "<td align='center' >" "<h3>" "Creditos" "</h3>"  +CreditosAp+  "</td>"
+               "</tr>"
+
+
+
+
+
+            "<tr>"
+               "<td >"
+                   "<h3>" "Materias cursando"  "</h3>"     +CursandoM+
+                "</td>"
+                "<td align='center'>" "<h3>" "Horas""</h3>" +HorasCd+ "</td>"
+               "<td align='center'>" "<h3>" "Creditos" "</h3>" +CreditosCp+  "</td>"
+
+             "</tr>"
+
+
+
+
+
+
+
+
+               "</tbody>"
+               "</table>"
+
+               "<FONT FACE=times new roman font size=4>"
                "<h3 align=center> "
                +Avances+
                "</h3>"
-               "</FONT>"
+   "</FONT>"
                "</div>"
-                "</FONT>"
+
                "</p>";
        QTextDocument document;
        document.setHtml(html);
@@ -352,7 +445,7 @@ void alumno::on_Cambio_al_7_clicked()
        document.print(&printer);
 
        QDesktopServices::openUrl(QUrl::fromLocalFile(fileName));
-       QMessageBox::information(this,"Cardex Avance","Tu kardex ha sido guardado.\nGracias.");
+       QMessageBox::information(this,"Cardex Avance","Tu kardex ha sido guardado.\nGracias.","Aceptar");
     }
 
 }
