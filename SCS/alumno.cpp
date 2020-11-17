@@ -40,44 +40,46 @@ alumno::~alumno()
 void alumno::Verificarbotones(){
     QDate fechaac;
     int dia=fechaac.currentDate().dayOfWeek();
+        ui->Cambio_al_2->setVisible(false);/*porcursar*/
+        ui->Marcar->setVisible(false);
+        ui->Marcar_Materias->setVisible(false);
+        ui->Cambio_al_5->setVisible(false);/*-------------cursando*/
+        ui->Marcar_3->setVisible(false);
+        ui->Marcar_Materias_3->setVisible(false);
+        ui->Cambio_al_4->setVisible(false);/*aprobadas*/
+        ui->Marcar_2->setVisible(false);
+        ui->Marcar_Materias_2->setVisible(false);
 
-       if(dia==1)/*Lunes*/
+        ui->enproceso->setVisible(true);
+        ui->enprocesotext->setVisible(true);
+
+       if(dia==1)/*Lunes 1--------------------------------*/
        {
-           ui->Cambio_al_2->setVisible(false);/*porcursar*/
-           ui->Marcar->setVisible(false);
-           ui->Marcar_Materias->setVisible(false);
            ui->Cambio_al_5->setVisible(true);/*-------------cursando*/
            ui->Marcar_3->setVisible(true);
            ui->Marcar_Materias_3->setVisible(true);
-           ui->Cambio_al_4->setVisible(false);/*aprobadas*/
-           ui->Marcar_2->setVisible(false);
-           ui->Marcar_Materias_2->setVisible(false);
+
+           ui->enproceso->setVisible(false);
+           ui->enprocesotext->setVisible(false);
 
        }
-       else if(dia==4)/*Jueves*/
+       else if(dia==4)/*Jueves 4*/
        {
 
            ui->Cambio_al_2->setVisible(true);/*-------------porcursar*/
            ui->Marcar->setVisible(true);
            ui->Marcar_Materias->setVisible(true);
-           ui->Cambio_al_5->setVisible(false);/*cursando*/
-           ui->Marcar_3->setVisible(false);
-           ui->Marcar_Materias_3->setVisible(false);
-           ui->Cambio_al_4->setVisible(false);/*aprobadas*/
-           ui->Marcar_2->setVisible(false);
-           ui->Marcar_Materias_2->setVisible(false);
 
-       }else if(dia==6)/*Sábado*/
+           ui->enproceso->setVisible(false);
+           ui->enprocesotext->setVisible(false);
+       }else if(dia==6)/*Sábado 6*/
        {
-           ui->Cambio_al_2->setVisible(false);/*porcursar*/
-           ui->Marcar->setVisible(false);
-           ui->Marcar_Materias->setVisible(false);
-           ui->Cambio_al_5->setVisible(false);/*cursando*/
-           ui->Marcar_3->setVisible(false);
-           ui->Marcar_Materias_3->setVisible(false);
            ui->Cambio_al_4->setVisible(true);/*--------------aprobadas*/
            ui->Marcar_2->setVisible(true);
            ui->Marcar_Materias_2->setVisible(true);
+
+           ui->enproceso->setVisible(false);
+           ui->enprocesotext->setVisible(false);
        }return;
 
 }

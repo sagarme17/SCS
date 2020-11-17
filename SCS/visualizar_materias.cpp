@@ -27,7 +27,7 @@ void visualizar_materias::LlenarTabla()
 
         ui->visualizar->setRowCount(0);
 
-        query1.prepare("CALL TABLA('"+matricula+"')");;
+        query1.prepare("CALL tabla_cursando('"+matricula+"');");
         query1.exec();
 
         while (query1.next()) {
@@ -44,6 +44,7 @@ void visualizar_materias::LlenarTabla()
             ui->visualizar->setItem(ui->visualizar->rowCount()-1,2,tres);
             ui->visualizar->setItem(ui->visualizar->rowCount()-1,3,cuatro);
         }
+        ui->visualizar->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
 
 }
 

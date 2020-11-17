@@ -51,7 +51,7 @@ void materias_por_cursar::MateriasNuevas()
 
 
 
-        query1.prepare("CALL TABLA('"+matricula+"')"); //PROCEDIMIENTO QUE MUESTRA LAS MATERIAS CON PRERREQUISITOS
+        query1.prepare("CALL tabla_porcursar('"+matricula+"')"); //PROCEDIMIENTO QUE MUESTRA LAS MATERIAS CON PRERREQUISITOS
         query1.exec();
 
         query2.prepare("select materia.Código,Nombre,Horas_PeriodoPT,Creditos from materia inner join cursando on materia.Código=cursando.Código where cursando.Matricula='"+matricula+"'"); //CURSANDO

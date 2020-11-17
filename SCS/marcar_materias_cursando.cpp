@@ -33,7 +33,7 @@ void marcar_Materias_Cursando::LlenarTablaCursando()
 
         ui->tablacursando->setRowCount(0);
 
-        query1.prepare("select materia.código,materia.nombre,materia.horas_periodopt,materia.creditos from prerequisito inner join aprobado on prerequisito.Código=aprobado.código inner join materia on prerequisito.código=materia.código where CódigoPre=any(select Código from aprobado where matricula='"+matricula+"') and (prerequisito.Código not in  (select Código from aprobado where matricula='"+matricula+"')) group by materia.nombre;");
+        query1.prepare("CALL tabla_cursando('"+matricula+"');");
         query1.exec();
 
         while (query1.next()) {
@@ -100,7 +100,7 @@ void marcar_Materias_Cursando::on_Aceptar_clicked()
 
         }else
             {
-             if(!QMessageBox::question(this,"Enviar Cambios","¿Está seguro de sus marcaciones?","Aceptar","Cancelar"))
+             if(!QMessageBox::question(this,"Enviar Cambios","¿Está seguro de sus marcaciones?","Sí","No"))
               {
                 qDebug()<<"MATERIAS";
                   for( int i=0; i<ui->tablacursando->rowCount(); i++)

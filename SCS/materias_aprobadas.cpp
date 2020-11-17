@@ -76,7 +76,7 @@ void materias_aprobadas::on_Actualizar_clicked()
                  return;
              }
            }
-         if(!QMessageBox::question(this,"Enviar Cambios","¿Está seguro de sus elecciones?","Aceptar","Cancelar"))
+         if(!QMessageBox::question(this,"Enviar Cambios","¿Está seguro de sus elecciones?","Sí","No"))
           {
              for(int i=0;i<tam;i++)
               {
