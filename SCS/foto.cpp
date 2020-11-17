@@ -27,9 +27,9 @@ Foto::Foto(QString idusuario, QWidget *parent) :
 void Foto::Act()
 {
     //this->mdb=QSqlDatabase::database("Connection");
-    QSqlQuery query1(mdb);
+    QSqlQuery query1(mdb),query2(mdb);
    // QSqlQuery query(mdb);
-    QByteArray foto;
+    QByteArray foto,fotod;
 
     query1.prepare("SELECT img FROM perfil where matricula= '"+Matricula+"'");
     query1.exec();
@@ -44,7 +44,20 @@ void Foto::Act()
     ui->aver->setPixmap(pix);
    // ui->aver->repaint();
     qDebug() << "Encontro la imagen";
-}
+}else
+    {
+        query1.prepare("SELECT imgen FROM fotos where Id_foto=1");
+        query1.exec();
+        query1.last();
+        foto = query1.value(0).toByteArray();
+
+
+        QPixmap pixd(100,100);
+
+        pixd.loadFromData(query1.value(0).toByteArray());
+        ui->aver->setPixmap(pixd);
+
+    }
 }
 
 Foto::~Foto()
@@ -94,7 +107,7 @@ void Foto::on_Actualizar_clicked()
 
         qDebug() << "ACtualizo imagen de alumno sin imagen";
 
-        QMessageBox::critical(this,"Actualizar","Cierra esta Pestaña para actualizar los cambios");
+
 
         Act();
 

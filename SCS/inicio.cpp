@@ -7,7 +7,6 @@
 #include "cambiar_contrasena.h"
 #include "ui_cambiar_contrasena.h"
 
-#include <QDebug>
 #include <QMessageBox>
 #include <QWidget>
 #include <QtSql/QSqlDatabase>
@@ -31,7 +30,6 @@ inicio::~inicio()
 void inicio::on_Inicio_sesion_clicked()
 {
 
-   //close();
 
     QPalette falta;
     falta.setColor(ui->Matricula->foregroundRole(),Qt::black);
