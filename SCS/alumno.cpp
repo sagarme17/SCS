@@ -447,7 +447,6 @@ void alumno::on_Cambio_al_7_clicked()
        document.print(&printer);
 
        QDesktopServices::openUrl(QUrl::fromLocalFile(fileName));
-       QMessageBox::information(this,"Cardex Avance","Tu kardex ha sido guardado.\nGracias.","Aceptar");
     }
 
 }
