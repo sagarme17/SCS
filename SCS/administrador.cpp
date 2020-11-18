@@ -48,7 +48,7 @@ void administrador::on_Cerrar_Sesion_clicked()
 
 void administrador::on_est_Materias_cursando_clicked()
 {
-    int total2016, total2017,Matricula,Porcentaje;
+    double total2016, total2017,Matricula,Porcentaje;
     QSqlQuery estadistico(mdb),logo(mdb),escudo(mdb);
     QString Codigo, Nonbre,MatriculaS;
 
@@ -170,7 +170,7 @@ void administrador::on_Restablecer_contras_clicked()
 
 void administrador::on_est_materias_aprobadas_clicked()
 {
-    int total2016, total2017,Matricula,Porcentaje;
+    double total2016, total2017,Matricula,Porcentaje;
     QSqlQuery estadistico(mdb),logo(mdb),escudo(mdb);
     QString Codigo, Nonbre,MatriculaS;
 
@@ -286,7 +286,7 @@ void administrador::on_est_materias_aprobadas_clicked()
 
 void administrador::on_est_materias_porcursar_clicked()
 {
-   int total2016, total2017,Matricula,Porcentaje;
+   double total2016, total2017,Matricula,Porcentaje;
    QSqlQuery estadistico(mdb),logo(mdb),escudo(mdb);
    QString Codigo, Nonbre,MatriculaS;
 
