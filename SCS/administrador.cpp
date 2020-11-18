@@ -49,8 +49,28 @@ void administrador::on_Cerrar_Sesion_clicked()
 void administrador::on_est_Materias_cursando_clicked()
 {
     int total2016, total2017,Matricula,Porcentaje;
-    QSqlQuery estadistico(mdb);
+    QSqlQuery estadistico(mdb),logo(mdb),escudo(mdb);
     QString Codigo, Nonbre,MatriculaS;
+
+    //FOTO DEL LOGO
+    logo.prepare("SELECT imgen FROM fotos where Id_foto=3");
+    logo.exec();
+    logo.next();
+    QByteArray guardarlogo=logo.value(0).toByteArray();
+    QPixmap pixmapL;
+    QBuffer bufferL(&guardarlogo);
+    pixmapL.save(&bufferL, "PNG");
+    QString urlL = QString("<img src=\"data:image/png;base64,") + guardarlogo.toBase64() + "\"/ >";
+
+    //FOTO BUAP
+    escudo.prepare("SELECT imgen FROM fotos where Id_foto=2");
+    escudo.exec();
+    escudo.next();
+    QByteArray guardarescudo=escudo.value(0).toByteArray();
+    QPixmap pixmapE;
+    QBuffer bufferE(&guardarescudo);
+    pixmapL.save(&bufferE, "PNG");
+    QString urlE = QString("<img src=\"data:image/png;base64,") + guardarescudo.toBase64() + "\"/ >";
     estadistico.prepare("select count(*) from cursando where Matricula Between 201600000 and 201700000");
     estadistico.exec();
     if(estadistico.next())
@@ -99,12 +119,13 @@ void administrador::on_est_Materias_cursando_clicked()
       qDebug()<< Cursando;
 
     QString html =
-            "<H1 align=center>ESTADISTICO MATERIAS CURSANDO </H1>"
+            "<img src=\"data:image/png;base64," + guardarlogo.toBase64() + "\" width='200' height='100' / >"
+            "<img src=\"data:image/png;base64," + guardarescudo.toBase64() + "\" width='120' height='120' align='right' / >"
             "<br>"
-            "<img src='C:/Users/esteban/Desktop/git 7/SCS/SCS/Images/FCC.jfif' width='150' height='150'>"
-         "</div>"
+            "<H1 align=center>ESTADISTICO MATERIAS CURSANDO</H1>"
+            "<br>"
          "<div align=right>"
-            "PUEBLA,"+QDate::currentDate().toString()+
+            "Heroico Estado de Puebla a "+QDate::currentDate().toString( "dddd  d , MMMM  , yyyy")+
          "</div>"
          "<br>"
          "<div align=center>"
@@ -150,8 +171,29 @@ void administrador::on_Restablecer_contras_clicked()
 void administrador::on_est_materias_aprobadas_clicked()
 {
     int total2016, total2017,Matricula,Porcentaje;
-    QSqlQuery estadistico(mdb);
+    QSqlQuery estadistico(mdb),logo(mdb),escudo(mdb);
     QString Codigo, Nonbre,MatriculaS;
+
+    //FOTO DEL LOGO
+    logo.prepare("SELECT imgen FROM fotos where Id_foto=3");
+    logo.exec();
+    logo.next();
+    QByteArray guardarlogo=logo.value(0).toByteArray();
+    QPixmap pixmapL;
+    QBuffer bufferL(&guardarlogo);
+    pixmapL.save(&bufferL, "PNG");
+    QString urlL = QString("<img src=\"data:image/png;base64,") + guardarlogo.toBase64() + "\"/ >";
+
+    //FOTO BUAP
+    escudo.prepare("SELECT imgen FROM fotos where Id_foto=2");
+    escudo.exec();
+    escudo.next();
+    QByteArray guardarescudo=escudo.value(0).toByteArray();
+    QPixmap pixmapE;
+    QBuffer bufferE(&guardarescudo);
+    pixmapL.save(&bufferE, "PNG");
+    QString urlE = QString("<img src=\"data:image/png;base64,") + guardarescudo.toBase64() + "\"/ >";
+
     estadistico.prepare("select count(*) from aprobado  where Matricula Between 201600000 and 201700000");
     estadistico.exec();
     if(estadistico.next())
@@ -200,12 +242,13 @@ void administrador::on_est_materias_aprobadas_clicked()
       qDebug()<< Aprobada;
 
     QString html =
-            "<H1 align=center>ESTADISTICO MATERIAS APROBADAS </H1>"
+            "<img src=\"data:image/png;base64," + guardarlogo.toBase64() + "\" width='200' height='100' / >"
+            "<img src=\"data:image/png;base64," + guardarescudo.toBase64() + "\" width='120' height='120' align='right' / >"
             "<br>"
-            "<img src='C:/Users/esteban/Desktop/git 7/SCS/SCS/Images/FCC.jfif' width='150' height='150'>"
-         "</div>"
+            "<H1 align=center>ESTADISTICO MATERIAS APROBADAS</H1>"
+            "<br>"
          "<div align=right>"
-            "PUEBLA,"+QDate::currentDate().toString()+
+           "Heroico Estado de Puebla a "+QDate::currentDate().toString( "dddd  d , MMMM  , yyyy")+
          "</div>"
          "<br>"
             "<div align=center>"
@@ -244,8 +287,29 @@ void administrador::on_est_materias_aprobadas_clicked()
 void administrador::on_est_materias_porcursar_clicked()
 {
    int total2016, total2017,Matricula,Porcentaje;
-   QSqlQuery estadistico(mdb);
+   QSqlQuery estadistico(mdb),logo(mdb),escudo(mdb);
    QString Codigo, Nonbre,MatriculaS;
+
+   //FOTO DEL LOGO
+   logo.prepare("SELECT imgen FROM fotos where Id_foto=3");
+   logo.exec();
+   logo.next();
+   QByteArray guardarlogo=logo.value(0).toByteArray();
+   QPixmap pixmapL;
+   QBuffer bufferL(&guardarlogo);
+   pixmapL.save(&bufferL, "PNG");
+   QString urlL = QString("<img src=\"data:image/png;base64,") + guardarlogo.toBase64() + "\"/ >";
+
+   //FOTO BUAP
+   escudo.prepare("SELECT imgen FROM fotos where Id_foto=2");
+   escudo.exec();
+   escudo.next();
+   QByteArray guardarescudo=escudo.value(0).toByteArray();
+   QPixmap pixmapE;
+   QBuffer bufferE(&guardarescudo);
+   pixmapL.save(&bufferE, "PNG");
+   QString urlE = QString("<img src=\"data:image/png;base64,") + guardarescudo.toBase64() + "\"/ >";
+
    estadistico.prepare("select count(*) from porcursar  where Matricula Between 201600000 and 201700000");
    estadistico.exec();
    if(estadistico.next())
@@ -295,12 +359,13 @@ PCursar += "<br>"+ Codigo+ " "+ Nonbre+ " "+ MatriculaS+ " ""alumnos 2016"" "+"<
      qDebug()<< PCursar;
 
    QString html =
-           "<H1 align=center>ESTADISTICO MATERIAS POR CURSAR </H1>"
+           "<img src=\"data:image/png;base64," + guardarlogo.toBase64() + "\" width='200' height='100' / >"
+           "<img src=\"data:image/png;base64," + guardarescudo.toBase64() + "\" width='120' height='120' align='right' / >"
            "<br>"
-           "<img src='C:/Users/esteban/Desktop/git 7/SCS/SCS/Images/FCC.jfif' width='150' height='150'>"
-        "</div>"
+           "<H1 align=center>ESTADISTICO MATERIAS POR CURSAR</H1>"
+           "<br>"
         "<div align=right>"
-           "PUEBLA,"+QDate::currentDate().toString()+
+           "Heroico Estado de Puebla a "+QDate::currentDate().toString( "dddd  d , MMMM  , yyyy")+
         "</div>"
         "<div align=center>"
         "<H3>"
