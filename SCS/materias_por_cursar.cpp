@@ -45,7 +45,8 @@ void materias_por_cursar::MateriasNuevas()
     if(mdb.open())
     {
          qDebug()<<"MATERIAS NUEVAS";
-        QSqlQuery query1(mdb),query2(mdb);
+        QSqlQuery query1(mdb),query2(mdb),query3(mdb),estadistico(mdb);
+        int total=0,Porcentaje;
 
         ui->Tabla1->setRowCount(0);
 
@@ -56,6 +57,17 @@ void materias_por_cursar::MateriasNuevas()
 
         query2.prepare("select materia.Código,Nombre,Horas_PeriodoPT,Creditos from materia inner join cursando on materia.Código=cursando.Código where cursando.Matricula='"+matricula+"'"); //CURSANDO
         query2.exec();
+
+        query3.prepare("select materia.Código,materia.Nombre,materia.Horas_PeriodoPT,materia.Creditos from materia inner join prerequisito on materia.Código=prerequisito.Código where (prerequisito.CódigoPre='70C') and (materia.Código not in (select Código from aprobado where matricula='"+matricula+"')); ");
+        query3.exec();
+
+        estadistico.prepare("select count(*) from aprobado  where Matricula='"+matricula+"'");
+        estadistico.exec();
+
+        if(estadistico.next()){
+            total= estadistico.value(0).toInt();
+        }
+        Porcentaje = (total * 100)/50;
 
         while (query2.next()) {
 
@@ -86,19 +98,20 @@ void materias_por_cursar::MateriasNuevas()
 
             connect(MateriasxCursar,SIGNAL(stateChanged(int)),this,SLOT(BoxChecked()));
 
-    }
+             }
+              ui->Tabla1->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+
 
         while(query1.next())
         {
 
             QCheckBox* MateriasxCursar=new QCheckBox();
-                       //QPushButton* MateriasxCursar=new QPushButton();
-                      QLabel* cursando=new QLabel();
+            QLabel* cursando=new QLabel();
 
 
                       //MateriasxCursar->setText("CLIKC");
 
-                       cursando->setText("CURSANDO");
+                      cursando->setText("CURSANDO");
                     //MateriasCursando();
                       QTableWidgetItem *uno=new QTableWidgetItem(query1.value(0).toString());
                       QTableWidgetItem *dos=new QTableWidgetItem(query1.value(1).toString());
@@ -121,10 +134,41 @@ void materias_por_cursar::MateriasNuevas()
                        //connect(MateriasxCursar,SIGNAL(clicked()),this,SLOT(BoxChecked()));
 
                       connect(MateriasxCursar,SIGNAL(stateChanged(int)),this,SLOT(BoxChecked()));
+             }
+                ui->Tabla1->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+
+                if(Porcentaje>=70) /*******-------------------------------------------------------------------******/
+                 {
+
+                    while (query3.next()) {
+                        QCheckBox* MateriasxCursar=new QCheckBox();
+                        QLabel* cursando=new QLabel();
 
 
+                                  //MateriasxCursar->setText("CLIKC");
 
-        }
+                                  cursando->setText("CURSANDO");
+                                //MateriasCursando();
+                                  QTableWidgetItem *uno=new QTableWidgetItem(query3.value(0).toString());
+                                  QTableWidgetItem *dos=new QTableWidgetItem(query3.value(1).toString());
+                                  QTableWidgetItem *tres=new QTableWidgetItem(query3.value(2).toString());
+
+                                  QTableWidgetItem *cuatro=new QTableWidgetItem(query3.value(3).toString());
+
+                                  ui->Tabla1->setRowCount(ui->Tabla1->rowCount()+1);
+                                  ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,0,uno);
+                                  ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,1,dos);
+                                  ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,2,tres);
+                                  ui->Tabla1->setItem(ui->Tabla1->rowCount()-1,3,cuatro);
+
+                                  ui->Tabla1->setCellWidget(ui->Tabla1->rowCount()-1,5,MateriasxCursar);
+
+                                  connect(MateriasxCursar,SIGNAL(stateChanged(int)),this,SLOT(BoxChecked()));
+                    }
+                    ui->Tabla1->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+
+              }else;
+
   }
 
 

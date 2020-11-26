@@ -694,10 +694,48 @@ hover!pressed:border: 5px solid blue;
       <string notr="true">font: 75 12pt &quot;Berlin Sans FB Demi&quot;;</string>
      </property>
      <property name="text">
-      <string>Sin Evento</string>
+      <string>En Proceso</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="terminadotext">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>100</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 12pt &quot;Berlin Sans FB Demi&quot;;</string>
+     </property>
+     <property name="text">
+      <string>PlanFinalizado </string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="terminado">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>20</y>
+       <width>91</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="SRC.qrc">:/Images/estrella.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
      </property>
     </widget>
    </widget>

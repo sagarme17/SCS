@@ -29,12 +29,22 @@ void marcar_Materias_Cursando::LlenarTablaCursando()
 {
     if(mdb.open())
     {
-        QSqlQuery query1(mdb),query2(mdb);
+        QSqlQuery query1(mdb),query2(mdb),query3(mdb),estadistico(mdb);
 
         ui->tablacursando->setRowCount(0);
 
         query1.prepare("CALL tabla_cursando('"+matricula+"');");
         query1.exec();
+        query3.prepare("select materia.Código,materia.Nombre,materia.Horas_PeriodoPT,materia.Creditos from materia inner join prerequisito on materia.Código=prerequisito.Código where (prerequisito.CódigoPre='70C') and (materia.Código not in (select Código from aprobado where matricula='"+matricula+"')); ");
+        query3.exec();
+        int total=0,Porcentaje;
+
+        estadistico.prepare("select count(*) from aprobado  where Matricula='"+matricula+"'");
+        estadistico.exec();
+        if(estadistico.next()){
+            total= estadistico.value(0).toInt();
+        }
+        Porcentaje = (total * 100)/50;
 
         while (query1.next()) {
             QCheckBox* MateriasCursando=new QCheckBox();
@@ -54,7 +64,34 @@ void marcar_Materias_Cursando::LlenarTablaCursando()
 
             connect(MateriasCursando,SIGNAL(stateChanged(int)),this,SLOT(BoxChecked()));
         }
-        ui->tablacursando->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+       ui->tablacursando->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+
+
+            if(Porcentaje>=70) /*******-------------------------------------------------------------------******/
+             {
+
+                while (query3.next()) {
+                    QCheckBox* MateriasCursando=new QCheckBox();
+
+                  //Servicio y practicas;
+                    QTableWidgetItem *uno=new QTableWidgetItem(query3.value(0).toString());
+                    QTableWidgetItem *dos=new QTableWidgetItem(query3.value(1).toString());
+                    QTableWidgetItem *tres=new QTableWidgetItem(query3.value(2).toString());
+                    QTableWidgetItem *cuatro=new QTableWidgetItem(query3.value(3).toString());
+
+                    ui->tablacursando->setRowCount(ui->tablacursando->rowCount()+1);
+                    ui->tablacursando->setItem(ui->tablacursando->rowCount()-1,0,uno);
+                    ui->tablacursando->setItem(ui->tablacursando->rowCount()-1,1,dos);
+                    ui->tablacursando->setItem(ui->tablacursando->rowCount()-1,2,tres);
+                    ui->tablacursando->setItem(ui->tablacursando->rowCount()-1,3,cuatro);
+                    ui->tablacursando->setCellWidget(ui->tablacursando->rowCount()-1,4,MateriasCursando);
+
+                    connect(MateriasCursando,SIGNAL(stateChanged(int)),this,SLOT(BoxChecked()));
+                }
+                ui->tablacursando->horizontalHeader()->setSectionResizeMode(1, QHeaderView::Stretch);
+
+          }else;
+
     }
 
 }
@@ -93,7 +130,7 @@ void marcar_Materias_Cursando::on_Aceptar_clicked()
 
     QSqlQuery query1(mdb);
     QCheckBox *b;
-    if(contadormat<3)
+    if(contadormat<3)/*3*/
     {
         qDebug()<<"TE FALTAAAAAAN";
         QMessageBox::critical(this,"Error","Te faltan materias por seleccionar","Aceptar");

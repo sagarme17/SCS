@@ -464,19 +464,19 @@ void mostrar_avance::aprobada()
 
            // Noveno Semestre
            case 43:
-           ui->ICCS_262->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+           ui->ICCS_262->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
            break;
           case 44:
-          ui->ISCC_202->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+          ui->ISCC_202->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
           break;
           case 45:
-          ui->SSCC_100->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+          ui->SSCC_100->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
           break;
           case 46:
-          ui->PPCc_101->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+          ui->PPCc_101->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
           break;
           case 47:
-          ui->IDDS_002->setStyleSheet("border-image: url(:/Images/Reloj.png); background:transparent;");
+          ui->IDDS_002->setStyleSheet("border-image: url(:/Images/Palomita.png); background:transparent;");
           break;
 //OPTATIVAS
 
