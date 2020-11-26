@@ -52,5 +52,7 @@
         <file>Images/ICCS_617.bmp</file>
         <file>Images/Palomita.png</file>
         <file>Images/logo_FCC.png</file>
+        <file>Images/estrella.png</file>
+        <file>Images/bolt_23731.png</file>
     </qresource>
 </RCC>

@@ -50,37 +50,56 @@ void alumno::Verificarbotones(){
         ui->Marcar_2->setVisible(false);
         ui->Marcar_Materias_2->setVisible(false);
 
-        ui->enproceso->setVisible(true);
-        ui->enprocesotext->setVisible(true);
+        ui->enproceso->setVisible(false);
+        ui->enprocesotext->setVisible(false);
 
-       if(dia==1)/*Lunes 1--------------------------------*/
-       {
-           ui->Cambio_al_5->setVisible(true);/*-------------cursando*/
-           ui->Marcar_3->setVisible(true);
-           ui->Marcar_Materias_3->setVisible(true);
+        ui->terminado->setVisible(false);
+        ui->terminadotext->setVisible(false);
 
-           ui->enproceso->setVisible(false);
-           ui->enprocesotext->setVisible(false);
 
-       }
-       else if(dia==4)/*Jueves 4*/
-       {
+        int total=0,Porcentaje;
+        QString Avance;
+        QSqlQuery    estadistico(mdb);
+        estadistico.prepare("select count(*) from aprobado  where Matricula='"+Matricula+"'");
+        estadistico.exec();
+        if(estadistico.next()){
+            total= estadistico.value(0).toInt();
+        }
+        Porcentaje = (total * 100)/50;
+        Avance = QString::number(Porcentaje);
+        qDebug()<<"Avance"+Avance;
+        if(Porcentaje<100)
+         {
+           if(dia==1)/*Lunes 1--------------------------------*/
+           {
+               ui->Cambio_al_5->setVisible(true);/*-------------cursando*/
+               ui->Marcar_3->setVisible(true);
+               ui->Marcar_Materias_3->setVisible(true);
 
-           ui->Cambio_al_2->setVisible(true);/*-------------porcursar*/
-           ui->Marcar->setVisible(true);
-           ui->Marcar_Materias->setVisible(true);
+           }
+           else if(dia==4)/*Jueves 4*/
+           {
 
-           ui->enproceso->setVisible(false);
-           ui->enprocesotext->setVisible(false);
-       }else if(dia==6)/*Sábado 6*/
-       {
-           ui->Cambio_al_4->setVisible(true);/*--------------aprobadas*/
-           ui->Marcar_2->setVisible(true);
-           ui->Marcar_Materias_2->setVisible(true);
+               ui->Cambio_al_2->setVisible(true);/*-------------porcursar*/
+               ui->Marcar->setVisible(true);
+               ui->Marcar_Materias->setVisible(true);
 
-           ui->enproceso->setVisible(false);
-           ui->enprocesotext->setVisible(false);
-       }return;
+           }else if(dia==6)/*Sábado 6*/
+           {
+               ui->Cambio_al_4->setVisible(true);/*--------------aprobadas*/
+               ui->Marcar_2->setVisible(true);
+               ui->Marcar_Materias_2->setVisible(true);
+
+           }else if(dia!=1 && dia!=4 && dia!=6) /*(1 4 6)*/
+           {
+               ui->enproceso->setVisible(true);
+               ui->enprocesotext->setVisible(true);
+           }
+         }else if(Porcentaje>=100)
+        {
+            ui->terminado->setVisible(true);
+            ui->terminadotext->setVisible(true);
+        }
 
 }
 
